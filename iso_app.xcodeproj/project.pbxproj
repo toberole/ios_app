@@ -90,6 +90,17 @@
 			path = images;
 			sourceTree = "<group>";
 		};
+		18BA1086223F95EC008D171F /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				18BA107E223F757D008D171F /* NextViewController.m */,
+				18BA107D223F757D008D171F /* NextViewController.h */,
+				18D8E648223CE49A006E89FC /* ViewController.m */,
+				18D8E647223CE49A006E89FC /* ViewController.h */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
 		18D8E638223CE49A006E89FC = {
 			isa = PBXGroup;
 			children = (
@@ -111,17 +122,14 @@
 		18D8E643223CE49A006E89FC /* iso_app */ = {
 			isa = PBXGroup;
 			children = (
+				18BA1086223F95EC008D171F /* controllers */,
 				18965532223D3DD8008DE47F /* images */,
 				18D8E644223CE49A006E89FC /* AppDelegate.h */,
 				18D8E645223CE49A006E89FC /* AppDelegate.m */,
-				18D8E647223CE49A006E89FC /* ViewController.h */,
-				18D8E648223CE49A006E89FC /* ViewController.m */,
 				18D8E64A223CE49A006E89FC /* Main.storyboard */,
 				18D8E64D223CE49C006E89FC /* Assets.xcassets */,
 				18D8E652223CE49C006E89FC /* Info.plist */,
 				18D8E653223CE49C006E89FC /* main.m */,
-				18BA107D223F757D008D171F /* NextViewController.h */,
-				18BA107E223F757D008D171F /* NextViewController.m */,
 				18BA107F223F757D008D171F /* NextViewController.xib */,
 				18BA1082223F8725008D171F /* Test_Next_Page.xib */,
 			);
