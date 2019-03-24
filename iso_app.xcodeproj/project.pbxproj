@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		182EFF7822468B3100E5AE90 /* aaaaa.xib in Resources */ = {isa = PBXBuildFile; fileRef = 182EFF7722468B3100E5AE90 /* aaaaa.xib */; };
 		18965535223D42A3008DE47F /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 18965533223D42A3008DE47F /* 1.jpg */; };
 		18965536223D42A3008DE47F /* 0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 18965534223D42A3008DE47F /* 0.jpg */; };
 		18BA1080223F757D008D171F /* NextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BA107E223F757D008D171F /* NextViewController.m */; };
@@ -37,13 +38,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		182EFF7722468B3100E5AE90 /* aaaaa.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = aaaaa.xib; sourceTree = "<group>"; };
 		18965533223D42A3008DE47F /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 		18965534223D42A3008DE47F /* 0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0.jpg; sourceTree = "<group>"; };
 		18BA107D223F757D008D171F /* NextViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NextViewController.h; sourceTree = "<group>"; };
 		18BA107E223F757D008D171F /* NextViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NextViewController.m; sourceTree = "<group>"; };
 		18BA107F223F757D008D171F /* NextViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NextViewController.xib; sourceTree = "<group>"; };
 		18BA1082223F8725008D171F /* Test_Next_Page.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Test_Next_Page.xib; sourceTree = "<group>"; };
-		18D8E641223CE49A006E89FC /* iso_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iso_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		18D8E641223CE49A006E89FC /* iso_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = iso_app.app; path = "/Users/apple/code/ncode/iso_app/build/Debug-iphoneos/iso_app.app"; sourceTree = "<absolute>"; };
 		18D8E644223CE49A006E89FC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		18D8E645223CE49A006E89FC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		18D8E647223CE49A006E89FC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -52,8 +54,8 @@
 		18D8E64D223CE49C006E89FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18D8E652223CE49C006E89FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18D8E653223CE49C006E89FC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		18D8E659223CE49C006E89FC /* iso_appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iso_appTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		18D8E664223CE49C006E89FC /* iso_appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iso_appUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		18D8E659223CE49C006E89FC /* iso_appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = iso_appTests.xctest; path = "/Users/apple/code/ncode/iso_app/build/Debug-iphoneos/iso_appTests.xctest"; sourceTree = "<absolute>"; };
+		18D8E664223CE49C006E89FC /* iso_appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = iso_appUITests.xctest; path = "/Users/apple/code/ncode/iso_app/build/Debug-iphoneos/iso_appUITests.xctest"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,18 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				18D8E643223CE49A006E89FC /* iso_app */,
-				18D8E642223CE49A006E89FC /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		18D8E642223CE49A006E89FC /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				18D8E641223CE49A006E89FC /* iso_app.app */,
-				18D8E659223CE49C006E89FC /* iso_appTests.xctest */,
-				18D8E664223CE49C006E89FC /* iso_appUITests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		18D8E643223CE49A006E89FC /* iso_app */ = {
@@ -132,6 +123,7 @@
 				18D8E653223CE49C006E89FC /* main.m */,
 				18BA107F223F757D008D171F /* NextViewController.xib */,
 				18BA1082223F8725008D171F /* Test_Next_Page.xib */,
+				182EFF7722468B3100E5AE90 /* aaaaa.xib */,
 			);
 			path = iso_app;
 			sourceTree = "<group>";
@@ -223,7 +215,7 @@
 				Base,
 			);
 			mainGroup = 18D8E638223CE49A006E89FC;
-			productRefGroup = 18D8E642223CE49A006E89FC /* Products */;
+			productRefGroup = 18D8E638223CE49A006E89FC;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -240,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18965536223D42A3008DE47F /* 0.jpg in Resources */,
+				182EFF7822468B3100E5AE90 /* aaaaa.xib in Resources */,
 				18965535223D42A3008DE47F /* 1.jpg in Resources */,
 				18D8E64E223CE49C006E89FC /* Assets.xcassets in Resources */,
 				18D8E64C223CE49A006E89FC /* Main.storyboard in Resources */,

@@ -17,10 +17,16 @@
 //    [self.window setRootViewController:navCtrlr];
 //    navCtrlr.navigationBarHidden = YES;
 
-    ViewController *c = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]]instantiateInitialViewController];
+    // 用制定的stroyboard构建ViewController
+    // ViewController *c = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]]instantiateInitialViewController];
+
+    // 创建一个导航栏的Controller
     UINavigationController *navigation = [[UINavigationController alloc]init];
+    // 隐藏导航栏
+    // navigation.navigationBar.hidden = YES;
     
-    self.window.rootViewController = [navigation initWithRootViewController:c];
+    // self.window.rootViewController = [navigation initWithRootViewController:c];
+    self.window.rootViewController = [navigation initWithRootViewController:self.window.rootViewController];
     
     return YES;
 }

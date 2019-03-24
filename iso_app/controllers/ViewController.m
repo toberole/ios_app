@@ -27,6 +27,14 @@
 
 @implementation ViewController
 
+- (void)didReceiveMemoryWarning{
+    [super didReceiveMemoryWarning];
+    
+    // 内存不足
+    
+    // UIScreen.mainScreen.bounds
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSLog(@"Mainpage viewDidLoad");
@@ -80,13 +88,20 @@
      
          options：当nib文件开始时，需要的数据
      */
+    NSArray *apparray1= [[NSBundle mainBundle]loadNibNamed:@"aaaaa" owner:nil options:nil];
+    NSLog(@"--------views = %@",apparray1);
+    
+    
     NSArray *apparray= [[NSBundle mainBundle]loadNibNamed:@"Test_Next_Page" owner:nil options:nil];
     NSLog(@"views = %@",apparray);
+    NSLog(@"views = %@",apparray[0]);
     NextViewController *nc  = [[NextViewController alloc]init];
     nc.view = apparray[0];
     [self.navigationController pushViewController:nc animated:YES];//跳转到下一页面
     // 隐藏导航栏
-    self.navigationController.navigationBar.hidden = YES;
+    // self.navigationController.navigationBar.hidden = YES;
+    
+    //self presentedViewController
 }
 
 -(void)showMsg:(NSString *)msg{
