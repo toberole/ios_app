@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:../iso_app">
-   </FileRef>
-   <FileRef
-      location = "self:">
+      location = "self:/Users/apple/code/ncode/ios_app/ios_app.xcodeproj">
    </FileRef>
 </Workspace>
