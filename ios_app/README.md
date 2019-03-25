@@ -1,0 +1,2 @@
+ios中管理界面类似android中Activity
+Activity对应于ViewController
