@@ -190,8 +190,13 @@
     // 导航栏左右按钮字体颜色
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
-    
     self.navigationController.navigationBarHidden = NO;
+    
+    // 色彩背景样式之类的对Bar设置，文字左右按钮之类的对Item设置。
+    // 每个UINavigationController的对象只包含了一个Bar，UINavigationController本身具备的item并没意义，
+    // 它管理的vc具备的item才有意义（改变的是每一个对应的item）。
+    // self.navigationItem;
+    // self.navigationController.navigationBar;
     
     UIBarButtonItem *item = [[UIBarButtonItem alloc]init];
     item.title = @"";

@@ -101,6 +101,27 @@
     
     NSLog(@"dispatch_async after");
     
+    // 创建用户队列
+    dispatch_queue_attr_t attr = DISPATCH_QUEUE_SERIAL;
+    dispatch_queue_t queue_SERIAL = dispatch_queue_create("queue_SERIAL",attr);
+    dispatch_async(queue_SERIAL, ^{
+        NSLog(@"queue_SERIAL");
+    });
+    
+    attr = DISPATCH_QUEUE_CONCURRENT;
+    dispatch_queue_t queue_CONCURRENT = dispatch_queue_create("queue_CONCURRENT",attr);
+    dispatch_async(queue_CONCURRENT, ^{
+        [NSThread sleepForTimeInterval:1];
+        NSLog(@"queue_CONCURRENT %@",NSThread.currentThread);
+    });
+    dispatch_async(queue_CONCURRENT, ^{
+        [NSThread sleepForTimeInterval:1];
+        NSLog(@"queue_CONCURRENT %@",NSThread.currentThread);
+    });
+    dispatch_async(queue_CONCURRENT, ^{
+        [NSThread sleepForTimeInterval:1];
+        NSLog(@"queue_CONCURRENT %@",NSThread.currentThread);
+    });
     
 }
 
