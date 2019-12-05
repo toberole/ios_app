@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		182EFF7822468B3100E5AE90 /* aaaaa.xib in Resources */ = {isa = PBXBuildFile; fileRef = 182EFF7722468B3100E5AE90 /* aaaaa.xib */; };
+		186C0D252398A3220051A17C /* Test_Selector.m in Sources */ = {isa = PBXBuildFile; fileRef = 186C0D242398A3220051A17C /* Test_Selector.m */; };
+		186C0D282398E82E0051A17C /* NetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 186C0D272398E82E0051A17C /* NetViewController.m */; };
+		186C0D2C2398ECE20051A17C /* netpage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186C0D2B2398ECE20051A17C /* netpage.xib */; };
 		18965535223D42A3008DE47F /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 18965533223D42A3008DE47F /* 1.jpg */; };
 		18965536223D42A3008DE47F /* 0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 18965534223D42A3008DE47F /* 0.jpg */; };
 		18BA1080223F757D008D171F /* NextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BA107E223F757D008D171F /* NextViewController.m */; };
@@ -40,7 +43,12 @@
 /* Begin PBXFileReference section */
 		182EFF7722468B3100E5AE90 /* aaaaa.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = aaaaa.xib; sourceTree = "<group>"; };
 		182EFFCB2247822700E5AE90 /* ios_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		
+		186C0D1E2398A21B0051A17C /* README.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = README.h; sourceTree = "<group>"; };
+		186C0D232398A3220051A17C /* Test_Selector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Test_Selector.h; sourceTree = "<group>"; };
+		186C0D242398A3220051A17C /* Test_Selector.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test_Selector.m; sourceTree = "<group>"; };
+		186C0D262398E82E0051A17C /* NetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetViewController.h; sourceTree = "<group>"; };
+		186C0D272398E82E0051A17C /* NetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetViewController.m; sourceTree = "<group>"; };
+		186C0D2B2398ECE20051A17C /* netpage.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = netpage.xib; sourceTree = "<group>"; };
 		18965533223D42A3008DE47F /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 		18965534223D42A3008DE47F /* 0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0.jpg; sourceTree = "<group>"; };
 		18BA107D223F757D008D171F /* NextViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NextViewController.h; sourceTree = "<group>"; };
@@ -82,6 +90,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		186C0D1D2398A2050051A17C /* doc */ = {
+			isa = PBXGroup;
+			children = (
+				186C0D1E2398A21B0051A17C /* README.h */,
+			);
+			path = doc;
+			sourceTree = "<group>";
+		};
+		186C0D222398A2C40051A17C /* test */ = {
+			isa = PBXGroup;
+			children = (
+				186C0D232398A3220051A17C /* Test_Selector.h */,
+				186C0D242398A3220051A17C /* Test_Selector.m */,
+			);
+			path = test;
+			sourceTree = "<group>";
+		};
 		18965532223D3DD8008DE47F /* images */ = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +123,8 @@
 				18BA107D223F757D008D171F /* NextViewController.h */,
 				18D8E648223CE49A006E89FC /* ViewController.m */,
 				18D8E647223CE49A006E89FC /* ViewController.h */,
+				186C0D262398E82E0051A17C /* NetViewController.h */,
+				186C0D272398E82E0051A17C /* NetViewController.m */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -113,6 +140,8 @@
 		18D8E643223CE49A006E89FC /* ios_app */ = {
 			isa = PBXGroup;
 			children = (
+				186C0D222398A2C40051A17C /* test */,
+				186C0D1D2398A2050051A17C /* doc */,
 				18BA1086223F95EC008D171F /* controllers */,
 				18965532223D3DD8008DE47F /* images */,
 				18D8E644223CE49A006E89FC /* AppDelegate.h */,
@@ -124,6 +153,7 @@
 				18BA107F223F757D008D171F /* NextViewController.xib */,
 				18BA1082223F8725008D171F /* Test_Next_Page.xib */,
 				182EFF7722468B3100E5AE90 /* aaaaa.xib */,
+				186C0D2B2398ECE20051A17C /* netpage.xib */,
 			);
 			path = ios_app;
 			sourceTree = "<group>";
@@ -180,7 +210,6 @@
 			);
 			name = ios_appUITests;
 			productName = ios_appUITests;
-			
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -230,6 +259,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				186C0D2C2398ECE20051A17C /* netpage.xib in Resources */,
 				18965536223D42A3008DE47F /* 0.jpg in Resources */,
 				182EFF7822468B3100E5AE90 /* aaaaa.xib in Resources */,
 				18965535223D42A3008DE47F /* 1.jpg in Resources */,
@@ -263,8 +293,10 @@
 			files = (
 				18D8E649223CE49A006E89FC /* ViewController.m in Sources */,
 				18BA1080223F757D008D171F /* NextViewController.m in Sources */,
+				186C0D282398E82E0051A17C /* NetViewController.m in Sources */,
 				18D8E654223CE49C006E89FC /* main.m in Sources */,
 				18D8E646223CE49A006E89FC /* AppDelegate.m in Sources */,
+				186C0D252398A3220051A17C /* Test_Selector.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,6 +458,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XK7NDLAV2M;
 				INFOPLIST_FILE = ios_app/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -442,6 +475,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XK7NDLAV2M;
 				INFOPLIST_FILE = ios_app/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

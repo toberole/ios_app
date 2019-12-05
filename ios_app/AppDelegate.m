@@ -21,6 +21,7 @@
     ViewController *c = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]]instantiateInitialViewController];
 
     // 创建一个导航栏的Controller UINavigationController中默认会有导航栏的UI 系统自带的
+    // UINavigationController 类Activity栈
     UINavigationController *uiNavigationController = [[UINavigationController alloc]init];
     // 隐藏导航栏
     // navigation.navigationBar.hidden = YES;
