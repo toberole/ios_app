@@ -17,9 +17,16 @@
 //    self.navigationController;
 //
 //    self.view.window.rootViewController;
+    
+    NSLog(@"NextViewController navigationItem = %@",self.navigationItem);
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    NSLog(@"NextViewController navigationItem = %@",self.navigationItem);
+    
     self.title = @"第二页";
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:nil action:nil];
 }

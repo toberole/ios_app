@@ -1,4 +1,5 @@
 #import "NetViewController.h"
+#import "../constant/Constant.h"
 
 @interface NetViewController ()
 
@@ -24,7 +25,12 @@
 
 - (void)viewWillAppear:(BOOL)animated{
      NSLog(@"viewWillAppear ......");
-     self.title = @"NETPAGE";
+    // 解决navigationBar遮挡视图的问题
+    // IOS7之后ViewController的View是全屏的
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.automaticallyAdjustsScrollViewInsets = NO;
+
+    self.title = @"NETPAGE";
     [self initViews];
 }
 
@@ -162,7 +168,7 @@
 -(void)request1{
     NSThread *thread = [[NSThread alloc]initWithBlock:^(){
         NSLog(@"request1 ......");
-        NSURL *url = [NSURL URLWithString:@"https://raw.githubusercontent.com/toberole/jni_xxxx_demo/master/data.txt"];
+        NSURL *url = [NSURL URLWithString:url2];
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
         NSOperationQueue *queue = [[NSOperationQueue alloc]init];
         // NSURLConnection 不建议使用，用NSURLSession替代

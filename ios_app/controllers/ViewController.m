@@ -4,6 +4,8 @@
 
 #import "../test/Test_Selector.h"
 #import "NetViewController.h"
+#import "StatusBarNavigationBarViewController.h"
+#import "UITableView_ViewController.h"
 
 
 #define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
@@ -30,6 +32,8 @@
 @property (nonatomic,strong)UIButton *json_btn;
 @property(nonatomic ,strong)UIButton *selector_btn;
 @property(nonatomic,strong)UIButton *net_btn;
+@property(nonatomic,strong)UIButton *test_bar_btn;
+@property(nonatomic,strong)UIButton *uiTabView_btn;
 
 @end
 
@@ -39,6 +43,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    NSLog(@"ViewController navigationItem = %@",self.navigationItem);
     
     // 设置导航栏
     [self setNav];
@@ -63,6 +69,8 @@
     _json_btn = [self.view viewWithTag:5];
     _selector_btn =[self.view viewWithTag:7];
     _net_btn = [self.view viewWithTag:8];
+    _test_bar_btn = [self.view viewWithTag:9];
+    _uiTabView_btn = [self.view viewWithTag:10];
     
     /*
      _btn.frame: 该view在父view坐标系统中的位置和大小，它的参考坐标系是父view的坐标系
@@ -74,6 +82,21 @@
     [_json_btn addTarget:self action:@selector(btn_json) forControlEvents:UIControlEventTouchUpInside];
     [_selector_btn addTarget:self action:@selector(btn_selector_clicked) forControlEvents:UIControlEventTouchUpInside];
     [_net_btn addTarget:self action:@selector(btn_net_Clicked) forControlEvents:UIControlEventTouchUpInside];
+    [_test_bar_btn addTarget:self action:@selector(test_bar_btn_clicked) forControlEvents:UIControlEventTouchUpInside];
+    [_uiTabView_btn addTarget:self action:@selector(uiTabView_btn_clicked) forControlEvents:UIControlEventTouchUpInside];
+}
+
+-(void)uiTabView_btn_clicked{
+    UITableView_ViewController *vc = [[UITableView_ViewController alloc]init];
+    NSArray * views = [[NSBundle mainBundle]loadNibNamed:@"listview" owner:nil options:nil];
+    UIView *v = views[0];
+    vc.view = v;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+-(void)test_bar_btn_clicked{
+    StatusBarNavigationBarViewController *vc = [[StatusBarNavigationBarViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark 跳转网络页面
@@ -183,6 +206,14 @@
     if( ([[[UIDevice currentDevice] systemVersion] doubleValue]>=7.0)) {
         self.edgesForExtendedLayout = UIRectEdgeNone;
     }
+    
+    // 状态栏
+//    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+//    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;// (黑色)
+//    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;// (白色)
+    
+    // 导航栏样式
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     // 导航栏背景颜色
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:62/255.0 green:173/255.0 blue:176/255.0 alpha:1.0];
     // 导航栏标题字体颜色
@@ -362,6 +393,12 @@
      NSJSONReadingMutableLeaves：返回的JSON对象中字符串的值为NSMutableString
      NSJSONReadingAllowFragments：允许JSON字符串最外层既不是NSArray也不是NSDictionary，但必须是有效的JSON Fragment。例如使用这个选项可以解析 @“123” 这样的字符串。
      
+     */
+    /*
+         {
+             "name": "hello",
+             "age": 11
+         }
      */
     id resString = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableLeaves error:nil];
     // 取值
