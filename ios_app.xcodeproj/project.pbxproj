@@ -19,6 +19,7 @@
 		186C0D42239BA2010051A17C /* OCBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 186C0D40239BA2010051A17C /* OCBaseViewController.m */; };
 		186C0D43239BA2010051A17C /* OCBaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186C0D41239BA2010051A17C /* OCBaseViewController.xib */; };
 		186C0D47239BC19B0051A17C /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 186C0D46239BC19B0051A17C /* Book.m */; };
+		186C0D4A239C06620051A17C /* Extra.m in Sources */ = {isa = PBXBuildFile; fileRef = 186C0D49239C06620051A17C /* Extra.m */; };
 		18965535223D42A3008DE47F /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 18965533223D42A3008DE47F /* 1.jpg */; };
 		18965536223D42A3008DE47F /* 0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 18965534223D42A3008DE47F /* 0.jpg */; };
 		18BA1080223F757D008D171F /* NextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BA107E223F757D008D171F /* NextViewController.m */; };
@@ -71,6 +72,8 @@
 		186C0D41239BA2010051A17C /* OCBaseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OCBaseViewController.xib; sourceTree = "<group>"; };
 		186C0D45239BC19B0051A17C /* Book.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
 		186C0D46239BC19B0051A17C /* Book.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
+		186C0D48239C06620051A17C /* Extra.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Extra.h; sourceTree = "<group>"; };
+		186C0D49239C06620051A17C /* Extra.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Extra.m; sourceTree = "<group>"; };
 		18965533223D42A3008DE47F /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 		18965534223D42A3008DE47F /* 0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0.jpg; sourceTree = "<group>"; };
 		18BA107D223F757D008D171F /* NextViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NextViewController.h; sourceTree = "<group>"; };
@@ -143,6 +146,8 @@
 			children = (
 				186C0D45239BC19B0051A17C /* Book.h */,
 				186C0D46239BC19B0051A17C /* Book.m */,
+				186C0D48239C06620051A17C /* Extra.h */,
+				186C0D49239C06620051A17C /* Extra.m */,
 			);
 			path = bean;
 			sourceTree = "<group>";
@@ -353,6 +358,7 @@
 				186C0D42239BA2010051A17C /* OCBaseViewController.m in Sources */,
 				186C0D3E239A56920051A17C /* UITableViewViewController.m in Sources */,
 				186C0D2F239942080051A17C /* StatusBarNavigationBarViewController.m in Sources */,
+				186C0D4A239C06620051A17C /* Extra.m in Sources */,
 				18D8E646223CE49A006E89FC /* AppDelegate.m in Sources */,
 				186C0D32239A1E860051A17C /* UITableView_ViewController.m in Sources */,
 				186C0D3B239A34540051A17C /* Constant.m in Sources */,

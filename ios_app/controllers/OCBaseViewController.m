@@ -1,12 +1,19 @@
 #import "OCBaseViewController.h"
 #import "../bean/Book.h"
+#import <objc/message.h>
+
+// 用与移除KVO 可以用于区别子类和父类中的kvo观察者
+// 移除的时候 子类 和 父类 分别移除自己的kvo观察者
+NSString * const desc_context_kov = @"desc_context_kov";
 
 @interface OCBaseViewController ()
+
 @property(nonatomic,strong) UIButton * btn_block;
 @property(nonatomic,strong) UIButton * btn_kvc_kvo;
 @property(nonatomic,strong) UIButton * btn_kvo;
-
+@property(nonatomic,strong) UIButton * btn_NSNotification;
 @property(nonatomic,strong) Book *book_kvo;
+@property(nonatomic,strong) Book *book_kvo1;
 
 @end
 
@@ -32,14 +39,38 @@
     NSLog(@"_book_kvo = %@",_book_kvo);
     
     [self addObserver4book_kvo];
+    [self initNotificationCenter];
     
     NSLog(@"OCBaseViewController#viewDidLoad");
+}
+
+-(void)initNotificationCenter{
+    // selector 接收到消息的调用的方法
+    // name 消息的标示 用于接收消息匹配
+    // object 用于接收消息标示 与发消息的匹配 nil匹配所有
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(notification_x:) name:book_notification object:nil];
+}
+
+-(void)notification_x:(NSNotification *)data{
+    NSLog(@"接收到 notification_x data = %@",data);
 }
 
 -(void)addObserver4book_kvo{
     NSLog(@"OCBaseViewController#addObserver4book_kvo");
     // 注册观察者 KVO 在dealloc中可以移除
-    [self.book_kvo addObserver:self forKeyPath:@"desc" options:NSKeyValueObservingOptionOld context:nil];
+    // context 可以用来标记
+    // 注意：使用 Class 方法获取的对象类型不是准确的，想要获取类的真实类型使用runtime 的 object_getClass（）函数
+    NSLog(@"添加监听前Class info book_kvo = %@  book_kvo1= %@",object_getClass(self.book_kvo),object_getClass(self.book_kvo1));
+    
+    NSLog(@"添加监听前Method info book_kvo = %p  book_kvo1= %p",[self.book_kvo methodForSelector:NSSelectorFromString(@"setDesc:")],[self.book_kvo1 methodForSelector:NSSelectorFromString(@"setDesc:")]);
+    
+    [self.book_kvo addObserver:self forKeyPath:@"desc" options:NSKeyValueObservingOptionOld context:CFBridgingRetain(desc_context_kov)];
+    NSLog(@"添加监听后Class info book_kvo = %@  book_kvo1= %@",object_getClass(self.book_kvo),object_getClass(self.book_kvo1));
+    
+    NSLog(@"添加监听后Method info book_kvo = %p  book_kvo1= %p",[self.book_kvo methodForSelector:NSSelectorFromString(@"setDesc:")],[self.book_kvo1 methodForSelector:NSSelectorFromString(@"setDesc:")]);
+    
+    
+    
     [self.book_kvo addObserver:self forKeyPath:@"name" options:NSKeyValueObservingOptionOld context:nil];
     [self.book_kvo addObserver:self forKeyPath:@"price" options:NSKeyValueObservingOptionOld context:nil];
 }
@@ -47,16 +78,22 @@
 -(void)removeObserver4book_kvo{
     NSLog(@"OCBaseViewController#removeObserver4book_kvo");
     // 注册观察者 KVO 在dealloc中可以移除
-    [self.book_kvo addObserver:self forKeyPath:@"desc" options:NSKeyValueObservingOptionOld context:nil];
+    // 定向移除 desc_context_kov
+    [self.book_kvo addObserver:self forKeyPath:@"desc" options:NSKeyValueObservingOptionOld context:CFBridgingRetain(desc_context_kov)];
+    
     [self.book_kvo addObserver:self forKeyPath:@"name" options:NSKeyValueObservingOptionOld context:nil];
     [self.book_kvo addObserver:self forKeyPath:@"price" options:NSKeyValueObservingOptionOld context:nil];
 }
 
 -(void)dealloc{
+    // 当对同一个keypath进行两次removeObserver时会导致程序crash
     NSLog(@"OCBaseViewController#dealloc");
     [self.book_kvo removeObserver:self forKeyPath:@"desc"];
     [self.book_kvo removeObserver:self forKeyPath:@"name"];
     [self.book_kvo removeObserver:self forKeyPath:@"price"];
+    
+    // 移除notication
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:book_notification object:nil];
 }
 
 
@@ -70,6 +107,11 @@
     _book_kvo.name = @"init data book name";
     _book_kvo.price = 666;
     _book_kvo.desc = @"init data book desc";
+    
+    _book_kvo1 = [[Book alloc]init];
+    _book_kvo1.name = @"init data book1 name";
+    _book_kvo1.price = 666;
+    _book_kvo1.desc = @"init data book1 desc";
 }
 
 -(void)initViews{
@@ -80,18 +122,35 @@
     [_btn_kvc_kvo addTarget:self action:@selector(btn_kvc_kvo_clicked) forControlEvents:UIControlEventTouchUpInside];
     _btn_kvo = [self.view viewWithTag:3];
     [_btn_kvo addTarget:self action:@selector(btn_kvo_clicked) forControlEvents:UIControlEventTouchUpInside];
+    _btn_NSNotification = [self.view viewWithTag:4];
+    [_btn_NSNotification addTarget:self action:@selector(btn_NSNotification_clicked) forControlEvents:UIControlEventTouchUpInside];
+}
+
+-(void)btn_NSNotification_clicked{
+    NSLog(@"btn_NSNotification_clicked");
+    // 发送消息
+    [_book_kvo notification_book];
 }
 
 -(void)btn_kvo_clicked{
+    NSLog(@"...... btn_kvo_clicked ......");
     _book_kvo.name = @"btn_kvo_clicked kvo name";
     _book_kvo.desc = @"btn_kvo_clicked kvo desc";
     _book_kvo.price = _book_kvo.price + 1;
 }
 
-
-
 /*
- KVC: key value code
+ KVC
+ 基本使用
+ setValue：forKey 和 setValue：forKeyPath两个方法
+ setValue forkey 和 setValue forKeyPath 的区别在于，forKeyPath 是可以多深层次访问的。例如：有两个类 Psrson 和Student，Psrson 类里面有个Student 类型的对象，Student 类里面有个 score 属性。那么就可以这么使用：[person setValue:@80 forKeyPath:@"student.score" ]
+ setValue设值顺序：
+    查找setKey 方法，有则调用，没有则查找看有没有_setKey方法，有则调用。没有则查看 accessInstanceVariablesDirectly 这个类方法的返回值，是yes则按照_key 、_isKey 、key 、iskey 顺序查找成员变量。如果没有找到则抛出异常 NSUnknownKeyException 。如果accessInstanceVariablesDirectly返回值是 NO，则程序抛出异常
+ valueForKey的取值顺序：
+    先按照 getKey 、key 、isKey 、_key 顺序查找方法取值，如果没有找到方法则查看accessInstanceVariablesDirectly 类方法的返回值，如果返回的是 NO，则抛出异常。如果返回的是YES，按照_key 、_isKey 、key 、isKey 顺序查找成员变量，如果没有找到，则抛出异常。
+ 
+ 
+ KVC: key value code 可以访问和修改私有成员变量、readOnly成员变量的值
  1、基本概念
  
  1）键-值编码是一个用于间接访问对象属性的机制，使用该机制不需要调用存取方法和变量实例就可以访问对象属性
@@ -143,7 +202,9 @@
  
  　　（4）监听控制器frame改变，实现抽屉效果。
  
- 
+ kVO 实现原理总结：
+ 动态生成一个子类，让这个对象的isa 指针指向一个新的类
+ 当修改对象的属性时 会调用重写的setter 方法。这个 setter 方法内部是 先调willChangeValueForKey， 再调父类原来的setter方法，再调didChangeValueForKey，最后触发监听的回调方法
  
  
  三、通知的基本概念和用法
@@ -182,6 +243,7 @@
  KVC方法会首先查找以参数命名的getter、setter方法，如果没有提供getter、setter方法，KVC方法会直接寻找_name和name的实例变量。
  
  */
+#pragma mark kvc
 -(void)btn_kvc_kvo_clicked{
     NSLog(@"btn_kvc_kvo_clicked");
     
@@ -222,6 +284,15 @@
     NSNumber *book4_price = [book4 valueForKeyPath:@"price"];
     NSLog(@"valueForKeyPath book4_name = %@,book4_price = %i",book4_name,[book4_price intValue]);
     
+    // 带路径 访问内部对象信息
+    Book *bookx = [[Book alloc]init];
+    Extra *e = [[Extra alloc]init];
+    e.extra_info = @"**** extra_info ****";
+    bookx.extra = e;
+    NSString *ee = [bookx valueForKeyPath:@"extra.extra_info"];
+    NSLog(@"带路径 访问内部对象信息 %@",ee);
+
+    
     // 字典转换为模型
     NSDictionary *dict1 = @{@"name":@"dict name",@"desc":@"dict desc",@"price":@333};
     Book *book5 = [[Book alloc]init];
@@ -241,12 +312,15 @@
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
     NSLog(@"--------- observeValueForKeyPath ---------");
     
-    NSLog(@"observeValueForKeyPath keyPath = %@",keyPath);
-    NSLog(@"observeValueForKeyPath object = %@",object);
-    NSLog(@"observeValueForKeyPath change = %@",change);
-    NSLog(@"observeValueForKeyPath context = %@",context);
-    
-    
+    if (YES/* 判断条件 */) {
+        NSLog(@"observeValueForKeyPath keyPath = %@",keyPath);
+        NSLog(@"observeValueForKeyPath object = %@",object);
+        NSLog(@"observeValueForKeyPath change = %@",change);
+        NSLog(@"observeValueForKeyPath context = %@",context);
+    }else{
+        // 注意给父类
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    }
 }
 
 
