@@ -6,7 +6,8 @@
 #import "NetViewController.h"
 #import "StatusBarNavigationBarViewController.h"
 #import "UITableView_ViewController.h"
-
+#import "UITableViewViewController.h"
+#import "OCBaseViewController.h"
 
 #define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 #define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
@@ -34,7 +35,9 @@
 @property(nonatomic,strong)UIButton *net_btn;
 @property(nonatomic,strong)UIButton *test_bar_btn;
 @property(nonatomic,strong)UIButton *uiTabView_btn;
+@property(nonatomic,strong)UIButton *uiTabView_btn1;
 
+@property(nonatomic,strong)UIButton *ocbase_btn;
 @end
 
 @implementation ViewController
@@ -71,6 +74,8 @@
     _net_btn = [self.view viewWithTag:8];
     _test_bar_btn = [self.view viewWithTag:9];
     _uiTabView_btn = [self.view viewWithTag:10];
+    _uiTabView_btn1 = [self.view viewWithTag:11];
+    _ocbase_btn = [self.view viewWithTag:12];
     
     /*
      _btn.frame: 该view在父view坐标系统中的位置和大小，它的参考坐标系是父view的坐标系
@@ -84,6 +89,14 @@
     [_net_btn addTarget:self action:@selector(btn_net_Clicked) forControlEvents:UIControlEventTouchUpInside];
     [_test_bar_btn addTarget:self action:@selector(test_bar_btn_clicked) forControlEvents:UIControlEventTouchUpInside];
     [_uiTabView_btn addTarget:self action:@selector(uiTabView_btn_clicked) forControlEvents:UIControlEventTouchUpInside];
+    [_uiTabView_btn1 addTarget:self action:@selector(uiTabView_btn1_clicked) forControlEvents:UIControlEventTouchUpInside];
+    
+    [_ocbase_btn addTarget:self action:@selector(oc_base_btn_clicked) forControlEvents:  UIControlEventTouchUpInside];
+}
+
+-(void)oc_base_btn_clicked{
+    OCBaseViewController *vc = [[OCBaseViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 -(void)uiTabView_btn_clicked{
@@ -91,6 +104,13 @@
     NSArray * views = [[NSBundle mainBundle]loadNibNamed:@"listview" owner:nil options:nil];
     UIView *v = views[0];
     vc.view = v;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+-(void)uiTabView_btn1_clicked{
+    NSLog(@"uiTabView_btn1_clicked");
+    UITableViewViewController *vc = [[UITableViewViewController alloc]init];
+    NSLog(@"uiTabView_btn1_clicked UITableViewViewController after");
     [self.navigationController pushViewController:vc animated:YES];
 }
 
