@@ -1,6 +1,10 @@
 #import "OCBaseViewController.h"
 #import "../bean/Book.h"
+// message.h包含了objc.h和runtime.h
 #import <objc/message.h>
+
+#import "../bean/Extra.h"
+#import "../bean/Extra+Test.h"
 
 // 用与移除KVO 可以用于区别子类和父类中的kvo观察者
 // 移除的时候 子类 和 父类 分别移除自己的kvo观察者
@@ -14,6 +18,7 @@ NSString * const desc_context_kov = @"desc_context_kov";
 @property(nonatomic,strong) UIButton * btn_NSNotification;
 @property(nonatomic,strong) Book *book_kvo;
 @property(nonatomic,strong) Book *book_kvo1;
+@property(nonatomic,strong) UIButton * btn_runtime;
 
 @end
 
@@ -44,6 +49,122 @@ NSString * const desc_context_kov = @"desc_context_kov";
     NSLog(@"OCBaseViewController#viewDidLoad");
 }
 
+-(void)initViews{
+    _btn_block = [self.view viewWithTag:1];
+    NSLog(@"%@",self.btn_block);
+    [_btn_block addTarget:self action:@selector(btn_block_clicked) forControlEvents:UIControlEventTouchUpInside];
+    _btn_kvc_kvo = [self.view viewWithTag:2];
+    [_btn_kvc_kvo addTarget:self action:@selector(btn_kvc_kvo_clicked) forControlEvents:UIControlEventTouchUpInside];
+    _btn_kvo = [self.view viewWithTag:3];
+    [_btn_kvo addTarget:self action:@selector(btn_kvo_clicked) forControlEvents:UIControlEventTouchUpInside];
+    _btn_NSNotification = [self.view viewWithTag:4];
+    [_btn_NSNotification addTarget:self action:@selector(btn_NSNotification_clicked) forControlEvents:UIControlEventTouchUpInside];
+    _btn_runtime = [self.view viewWithTag:5];
+    [_btn_runtime addTarget:self action:@selector(btn_runtime_clicked) forControlEvents:UIControlEventTouchUpInside];
+}
+
+-(void)initData{
+    _book_kvo = [[Book alloc]init];
+    _book_kvo.name = @"init data book name";
+    _book_kvo.price = 666;
+    _book_kvo.desc = @"init data book desc";
+    
+    _book_kvo1 = [[Book alloc]init];
+    _book_kvo1.name = @"init data book1 name";
+    _book_kvo1.price = 666;
+    _book_kvo1.desc = @"init data book1 desc";
+}
+
+-(void)btn_runtime_clicked{
+    NSLog(@"btn_runtime_clicked");
+    
+    // 通过类名称来实例化对象
+    Class clazz = NSClassFromString(@"Book");
+    Book *b = [[clazz alloc]init];
+    b.name = @"name xxx";
+    NSLog(@"b = %@",b);
+    
+    // 获取类
+    Class clazz1 = [Book class];
+    NSLog(@"Book class name = %@",NSStringFromClass(clazz1));
+    
+    // SEL 反射
+    SEL selector = NSSelectorFromString(@"setName:");
+    [b performSelector:selector withObject:@"name aaa"];
+    NSLog(@"b = %@",b);
+    
+    // 将方法变成字符串
+    SEL selector1 = NSSelectorFromString(@"setName:");
+    NSString *selectorName = NSStringFromSelector(selector1);
+    NSLog(@"selectorName: %@", selectorName);
+    
+    // class方法和objc_getClass方法
+    /*
+     判断对象类型:
+     -(BOOL) isKindOfClass: 判断是否是这个类或者这个类的子类的实例
+     -(BOOL) isMemberOfClass: 判断是否是这个类的实例
+     
+     判断对象or类是否有这个方法
+     -(BOOL) respondsToSelector: 判读实例是否有这样方法
+     +(BOOL) instancesRespondToSelector: 判断类是否有这个方法
+     
+     object_getClass:获得的是isa的指向
+     self.class:当self是实例对象的时候，返回的是类对象，否则则返回自身。
+     类方法class，返回的是self，所以当查找meta class时，需要对类对象调用object_getClass方法
+     
+     */
+    
+    /*
+     OC 与 C 的对应方法
+     [People class] == objc_getClass("People")
+     @selector() == sel_registerName()
+     */
+    
+    // runtime交换方法
+    /*
+     用法
+     先给要替换的方法的类添加一个Category，然后在Category中的+(void)load方法中添加Method Swizzling方法，我们用来替换的方法也写在这个Category中。
+     
+     由于load类方法是程序运行时这个类被加载到内存中就调用的一个方法，执行比较早，并且不需要我们手动调用。
+     
+     注意要点
+     Swizzling应该总在+load中执行
+     Swizzling应该总是在dispatch_once中执行
+     Swizzling在+load中执行时，不要调用[super load]。如果多次调用了[super load]，可能会出现“Swizzle无效”的假象。
+     为了避免Swizzling的代码被重复执行，我们可以通过GCD的dispatch_once函数来解决，利用dispatch_once函数内代码只会执行一次的特性。
+     方案1
+         class_getInstanceMethod(Class _Nullable cls, SEL _Nonnull name)
+         method_getImplementation(Method _Nonnull m)
+         class_addMethod(Class _Nullable cls, SEL _Nonnull name, IMP _Nonnull imp,
+         const char * _Nullable types)
+         class_replaceMethod(Class _Nullable cls, SEL _Nonnull name, IMP _Nonnull imp,
+         const char * _Nullable types)
+     方案2
+        method_exchangeImplementations(Method _Nonnull m1, Method _Nonnull m2)
+     */
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{// dispatch_once app整个生命周只会执行一次
+        // 方法一 没有在load方法里面实现
+//        [Extra oneSwizzleInstanceMethod:@selector(test) withMethod:@selector(test_xxx)];
+//        Extra *e_ch = [Extra new];
+//        [e_ch test_xxx];
+//        [e_ch test];
+        
+        // 方法二 在load里面实现交换
+        Extra *e_ch = [[Extra alloc]init];
+        NSLog(@"调用test_Extra");
+        [e_ch test_Extra];
+        NSLog(@"调用test");
+        [e_ch test];
+        
+    });
+    
+    
+    
+    // runtime动态添加方法
+    // runtime给分类添加属性
+}
+
 -(void)initNotificationCenter{
     // selector 接收到消息的调用的方法
     // name 消息的标示 用于接收消息匹配
@@ -61,15 +182,13 @@ NSString * const desc_context_kov = @"desc_context_kov";
     // context 可以用来标记
     // 注意：使用 Class 方法获取的对象类型不是准确的，想要获取类的真实类型使用runtime 的 object_getClass（）函数
     NSLog(@"添加监听前Class info book_kvo = %@  book_kvo1= %@",object_getClass(self.book_kvo),object_getClass(self.book_kvo1));
-    
+    //self.book_kvo.isa
     NSLog(@"添加监听前Method info book_kvo = %p  book_kvo1= %p",[self.book_kvo methodForSelector:NSSelectorFromString(@"setDesc:")],[self.book_kvo1 methodForSelector:NSSelectorFromString(@"setDesc:")]);
     
-    [self.book_kvo addObserver:self forKeyPath:@"desc" options:NSKeyValueObservingOptionOld context:CFBridgingRetain(desc_context_kov)];
+    [self.book_kvo addObserver:self forKeyPath:@"desc" options:NSKeyValueObservingOptionOld context:(void*)desc_context_kov];
     NSLog(@"添加监听后Class info book_kvo = %@  book_kvo1= %@",object_getClass(self.book_kvo),object_getClass(self.book_kvo1));
     
     NSLog(@"添加监听后Method info book_kvo = %p  book_kvo1= %p",[self.book_kvo methodForSelector:NSSelectorFromString(@"setDesc:")],[self.book_kvo1 methodForSelector:NSSelectorFromString(@"setDesc:")]);
-    
-    
     
     [self.book_kvo addObserver:self forKeyPath:@"name" options:NSKeyValueObservingOptionOld context:nil];
     [self.book_kvo addObserver:self forKeyPath:@"price" options:NSKeyValueObservingOptionOld context:nil];
@@ -79,7 +198,7 @@ NSString * const desc_context_kov = @"desc_context_kov";
     NSLog(@"OCBaseViewController#removeObserver4book_kvo");
     // 注册观察者 KVO 在dealloc中可以移除
     // 定向移除 desc_context_kov
-    [self.book_kvo addObserver:self forKeyPath:@"desc" options:NSKeyValueObservingOptionOld context:CFBridgingRetain(desc_context_kov)];
+    [self.book_kvo addObserver:self forKeyPath:@"desc" options:NSKeyValueObservingOptionOld context:(void*)desc_context_kov];
     
     [self.book_kvo addObserver:self forKeyPath:@"name" options:NSKeyValueObservingOptionOld context:nil];
     [self.book_kvo addObserver:self forKeyPath:@"price" options:NSKeyValueObservingOptionOld context:nil];
@@ -100,30 +219,6 @@ NSString * const desc_context_kov = @"desc_context_kov";
 - (void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
     NSLog(@"OCBaseViewController#viewDidLayoutSubviews");
-}
-
--(void)initData{
-    _book_kvo = [[Book alloc]init];
-    _book_kvo.name = @"init data book name";
-    _book_kvo.price = 666;
-    _book_kvo.desc = @"init data book desc";
-    
-    _book_kvo1 = [[Book alloc]init];
-    _book_kvo1.name = @"init data book1 name";
-    _book_kvo1.price = 666;
-    _book_kvo1.desc = @"init data book1 desc";
-}
-
--(void)initViews{
-    _btn_block = [self.view viewWithTag:1];
-    NSLog(@"%@",self.btn_block);
-    [_btn_block addTarget:self action:@selector(btn_block_clicked) forControlEvents:UIControlEventTouchUpInside];
-    _btn_kvc_kvo = [self.view viewWithTag:2];
-    [_btn_kvc_kvo addTarget:self action:@selector(btn_kvc_kvo_clicked) forControlEvents:UIControlEventTouchUpInside];
-    _btn_kvo = [self.view viewWithTag:3];
-    [_btn_kvo addTarget:self action:@selector(btn_kvo_clicked) forControlEvents:UIControlEventTouchUpInside];
-    _btn_NSNotification = [self.view viewWithTag:4];
-    [_btn_NSNotification addTarget:self action:@selector(btn_NSNotification_clicked) forControlEvents:UIControlEventTouchUpInside];
 }
 
 -(void)btn_NSNotification_clicked{
