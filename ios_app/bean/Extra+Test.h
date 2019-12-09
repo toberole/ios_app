@@ -6,6 +6,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)test_Extra;
 - (void)test_xxx;
 
+-(void)test_over;
+
 + (void)oneSwizzleInstanceMethod:(SEL)origSelector withMethod:(SEL)newSelector;
 + (void)twoSwizzleInstanceMethod:(SEL)origSelector withMethod:(SEL)newSelector;
 

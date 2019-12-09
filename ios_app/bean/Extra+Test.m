@@ -12,6 +12,16 @@
     NSLog(@"...... Extra (Test) test_xxx ......");
 }
 
+- (void)test_over{
+    NSLog(@"...... Extra (Test) test_over ......");
+}
+
++ (void)initialize
+{
+    [super initialize];
+    NSLog(@"...... Extra (Test) initialize ......");
+}
+
 + (void)load{
     NSLog(@"Extra (Test) load");
     

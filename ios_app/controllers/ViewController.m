@@ -8,6 +8,7 @@
 #import "UITableView_ViewController.h"
 #import "UITableViewViewController.h"
 #import "OCBaseViewController.h"
+#import "APPUIViewController.h"
 
 #define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 #define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
@@ -36,13 +37,52 @@
 @property(nonatomic,strong)UIButton *test_bar_btn;
 @property(nonatomic,strong)UIButton *uiTabView_btn;
 @property(nonatomic,strong)UIButton *uiTabView_btn1;
-
 @property(nonatomic,strong)UIButton *ocbase_btn;
+@property (nonatomic,strong)UIButton *uitest_btn;
+
 @end
 
 @implementation ViewController
 
 // loadview -> viewDidLoad -> viewWillAppear -> viewDidAppear
+/*
+ loadView什么时候被调用？
+    每次访问UIViewController的view(比如controller.view、self.view)而且view为nil，loadView方法就会被调用。
+ 有什么作用？
+    loadView方法是用来负责创建UIViewController的view
+ 默认实现是怎样的？
+    a、它会先去查找与UIViewController相关联的xib文件，通过加载xib文件来创建UIViewController的view
+    如果在初始化UIViewController指定了xib文件名，就会根据传入的xib文件名加载对应的xib文件
+        [[MJViewController alloc] initWithNibName:@"MJViewController" bundle:nil];
+    b、如果没有明显地传xib文件名，就会加载跟UIViewController同名的xib文件
+        [[MJViewController alloc] init]; // 加载MJViewController.xib
+    c、如果没有找到相关联的xib文件，就会创建一个空白的UIView，然后赋值给UIViewController的view属性，大致如下
+        self.view = [[[UIView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame] autorelease];
+
+    注意：
+    在某些情况下，xib不是那么地灵活，所以有时候我们想通过代码来创建UIView，比如：
+    self.view = [[[UIWebView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame] autorelease];
+    如果想通过代码来创建UIViewController的view，就要重写loadView方法，并且不需要调用[super loadView]，因为若没有xib文件，[super loadView]默认会创建一个空白的UIView。我们既然要通过代码来自定义UIView，那么就没必要事先创建一个空白的UIView，以节省不必要的开销。正确的做法应该是这样：
+ - (void)loadView {
+ self.view = [[[UIWebView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame] autorelease];
+ }
+ 
+ 
+ viewDidLoad 什么时候被调用？
+    无论是通过xib文件还是重写loadView方法创建UIViewController的view，在view创建完毕后，最终都会调用viewDidLoad方法
+ 有什么作用？
+    一般我们会在这里做界面上的初始化操作
+ 
+ */
++ (void)load{
+    [super load];
+    NSLog(@"ViewController#load");
+}
+
+-(void)loadView{
+    [super loadView];
+    NSLog(@"ViewController#loadView");
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -76,6 +116,7 @@
     _uiTabView_btn = [self.view viewWithTag:10];
     _uiTabView_btn1 = [self.view viewWithTag:11];
     _ocbase_btn = [self.view viewWithTag:12];
+    _uitest_btn = [self.view viewWithTag:13];
     
     /*
      _btn.frame: 该view在父view坐标系统中的位置和大小，它的参考坐标系是父view的坐标系
@@ -92,6 +133,14 @@
     [_uiTabView_btn1 addTarget:self action:@selector(uiTabView_btn1_clicked) forControlEvents:UIControlEventTouchUpInside];
     
     [_ocbase_btn addTarget:self action:@selector(oc_base_btn_clicked) forControlEvents:  UIControlEventTouchUpInside];
+    [_uitest_btn addTarget:self action:@selector(uitest_btn_clicked) forControlEvents:  UIControlEventTouchUpInside];
+    
+}
+
+-(void)uitest_btn_clicked{
+    NSLog(@"uitest_btn_clicked");
+    APPUIViewController *vc = [[APPUIViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 -(void)oc_base_btn_clicked{
@@ -507,10 +556,6 @@
     }completion:^(BOOL finished){
         [ul removeFromSuperview];
     }];
-}
--(void)loadView{
-    [super loadView];
-    NSLog(@"ViewController#loadView");
 }
 
 - (void)viewDidUnload{

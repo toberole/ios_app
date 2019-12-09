@@ -75,6 +75,7 @@ NSString * const desc_context_kov = @"desc_context_kov";
     _book_kvo1.desc = @"init data book1 desc";
 }
 
+#pragma mark - runtime
 -(void)btn_runtime_clicked{
     NSLog(@"btn_runtime_clicked");
     
@@ -158,11 +159,27 @@ NSString * const desc_context_kov = @"desc_context_kov";
         [e_ch test];
         
     });
-    
-    
-    
     // runtime动态添加方法
     // runtime给分类添加属性
+    
+    // 分类重写主类的方法
+    /*
+     方法列表里会存在两个SEL相同的方法。
+     实际调用时，调用的是后添加的方法，即后添加的方法在方法列表methodLists的这个数组的顶部
+     类的加载顺序，决定方法的添加顺序，调用的时候，后添加的方法会先被找到，所以调用的始终是后加载的类的方法实现。
+     */
+    NSLog(@"分类重写主类的方法");
+    id LenderClass = objc_getClass("Extra");
+    unsigned int outCount, i;
+    //获取实例方法列表
+    Method *methodList = class_copyMethodList(LenderClass, &outCount);
+    for (i=0; i<outCount; i++) {
+        Method method = methodList[i];
+        NSLog(@"instanceMethod：%@", NSStringFromSelector(method_getName(method)));
+    }
+    Extra *ex = [[Extra alloc]init];
+    // 调用的是分类里面的方法
+    [ex test_over];
 }
 
 -(void)initNotificationCenter{
