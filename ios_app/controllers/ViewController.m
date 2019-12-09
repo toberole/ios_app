@@ -9,6 +9,7 @@
 #import "UITableViewViewController.h"
 #import "OCBaseViewController.h"
 #import "APPUIViewController.h"
+#import "../testui/Test1_ViewController.h"
 
 #define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 #define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
@@ -139,7 +140,10 @@
 
 -(void)uitest_btn_clicked{
     NSLog(@"uitest_btn_clicked");
-    APPUIViewController *vc = [[APPUIViewController alloc]init];
+//    APPUIViewController *vc = [[APPUIViewController alloc]init];
+//    [self.navigationController pushViewController:vc animated:YES];
+    
+    Test1_ViewController *vc = [[Test1_ViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
