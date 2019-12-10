@@ -10,6 +10,7 @@
 #import "OCBaseViewController.h"
 #import "APPUIViewController.h"
 #import "../testui/Test1_ViewController.h"
+#import "../testui/TestAnimationViewController.h"
 
 #define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 #define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
@@ -93,6 +94,9 @@
     // 设置导航栏
     [self setNav];
     
+    // [self file_op];
+    [self file_op1];
+    
     
     NSLog(@"ViewController#viewDidLoad");
     //    UIButton *btn = [[UIButton alloc]init];
@@ -138,12 +142,142 @@
     
 }
 
+#pragma mark NSFileHandle
+-(void)file_op2{
+    
+}
+
+
+#pragma mark 文件操作 1
+-(void)file_op1{
+    // 程序里面的资源都在mainBundle
+    NSString * aaaa_path = [[NSBundle mainBundle]pathForResource:@"test_file/aaaa" ofType:@"txt"];
+    NSLog(@"aaaa_path = %@",aaaa_path);
+    NSString * data = [[NSString alloc]initWithContentsOfFile:aaaa_path encoding:NSUTF8StringEncoding error:nil];
+    NSLog(@"data = %@",data);
+    
+    NSString * doc = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)lastObject];
+    NSString * aaaa_file = [doc stringByAppendingPathComponent:@"test_file/aaaa.txt"];
+    if ([[NSFileManager defaultManager] fileExistsAtPath:aaaa_path]) {
+        NSLog(@"aaaa_file Exists");
+    }else{
+        NSLog(@"aaaa_file not Exists");
+    }
+}
+
+/*
+ 文件管理器（NSFileManager/FileManager）：此类主要是对文件进行的操作（创建/删除/改名等）以及文件信息的获取。
+ 文件连接器（NSFileHandle/FileHandle）：此类主要是对文件内容进行读取和写入操作。
+ 一、沙盒以及组成部分
+    iOS应用程序只能对自己创建的文件系统读取文件，这个"独立","封闭","安全"的空间，称之为沙盒。
+ 
+ 1.1、Home目录(应用程序包)
+    整个应用程序各文档所在的目录,包含了所有的资源文件和可执行文件
+ 1.2、Documents
+    保存应用运行时生成的需要持久化的数据，iTunes同步设备时会备份该目录
+    需要保存由"应用程序本身"产生的文件或者数据，例如: 游戏进度，涂鸦软件的绘图
+    目录中的文件会被自动保存在 iCloud
+    此目录下不要保存从网络上下载的文件，否则会无法上架!
+ 1.3、tmp
+    保存应用运行时所需要的临时数据或文件，"后续不需要使用"，使用完毕后再将相应的文件从该目录删除。
+    应用没有运行，系统也可能会清除该目录下的文件
+    iTunes不会同步备份该目录
+    重新启动手机, tmp 目录会被清空
+    系统磁盘空间不足时，系统也会自动清理
+ 1.4、Library/Cache
+    保存应用运行时生成的需要持久化的数据，iTunes同步设备时不备份该目录。一般存放体积大、不需要备份的非重要数据
+    保存临时文件,"后续需要使用"，例如: 缓存的图片，离线数据（地图数据）
+    系统不会清理 cache 目录中的文件
+    就要求程序开发时, "必须提供 cache 目录的清理解决方案"
+ 1.5、Library/Preference
+    保存应用的所有偏好设置，IOS的Settings应用会在该目录中查找应用的设置信息。iTunes
+    用户偏好，使用 NSUserDefault 直接读写！
+    如果想要数据及时写入硬盘，还需要调用一个同步方法 synchronize()
+ 1.6.程序.app，与另三个路径的父路径不同
+    这是应用程序的程序包目录，包含应用程序的本身。由于应用程序必须经过签名，所以您在运行时不能对这个目录中的内容进行修改，否则可能会使应用程序无法启动
+ */
+
+#pragma mark 文件操作
+-(void)file_op{
+    // NSHomeDirectory()是应用程序目录的路径
+    // 在该文件目录下有三个文件夹:Documents、Library、temp以及一个.app包[存放应用程序的源文件，包括资源文件和可执行文件]
+    NSString * homeDir = NSHomeDirectory();
+    NSLog(@"homeDir = %@",homeDir);
+    
+    // // 获取Documents目录路径
+    NSString *docDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
+    NSLog(@"docDir = %@",docDir);
+    
+    // 获取Library的目录路径
+    NSString *libDir = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) lastObject];
+    NSLog(@"libDir = %@",libDir);
+    
+    // 获取Caches目录路径
+    NSString *cachesDir = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject];
+    NSLog(@"cachesDir = %@",cachesDir);
+    
+    // 获取tmp目录路径
+    NSString *tmpDir =  NSTemporaryDirectory();
+    NSLog(@"tmpDir = %@",tmpDir);
+    
+    // 获取resource路径
+    NSString *resourcePath =  [[NSBundle mainBundle] pathForResource:@"abc" ofType:@"jpg"];
+    NSLog(@"resourcePath = %@",resourcePath);
+    
+    /*
+     Documents和Caches文件夹区别
+     如果做个记事本的app，那么用户写了东西，总要把东西存起来。那么这个文件则是用户自行生成的，就放在documents文件夹里面。
+     如果需要和服务器配合，经常从服务器下载东西，展示给用户看。那么这些下载下来的东西就放在library/caches。
+     */
+    
+    // 创建文件夹
+    // 在NSDocumentDirectory下面
+    NSString * documentsDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    // test-xxx 文件夹
+    NSString * test_xxx = [documentsDir stringByAppendingPathComponent:@"test_xxx"];
+    // 判断是否存在
+    BOOL isExit;
+    // 是否是文件夹
+    BOOL isDir;
+    isExit = [[NSFileManager defaultManager] fileExistsAtPath:test_xxx isDirectory:&isDir];
+    NSLog(@"isExit = %i,isDir = %i",isExit,isDir);
+    if (!isExit || !isDir) {
+        [[NSFileManager defaultManager]createDirectoryAtPath:test_xxx withIntermediateDirectories:YES attributes:nil error:nil];
+    }
+    
+    // 删除cache下面的文件夹
+    NSString *cacheDir = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)firstObject];
+    NSString * deleted_dir = [cacheDir stringByAppendingPathComponent:@"test_xxx"];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if ([fileManager fileExistsAtPath:deleted_dir]) {
+        NSError *error;
+        BOOL isSuc = [fileManager removeItemAtPath:deleted_dir error:&error];
+        if (!isSuc) {
+            NSLog(@"removeItemAtPath error = %@",error);
+        }else{
+            NSLog(@"删除成功!!!");
+        }
+    }
+    
+    // 移动文件夹 重命名文件夹是通过移动文件夹实现的
+    // 1 创建一个文件夹
+    NSString * documentsDir_Path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    NSString * create_dir = [documentsDir_Path stringByAppendingPathComponent:@"create_dir"];
+    [fileManager createDirectoryAtPath:create_dir withIntermediateDirectories:YES attributes:nil error:nil];
+    NSString * move_dir = [documentsDir_Path stringByAppendingPathComponent:@"move_dir"];
+    // 2 移动
+    [fileManager moveItemAtPath:create_dir toPath:move_dir error:nil];
+}
+
 -(void)uitest_btn_clicked{
     NSLog(@"uitest_btn_clicked");
 //    APPUIViewController *vc = [[APPUIViewController alloc]init];
 //    [self.navigationController pushViewController:vc animated:YES];
     
-    Test1_ViewController *vc = [[Test1_ViewController alloc]init];
+//    Test1_ViewController *vc = [[Test1_ViewController alloc]init];
+//    [self.navigationController pushViewController:vc animated:YES];
+    
+    TestAnimationViewController *vc = [[TestAnimationViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
