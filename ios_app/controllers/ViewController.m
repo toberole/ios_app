@@ -11,6 +11,8 @@
 #import "APPUIViewController.h"
 #import "../testui/Test1_ViewController.h"
 #import "../testui/TestAnimationViewController.h"
+#import "../testui/APPInfosViewController.h"
+
 
 #define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 #define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
@@ -95,8 +97,8 @@
     [self setNav];
     
     // [self file_op];
-    [self file_op1];
-    
+    // [self file_op1];
+    [self file_op2];
     
     NSLog(@"ViewController#viewDidLoad");
     //    UIButton *btn = [[UIButton alloc]init];
@@ -142,9 +144,38 @@
     
 }
 
+//NSInputStream;
+//NSOutputStream;
 #pragma mark NSFileHandle
 -(void)file_op2{
-    
+    NSString * doc = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)lastObject];
+    NSString *f = [doc stringByAppendingPathComponent:@"t.txt"];
+    if (![[NSFileManager defaultManager]fileExistsAtPath:f]) {
+        // 不存在就创建文件
+        [[NSFileManager defaultManager]createFileAtPath:f contents:nil attributes:nil];
+    }
+    NSFileHandle *fh = [NSFileHandle fileHandleForWritingAtPath:f];
+    NSString * d = @"测试数据";
+    [fh writeData:[d dataUsingEncoding:NSUTF8StringEncoding]];
+}
+
+- (void)saveFile:(NSData *)data {
+    //保存文件的路径
+    NSString *filePath = @"//";
+    //如果文件不存在，返回的是nil
+    NSFileHandle *fileHandle = [NSFileHandle fileHandleForWritingAtPath:filePath];
+    //判断文件存不存在
+     if (fileHandle == nil) {
+        //如果文件不存在，会自动创建
+        [data writeToFile:filePath atomically:YES];
+    }else {
+        //让offset指向文件的末尾
+        [fileHandle seekToEndOfFile];
+        //在文件的末尾再继续写入文件
+        [fileHandle writeData:data];
+        //关闭文件
+        [fileHandle closeFile];
+    }
 }
 
 
@@ -277,7 +308,10 @@
 //    Test1_ViewController *vc = [[Test1_ViewController alloc]init];
 //    [self.navigationController pushViewController:vc animated:YES];
     
-    TestAnimationViewController *vc = [[TestAnimationViewController alloc]init];
+//    TestAnimationViewController *vc = [[TestAnimationViewController alloc]init];
+//    [self.navigationController pushViewController:vc animated:YES];
+    
+    APPInfosViewController *vc = [[APPInfosViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

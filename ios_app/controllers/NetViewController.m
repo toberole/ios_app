@@ -89,6 +89,7 @@
  不过需要注意，GCD 会根据系统资源控制并行的数量，所以如果任务很多，它并不会让所有任务同时执行。
  
  */
+// dispatch
 -(void)request3{
     // dispatch_async 异步
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -138,6 +139,7 @@
  分别是：NSInvocationOperation 和 NSBlockOperation 。
  创一个 Operation 后，需要调用 start 方法来启动任务，它会默认在当前队列同步执行。当然你也可以在中途取消一个任务，只需要调用其 cancel 方法可。
  */
+// NSInvocationOperation
 -(void)request2{
     NSLog(@"request2 NSThread.currentThread = %@",NSThread.currentThread);
     // NSInvocationOperation 创建任务

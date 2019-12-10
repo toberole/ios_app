@@ -35,6 +35,9 @@
 		189A237D239E5BDA00AC8B67 /* TestAnimationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 189A237B239E5BDA00AC8B67 /* TestAnimationViewController.xib */; };
 		189A2380239E80E900AC8B67 /* test_file in Resources */ = {isa = PBXBuildFile; fileRef = 189A237F239E80E900AC8B67 /* test_file */; };
 		189A2384239F31AD00AC8B67 /* abc.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 189A2383239F31AD00AC8B67 /* abc.jpg */; };
+		189A2388239F6D9A00AC8B67 /* APPInfosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189A2386239F6D9A00AC8B67 /* APPInfosViewController.m */; };
+		189A2389239F6D9A00AC8B67 /* APPInfosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 189A2387239F6D9A00AC8B67 /* APPInfosViewController.xib */; };
+		189A238C239F79B800AC8B67 /* APPInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 189A238B239F79B800AC8B67 /* APPInfo.m */; };
 		18BA1080223F757D008D171F /* NextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BA107E223F757D008D171F /* NextViewController.m */; };
 		18BA1081223F757D008D171F /* NextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BA107F223F757D008D171F /* NextViewController.xib */; };
 		18BA1083223F8725008D171F /* Test_Next_Page.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BA1082223F8725008D171F /* Test_Next_Page.xib */; };
@@ -108,6 +111,11 @@
 		189A237B239E5BDA00AC8B67 /* TestAnimationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestAnimationViewController.xib; sourceTree = "<group>"; };
 		189A237F239E80E900AC8B67 /* test_file */ = {isa = PBXFileReference; lastKnownFileType = folder; name = test_file; sourceTree = "<group>"; };
 		189A2383239F31AD00AC8B67 /* abc.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = abc.jpg; sourceTree = "<group>"; };
+		189A2385239F6D9A00AC8B67 /* APPInfosViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPInfosViewController.h; sourceTree = "<group>"; };
+		189A2386239F6D9A00AC8B67 /* APPInfosViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPInfosViewController.m; sourceTree = "<group>"; };
+		189A2387239F6D9A00AC8B67 /* APPInfosViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = APPInfosViewController.xib; sourceTree = "<group>"; };
+		189A238A239F79B800AC8B67 /* APPInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPInfo.h; sourceTree = "<group>"; };
+		189A238B239F79B800AC8B67 /* APPInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPInfo.m; sourceTree = "<group>"; };
 		18BA107D223F757D008D171F /* NextViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NextViewController.h; sourceTree = "<group>"; };
 		18BA107E223F757D008D171F /* NextViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NextViewController.m; sourceTree = "<group>"; };
 		18BA107F223F757D008D171F /* NextViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NextViewController.xib; sourceTree = "<group>"; };
@@ -184,6 +192,8 @@
 				186C0D51239CA8620051A17C /* Extra+Test.m */,
 				186C0D53239CE08E0051A17C /* NSURL+url.h */,
 				186C0D54239CE08E0051A17C /* NSURL+url.m */,
+				189A238A239F79B800AC8B67 /* APPInfo.h */,
+				189A238B239F79B800AC8B67 /* APPInfo.m */,
 			);
 			path = bean;
 			sourceTree = "<group>";
@@ -209,6 +219,9 @@
 				189A2379239E5BDA00AC8B67 /* TestAnimationViewController.h */,
 				189A237A239E5BDA00AC8B67 /* TestAnimationViewController.m */,
 				189A237B239E5BDA00AC8B67 /* TestAnimationViewController.xib */,
+				189A2385239F6D9A00AC8B67 /* APPInfosViewController.h */,
+				189A2386239F6D9A00AC8B67 /* APPInfosViewController.m */,
+				189A2387239F6D9A00AC8B67 /* APPInfosViewController.xib */,
 			);
 			path = testui;
 			sourceTree = "<group>";
@@ -397,6 +410,7 @@
 				189A236D239DEAF500AC8B67 /* APPUIScrollViewController.xib in Resources */,
 				189A2372239E153E00AC8B67 /* Test1_ViewController.xib in Resources */,
 				18BA1081223F757D008D171F /* NextViewController.xib in Resources */,
+				189A2389239F6D9A00AC8B67 /* APPInfosViewController.xib in Resources */,
 				18BA1083223F8725008D171F /* Test_Next_Page.xib in Resources */,
 				186C0D7F239D23A50051A17C /* APPUIViewController.xib in Resources */,
 				186C0D43239BA2010051A17C /* OCBaseViewController.xib in Resources */,
@@ -426,7 +440,9 @@
 			files = (
 				189A237C239E5BDA00AC8B67 /* TestAnimationViewController.m in Sources */,
 				189A236C239DEAF500AC8B67 /* APPUIScrollViewController.m in Sources */,
+				189A2388239F6D9A00AC8B67 /* APPInfosViewController.m in Sources */,
 				186C0D52239CA8620051A17C /* Extra+Test.m in Sources */,
+				189A238C239F79B800AC8B67 /* APPInfo.m in Sources */,
 				18D8E649223CE49A006E89FC /* ViewController.m in Sources */,
 				18BA1080223F757D008D171F /* NextViewController.m in Sources */,
 				186C0D282398E82E0051A17C /* NetViewController.m in Sources */,
