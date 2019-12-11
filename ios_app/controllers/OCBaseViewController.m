@@ -403,7 +403,6 @@ NSString * const desc_context_kov = @"desc_context_kov";
     bookx.extra = e;
     NSString *ee = [bookx valueForKeyPath:@"extra.extra_info"];
     NSLog(@"带路径 访问内部对象信息 %@",ee);
-
     
     // 字典转换为模型
     NSDictionary *dict1 = @{@"name":@"dict name",@"desc":@"dict desc",@"price":@333};
@@ -437,7 +436,7 @@ NSString * const desc_context_kov = @"desc_context_kov";
 
 
 /*
-    block 访问外部的局部变量 不能修改且使用的使用的外部局部变量的拷贝
+    block 访问外部的局部变量 不能修改 且使用的是外部局部变量的拷贝
  */
 -(void)btn_block_clicked{
     // block内不能修改

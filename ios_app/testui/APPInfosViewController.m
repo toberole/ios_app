@@ -48,10 +48,119 @@ int IMG_V_ITEM_TAG_BASE = 2000;
     NSLog(@"w = %i,h= %i",s_w,s_h);
     [self initData];
 }
+
+-(void)initData1{
+    NSLog(@"initData");
+    dispatch_queue_t queue = dispatch_queue_create("app_queue", DISPATCH_QUEUE_CONCURRENT);
+    dispatch_async(queue, ^{
+        // 加载数据
+        NSURL *url = [NSURL URLWithString:data_url];
+        NSURLRequest *request = [NSURLRequest requestWithURL:url];
+        NSURLSessionTask *task = [[NSURLSession sharedSession]dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+            NSLog(@"data = %@",[[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding]);
+            NSArray * apps = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+            NSLog(@"apps ------ %@",apps);
+            self->_appinfos = [[NSMutableArray alloc]init];
+            for (NSDictionary *dict in apps) {
+                APPInfo *info = [APPInfo appInfoWithDict:dict];
+                NSLog(@"info: %@",info);
+                [self->_appinfos addObject:info];
+            }
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                int n = [self->_appinfos count];
+                NSLog(@"appinfos count = %i",n);
+                int gap = (s_w - col_count * cell_w)/(col_count+1);
+                NSLog(@"gap = %i",gap);
+                
+                // view item 可以通过xib实现
+                
+                for (int i = 0;i < n;i++) {
+                    UIView * v = [[UIView alloc]init];
+                    // vs 中是xib中item的外层的view数组
+                    NSArray * vs = [[NSBundle mainBundle]loadNibNamed:@"appinfo_item" owner:nil options:nil];
+                    NSLog(@"vs = %@",vs);
+                    
+                    [self.view addSubview:vs[0]];
+                    
+                    if(YES)continue;
+                    
+                    [v setBackgroundColor:[UIColor grayColor]];
+                    CGFloat x = (i % col_count+1) * gap+ i%col_count*cell_w;
+                    CGFloat y = (i/col_count)*gap + (i/col_count)*cell_w + 80;
+                    CGFloat w = cell_w;
+                    CGFloat h = cell_w;
+                    NSLog(@"x = %lf,y = %lf,w = %lf,h = %lf",x,y,w,h);
+                    // UIView 一定要设置Fream属性 否则就不可见
+                    [v setFrame:CGRectMake(x, y, w, h)];
+                    [self.view addSubview:v];
+                    
+                    // 添加UIImg
+                    UIImageView *img_v = [[UIImageView alloc]init];
+                    img_v.tag = IMG_V_ITEM_TAG_BASE+i;
+                    [img_v setBackgroundColor:[UIColor greenColor]];
+                    CGFloat img_v_x = (cell_w-img_w)*0.5;
+                    CGFloat img_v_y = 0;
+                    CGFloat img_v_w = img_w;
+                    CGFloat img_v_h = img_w;
+                    [img_v setFrame:CGRectMake(img_v_x, img_v_y, img_v_w, img_v_h)];
+                    [v addSubview:img_v];
+                    
+                    //添加UILabel
+                    UILabel *lab = [[UILabel alloc]init];
+                    [lab setBackgroundColor:[UIColor blueColor]];
+                    CGFloat lab_x = 0;
+                    CGFloat lab_y = img_w;
+                    CGFloat lab_w = cell_w;
+                    CGFloat lab_h = 20;
+                    [lab setFrame:CGRectMake(lab_x, lab_y, lab_w, lab_h)];
+                    [lab setTextAlignment:NSTextAlignmentCenter];
+                    [lab setText:((APPInfo*)_appinfos[i]).name];
+                    [v addSubview:lab];
+                    
+                    //添加UIButton
+                    UIButton *btn = [[UIButton alloc]init];
+                    [btn setBackgroundColor:[UIColor redColor]];
+                    CGFloat btn_x = 0;
+                    CGFloat btn_y = img_w+lab_h;
+                    CGFloat btn_w = cell_w;
+                    CGFloat btn_h = 20;
+                    [btn setTitle:@"点击下载" forState:UIControlStateNormal];
+                    [btn setFrame:CGRectMake(btn_x, btn_y, btn_w, btn_h)];
+                    btn.tag = i+BTN_V_ITEM_TAG_BASE;
+                    [btn addTarget:self action:@selector(item_btn_clicked:) forControlEvents:UIControlEventTouchUpInside];
+                    [v addSubview:btn];
+                }
+                
+                
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//                    for (int i = 0;i<n; i++) {
+//                        // 下载图片
+//                        NSURL * url = [NSURL URLWithString:((APPInfo*)_appinfos[i]).img];
+//                        NSData * data = [[NSData alloc]initWithContentsOfURL:url];
+//                        if (data) {
+//                            NSLog(@"加载图片成功");
+//                            dispatch_async(dispatch_get_main_queue(), ^{
+//                                UIImageView *img_v = [self.view viewWithTag:(i+IMG_V_ITEM_TAG_BASE)];
+//                                [img_v setImage:[UIImage imageWithData:data]];
+//                            });
+//                        }
+//                    }
+                });
+            });
+        }];
+        
+        [task resume];
+    });
+}
+
 /*
  JSon解析
  NSURLSession
  NSDictionary 2 bean
+ */
+/**
+    手动代码添加view item
  */
 -(void)initData{
     NSLog(@"initData");
@@ -66,17 +175,24 @@ int IMG_V_ITEM_TAG_BASE = 2000;
             NSLog(@"apps ------ %@",apps);
             _appinfos = [[NSMutableArray alloc]init];
             for (NSDictionary *dict in apps) {
-                APPInfo *info = [[APPInfo alloc]init];
-                [info setValuesForKeysWithDictionary:dict];
+//                APPInfo *info = [[APPInfo alloc]init];
+//                // 字典 直接转换为模型bean
+//                [info setValuesForKeysWithDictionary:dict];
+//                NSLog(@"info: %@",info);
+                
+                // 字典 直接转换为模型bean
+                APPInfo *info = [APPInfo appInfoWithDict:dict];
                 NSLog(@"info: %@",info);
-                [_appinfos addObject:info];
+                [self->_appinfos addObject:info];
             }
             
             dispatch_async(dispatch_get_main_queue(), ^{
-                int n = [_appinfos count];
+                int n = [self->_appinfos count];
                 NSLog(@"appinfos count = %i",n);
                 int gap = (s_w - col_count * cell_w)/(col_count+1);
                 NSLog(@"gap = %i",gap);
+                
+                // view item 可以通过xib实现
                 
                 for (int i = 0;i < n;i++) {
                     UIView * v = [[UIView alloc]init];

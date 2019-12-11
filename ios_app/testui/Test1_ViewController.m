@@ -15,8 +15,12 @@
 @property (strong, nonatomic) IBOutlet UIButton *btn_add;
 @property (strong, nonatomic) IBOutlet UIButton *btn_op;
 
+@property (strong, nonatomic) IBOutlet UIButton *btn_bg;
+
 - (IBAction)add:(UIButton *)sender;
 - (IBAction)btn_op:(UIButton *)sender;
+
+
 
 @end
 
@@ -27,6 +31,11 @@
     self.title = @"Test1_ViewController";
     // [self addView_code];
     [self addView_code1];
+    
+    // 正常状态
+    [_btn_bg setBackgroundImage:[UIImage imageNamed:@"0.jpg"] forState:UIControlStateNormal];
+    // UIControlStateHighlighted 手触摸上去之后
+    [_btn_bg setBackgroundImage:[UIImage imageNamed:@"1.jpg"]  forState:UIControlStateHighlighted];
 }
 
 -(void)addView_code1{

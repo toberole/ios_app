@@ -1,0 +1,167 @@
+MhxzKhlMhxzKhl
+
+
+https://www.cnblogs.com/Alandre/p/4878841.html
+https://blog.csdn.net/vblittleboy/article/details/25620071
+https://blog.csdn.net/u012400305/article/details/78316482
+https://blog.csdn.net/xu15936789020/article/details/78342413
+https://blog.csdn.net/layuetian2011/article/details/52369800
+https://www.cnblogs.com/lwbqqyumidi/p/3837629.html
+https://www.cnblogs.com/zhenyu-go/p/5536667.html
+
+
+
+
+-Xms20m 
+-Xmx20m 
+-XX:+PrintGCTimeStamps 
+-XX:+PrintGCDetails
+-verbose:gc
+-Xloggc:/Users/apple/code/gc.log
+-Xmn10M
+-XX:SurvivorRatio=8
+
+
+https://juejin.im/post/5b685a2a5188251ac22b71c0#heading-19
+
+
+
+// ffmpeg
+https://www.jianshu.com/p/0a7f3175c1b9
+
+https://juejin.im/post/5b48ba59e51d4518e311768b
+https://blog.csdn.net/chuyouyinghe/article/details/78440083
+
+http://www.samirchen.com/ffmpeg-tutorial-1/
+
+
+
+
+https://blog.csdn.net/qq_35971623/article/details/78471875
+https://blog.csdn.net/qq_17441227/article/details/82877161
+https://blog.csdn.net/ahilll/article/details/84389001
+
+
+https://www.jianshu.com/p/d83161e77e90
+
+
+
+
+
+export ANDROID_NDK=[YourNDKPath]
+cd ~/<my_working _directory>
+git clone https://gist.github.com/tzutalin/f07f5633fd599001101006561689062b
+sh build-android-opencv.sh
+
+
+
+
+
+https://blog.csdn.net/nia305/article/details/79297842
+https://zhuanlan.zhihu.com/p/40069484
+https://blog.csdn.net/commshare/article/details/22398645
+https://blog.csdn.net/ywl5320/article/details/78739211
+https://www.jianshu.com/p/e576c7e1c403
+
+https://blog.51cto.com/ticktick
+
+https://blog.51cto.com/ticktick/2324928
+
+1. 《雷霄骅的专栏》：http://blog.csdn.net/leixiaohua1020
+
+2. 《Android音频开发》：http://ticktick.blog.51cto.com/823160/d-15
+
+3. 《FFMPEG Tips》：http://ticktick.blog.51cto.com/823160/d-17
+
+4. 《Learn OpenGL 中文》：https://learnopengl-cn.readthedocs.io/zh/latest/
+
+5. 《Android Graphic 架构》：https://source.android.com/devices/graphics/
+
+
+微信开发者
+Account:  fangyuchen@sogou-inc.com
+Password:  !@#$rewqASDFvcxz
+
+
+
+CrashReport.initCrashReport(getApplicationContext(), "ff76ba0cbd", true);
+implementation 'com.tencent.bugly:crashreport:latest.release'
+implementation 'com.tencent.bugly:nativecrashreport:latest.release'
+
+cat  /proc/cpuinfo
+
+10.130.14.36
+
+
+influxdb
+timescaledb
+Tdengine
+opentsdb
+Prometheus
+IoTDB 
+天工
+HiTSDB
+CTSDB
+寄云时序数据库 NeuSeer
+庚星时序数据库
+DolphinDB
+
+
+Binder
+https://www.jianshu.com/p/84b18387992f
+
+https://www.jianshu.com/p/739c6ca09aa3
+
+https://juejin.im/post/5bc7e689f265da0adc18fb7a
+
+https://github.com/CarGuo/GSYVideoPlayer
+
+export COMMON_FF_CFG_FLAGS="$COMMON_FF_CFG_FLAGS --enable-decoder=pcm_alaw"
+export COMMON_FF_CFG_FLAGS="$COMMON_FF_CFG_FLAGS --enable-decoder=pcm_ulaw"
+export COMMON_FF_CFG_FLAGS="$COMMON_FF_CFG_FLAGS --enable-decoder=pcm_mulaw"
+
+https://www.cnblogs.com/renhui/p/7452572.html
+
+https://juejin.im/post/5bc7e689f265da0adc18fb7a
+
+
+
+
+
+//////////////////
+https://zhuanlan.zhihu.com/p/61747783
+https://zhuanlan.zhihu.com/p/64739970
+https://zhuanlan.zhihu.com/p/73984438
+
+
+您好，您已确认办理工作居住证，请一周后登录系统填写个人信息，提交办理申请，同时请务必在办理日期的前一周将办理所需的材料（Pandora-HiHR查看）交至搜狐网络大厦15层HR马路瑶(010-56899622)、张子琦(010-56898104)进行初审。系统地址：http://219.232.200.39/uamsso/，用户名为：姓名全拼+工号，密码为：姓名首字母（大写）+工号+a。
+
+zhouwei215664
+Zhouwei215664a
+
+
+
+
+昨夜小窗虚掩 破晓之时 方觉矣 然为时已晚 晨起 喉如吞炭 四肢无力 汗出如涌 精气不足也 本想区区小恙尔 何足惧哉 遂起 赴司至半途 妖风迎面吹 泪涕不禁俱下 今恐难值事 请休一日 遇事须寻 留言便可 翌日再战
+
+偶染小恙 喉如吞炭 精气不足 今难值事 请休半日 遇事须寻 留言便可
+
+昨夜小窗虚掩 破晓之时 方觉矣 晨起 喉如吞炭 四肢乏力 精气不足 今难值事 请休半日 遇事须寻 留言便可
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
