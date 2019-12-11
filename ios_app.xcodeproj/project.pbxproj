@@ -28,6 +28,8 @@
 		1870905123A0BB160087C293 /* appinfo_item.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1870905023A0BB160087C293 /* appinfo_item.xib */; };
 		1870905323A0CA560087C293 /* test_file.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1870905223A0CA560087C293 /* test_file.txt */; };
 		1870905723A0D2BF0087C293 /* APPInfoItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1870905623A0D2BF0087C293 /* APPInfoItemView.m */; };
+		1870905B23A0E8DD0087C293 /* DownloadFileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1870905923A0E8DD0087C293 /* DownloadFileViewController.m */; };
+		1870905C23A0E8DD0087C293 /* DownloadFileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1870905A23A0E8DD0087C293 /* DownloadFileViewController.xib */; };
 		189A236C239DEAF500AC8B67 /* APPUIScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189A236A239DEAF500AC8B67 /* APPUIScrollViewController.m */; };
 		189A236D239DEAF500AC8B67 /* APPUIScrollViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 189A236B239DEAF500AC8B67 /* APPUIScrollViewController.xib */; };
 		189A2371239E153E00AC8B67 /* Test1_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189A236F239E153E00AC8B67 /* Test1_ViewController.m */; };
@@ -110,6 +112,9 @@
 		1870905223A0CA560087C293 /* test_file.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test_file.txt; sourceTree = "<group>"; };
 		1870905523A0D2BF0087C293 /* APPInfoItemView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPInfoItemView.h; sourceTree = "<group>"; };
 		1870905623A0D2BF0087C293 /* APPInfoItemView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPInfoItemView.m; sourceTree = "<group>"; };
+		1870905823A0E8DD0087C293 /* DownloadFileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DownloadFileViewController.h; sourceTree = "<group>"; };
+		1870905923A0E8DD0087C293 /* DownloadFileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DownloadFileViewController.m; sourceTree = "<group>"; };
+		1870905A23A0E8DD0087C293 /* DownloadFileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DownloadFileViewController.xib; sourceTree = "<group>"; };
 		189A2369239DEAF500AC8B67 /* APPUIScrollViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPUIScrollViewController.h; sourceTree = "<group>"; };
 		189A236A239DEAF500AC8B67 /* APPUIScrollViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPUIScrollViewController.m; sourceTree = "<group>"; };
 		189A236B239DEAF500AC8B67 /* APPUIScrollViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = APPUIScrollViewController.xib; sourceTree = "<group>"; };
@@ -262,6 +267,9 @@
 				189A2385239F6D9A00AC8B67 /* APPInfosViewController.h */,
 				189A2386239F6D9A00AC8B67 /* APPInfosViewController.m */,
 				189A2387239F6D9A00AC8B67 /* APPInfosViewController.xib */,
+				1870905823A0E8DD0087C293 /* DownloadFileViewController.h */,
+				1870905923A0E8DD0087C293 /* DownloadFileViewController.m */,
+				1870905A23A0E8DD0087C293 /* DownloadFileViewController.xib */,
 			);
 			path = testui;
 			sourceTree = "<group>";
@@ -438,6 +446,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1870905C23A0E8DD0087C293 /* DownloadFileViewController.xib in Resources */,
 				186C0D2C2398ECE20051A17C /* netpage.xib in Resources */,
 				189A2378239E4E2700AC8B67 /* images.xcassets in Resources */,
 				1870905323A0CA560087C293 /* test_file.txt in Resources */,
@@ -490,6 +499,7 @@
 				189A237C239E5BDA00AC8B67 /* TestAnimationViewController.m in Sources */,
 				189A236C239DEAF500AC8B67 /* APPUIScrollViewController.m in Sources */,
 				189A2388239F6D9A00AC8B67 /* APPInfosViewController.m in Sources */,
+				1870905B23A0E8DD0087C293 /* DownloadFileViewController.m in Sources */,
 				186C0D52239CA8620051A17C /* Extra+Test.m in Sources */,
 				189A238C239F79B800AC8B67 /* APPInfo.m in Sources */,
 				18D8E649223CE49A006E89FC /* ViewController.m in Sources */,

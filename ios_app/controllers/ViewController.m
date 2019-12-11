@@ -12,7 +12,7 @@
 #import "../testui/Test1_ViewController.h"
 #import "../testui/TestAnimationViewController.h"
 #import "../testui/APPInfosViewController.h"
-
+#import "../testui/DownloadFileViewController.h"
 
 #define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 #define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
@@ -147,6 +147,24 @@
     [_ocbase_btn addTarget:self action:@selector(oc_base_btn_clicked) forControlEvents:  UIControlEventTouchUpInside];
     [_uitest_btn addTarget:self action:@selector(uitest_btn_clicked) forControlEvents:  UIControlEventTouchUpInside];
     
+}
+
+-(void)uitest_btn_clicked{
+    NSLog(@"uitest_btn_clicked");
+    //    APPUIViewController *vc = [[APPUIViewController alloc]init];
+    //    [self.navigationController pushViewController:vc animated:YES];
+    
+    //    Test1_ViewController *vc = [[Test1_ViewController alloc]init];
+    //    [self.navigationController pushViewController:vc animated:YES];
+    
+    //    TestAnimationViewController *vc = [[TestAnimationViewController alloc]init];
+    //    [self.navigationController pushViewController:vc animated:YES];
+    
+//    APPInfosViewController *vc = [[APPInfosViewController alloc]init];
+//    [self.navigationController pushViewController:vc animated:YES];
+    
+    DownloadFileViewController *vc = [[DownloadFileViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 //NSInputStream;
@@ -303,21 +321,6 @@
     NSString * move_dir = [documentsDir_Path stringByAppendingPathComponent:@"move_dir"];
     // 2 移动
     [fileManager moveItemAtPath:create_dir toPath:move_dir error:nil];
-}
-
--(void)uitest_btn_clicked{
-    NSLog(@"uitest_btn_clicked");
-//    APPUIViewController *vc = [[APPUIViewController alloc]init];
-//    [self.navigationController pushViewController:vc animated:YES];
-    
-//    Test1_ViewController *vc = [[Test1_ViewController alloc]init];
-//    [self.navigationController pushViewController:vc animated:YES];
-    
-//    TestAnimationViewController *vc = [[TestAnimationViewController alloc]init];
-//    [self.navigationController pushViewController:vc animated:YES];
-    
-    APPInfosViewController *vc = [[APPInfosViewController alloc]init];
-    [self.navigationController pushViewController:vc animated:YES];
 }
 
 -(void)oc_base_btn_clicked{
