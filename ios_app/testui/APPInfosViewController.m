@@ -26,6 +26,9 @@ int IMG_V_ITEM_TAG_BASE = 2000;
 
 @property(nonatomic,strong) NSMutableArray *appinfos;
 
+// 测试block循环引用 block内部默认之后外部的self
+@property (copy, nonatomic) dispatch_block_t testBlock;
+
 @end
 
 @implementation APPInfosViewController
@@ -47,6 +50,12 @@ int IMG_V_ITEM_TAG_BASE = 2000;
     [self.view setBackgroundColor:[UIColor whiteColor]];
     NSLog(@"w = %i,h= %i",s_w,s_h);
     [self initData];
+    
+    // 导致内存泄漏
+//    self.testBlock = ^(){
+//        NSLog(@"--------------- %@", [self class]);
+//    };
+//    self.testBlock();
 }
 
 -(void)initData1{
@@ -339,6 +348,11 @@ int IMG_V_ITEM_TAG_BASE = 2000;
         return;
     }
     NSLog(@"didComplete");
+}
+
+- (void)dealloc
+{
+    NSLog(@"******** APPInfosViewController#dealloc ********");
 }
 
 @end

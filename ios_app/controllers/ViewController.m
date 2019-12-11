@@ -96,6 +96,11 @@
     // 设置导航栏
     [self setNav];
     
+    NSBundle *bundle = [NSBundle mainBundle];
+    NSLog(@"bundle = %@",bundle);
+    NSLog(@"bundle.bundlePath = %@",bundle.bundlePath);
+    
+    
     // [self file_op];
     // [self file_op1];
     [self file_op2];
