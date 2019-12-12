@@ -10,6 +10,11 @@ extern NSString * const url3;
 
 extern NSString * const url4;
 
+// 屏幕大小
+#define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
+#define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
+
+
 @interface Constant : NSObject
 
 @end

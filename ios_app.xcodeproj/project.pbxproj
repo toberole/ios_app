@@ -30,6 +30,13 @@
 		1870905723A0D2BF0087C293 /* APPInfoItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1870905623A0D2BF0087C293 /* APPInfoItemView.m */; };
 		1870905B23A0E8DD0087C293 /* DownloadFileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1870905923A0E8DD0087C293 /* DownloadFileViewController.m */; };
 		1870905C23A0E8DD0087C293 /* DownloadFileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1870905A23A0E8DD0087C293 /* DownloadFileViewController.xib */; };
+		1870906223A1D0190087C293 /* Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 1870906123A1D0190087C293 /* Toast.m */; };
+		1870906623A1D91C0087C293 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1870906423A1D91C0087C293 /* LoginViewController.m */; };
+		1870906723A1D91C0087C293 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1870906523A1D91C0087C293 /* LoginViewController.xib */; };
+		1870906923A201240087C293 /* extras.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1870906823A201240087C293 /* extras.plist */; };
+		1870906B23A202A30087C293 /* p1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1870906A23A202A30087C293 /* p1.plist */; };
+		1870906F23A205800087C293 /* APPIMGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1870906D23A205800087C293 /* APPIMGViewController.m */; };
+		1870907023A205800087C293 /* APPIMGViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1870906E23A205800087C293 /* APPIMGViewController.xib */; };
 		189A236C239DEAF500AC8B67 /* APPUIScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189A236A239DEAF500AC8B67 /* APPUIScrollViewController.m */; };
 		189A236D239DEAF500AC8B67 /* APPUIScrollViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 189A236B239DEAF500AC8B67 /* APPUIScrollViewController.xib */; };
 		189A2371239E153E00AC8B67 /* Test1_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189A236F239E153E00AC8B67 /* Test1_ViewController.m */; };
@@ -45,7 +52,7 @@
 		189A239023A0817F00AC8B67 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 189A238F23A0817F00AC8B67 /* 1.jpg */; };
 		189A239823A082BA00AC8B67 /* 5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 189A239123A082BA00AC8B67 /* 5.jpg */; };
 		189A239923A082BA00AC8B67 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 189A239223A082BA00AC8B67 /* 3.jpg */; };
-		189A239C23A082BA00AC8B67 /* 4.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 189A239523A082BA00AC8B67 /* 4.jpeg */; };
+		189A239C23A082BA00AC8B67 /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 189A239523A082BA00AC8B67 /* 4.jpg */; };
 		189A239E23A082BA00AC8B67 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 189A239723A082BA00AC8B67 /* 2.jpg */; };
 		189A23A023A0834F00AC8B67 /* 6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 189A239F23A0834F00AC8B67 /* 6.jpg */; };
 		18BA1080223F757D008D171F /* NextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BA107E223F757D008D171F /* NextViewController.m */; };
@@ -115,6 +122,16 @@
 		1870905823A0E8DD0087C293 /* DownloadFileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DownloadFileViewController.h; sourceTree = "<group>"; };
 		1870905923A0E8DD0087C293 /* DownloadFileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DownloadFileViewController.m; sourceTree = "<group>"; };
 		1870905A23A0E8DD0087C293 /* DownloadFileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DownloadFileViewController.xib; sourceTree = "<group>"; };
+		1870906023A1D0190087C293 /* Toast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Toast.h; sourceTree = "<group>"; };
+		1870906123A1D0190087C293 /* Toast.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Toast.m; sourceTree = "<group>"; };
+		1870906323A1D91C0087C293 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		1870906423A1D91C0087C293 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		1870906523A1D91C0087C293 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		1870906823A201240087C293 /* extras.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = extras.plist; sourceTree = "<group>"; };
+		1870906A23A202A30087C293 /* p1.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = p1.plist; sourceTree = "<group>"; };
+		1870906C23A205800087C293 /* APPIMGViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPIMGViewController.h; sourceTree = "<group>"; };
+		1870906D23A205800087C293 /* APPIMGViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPIMGViewController.m; sourceTree = "<group>"; };
+		1870906E23A205800087C293 /* APPIMGViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = APPIMGViewController.xib; sourceTree = "<group>"; };
 		189A2369239DEAF500AC8B67 /* APPUIScrollViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPUIScrollViewController.h; sourceTree = "<group>"; };
 		189A236A239DEAF500AC8B67 /* APPUIScrollViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPUIScrollViewController.m; sourceTree = "<group>"; };
 		189A236B239DEAF500AC8B67 /* APPUIScrollViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = APPUIScrollViewController.xib; sourceTree = "<group>"; };
@@ -135,7 +152,7 @@
 		189A238F23A0817F00AC8B67 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 		189A239123A082BA00AC8B67 /* 5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5.jpg; sourceTree = "<group>"; };
 		189A239223A082BA00AC8B67 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
-		189A239523A082BA00AC8B67 /* 4.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpeg; sourceTree = "<group>"; };
+		189A239523A082BA00AC8B67 /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
 		189A239723A082BA00AC8B67 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
 		189A239F23A0834F00AC8B67 /* 6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 6.jpg; sourceTree = "<group>"; };
 		18BA107D223F757D008D171F /* NextViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NextViewController.h; sourceTree = "<group>"; };
@@ -233,6 +250,8 @@
 			children = (
 				1870905523A0D2BF0087C293 /* APPInfoItemView.h */,
 				1870905623A0D2BF0087C293 /* APPInfoItemView.m */,
+				1870906023A1D0190087C293 /* Toast.h */,
+				1870906123A1D0190087C293 /* Toast.m */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -244,7 +263,7 @@
 				189A238F23A0817F00AC8B67 /* 1.jpg */,
 				189A239723A082BA00AC8B67 /* 2.jpg */,
 				189A239223A082BA00AC8B67 /* 3.jpg */,
-				189A239523A082BA00AC8B67 /* 4.jpeg */,
+				189A239523A082BA00AC8B67 /* 4.jpg */,
 				189A239123A082BA00AC8B67 /* 5.jpg */,
 				189A239F23A0834F00AC8B67 /* 6.jpg */,
 				1870904D23A099760087C293 /* 7.jpg */,
@@ -270,6 +289,12 @@
 				1870905823A0E8DD0087C293 /* DownloadFileViewController.h */,
 				1870905923A0E8DD0087C293 /* DownloadFileViewController.m */,
 				1870905A23A0E8DD0087C293 /* DownloadFileViewController.xib */,
+				1870906323A1D91C0087C293 /* LoginViewController.h */,
+				1870906423A1D91C0087C293 /* LoginViewController.m */,
+				1870906523A1D91C0087C293 /* LoginViewController.xib */,
+				1870906C23A205800087C293 /* APPIMGViewController.h */,
+				1870906D23A205800087C293 /* APPIMGViewController.m */,
+				1870906E23A205800087C293 /* APPIMGViewController.xib */,
 			);
 			path = testui;
 			sourceTree = "<group>";
@@ -341,6 +366,8 @@
 				186C0D2B2398ECE20051A17C /* netpage.xib */,
 				186C0D33239A1F220051A17C /* listview.xib */,
 				189A2377239E4E2700AC8B67 /* images.xcassets */,
+				1870906823A201240087C293 /* extras.plist */,
+				1870906A23A202A30087C293 /* p1.plist */,
 			);
 			path = ios_app;
 			sourceTree = "<group>";
@@ -450,7 +477,7 @@
 				186C0D2C2398ECE20051A17C /* netpage.xib in Resources */,
 				189A2378239E4E2700AC8B67 /* images.xcassets in Resources */,
 				1870905323A0CA560087C293 /* test_file.txt in Resources */,
-				189A239C23A082BA00AC8B67 /* 4.jpeg in Resources */,
+				189A239C23A082BA00AC8B67 /* 4.jpg in Resources */,
 				1870904E23A099770087C293 /* 7.jpg in Resources */,
 				189A23A023A0834F00AC8B67 /* 6.jpg in Resources */,
 				182EFF7822468B3100E5AE90 /* aaaaa.xib in Resources */,
@@ -459,11 +486,15 @@
 				18D8E64E223CE49C006E89FC /* Assets.xcassets in Resources */,
 				189A237D239E5BDA00AC8B67 /* TestAnimationViewController.xib in Resources */,
 				18D8E64C223CE49A006E89FC /* Main.storyboard in Resources */,
+				1870906923A201240087C293 /* extras.plist in Resources */,
+				1870907023A205800087C293 /* APPIMGViewController.xib in Resources */,
 				189A2384239F31AD00AC8B67 /* abc.jpg in Resources */,
 				189A236D239DEAF500AC8B67 /* APPUIScrollViewController.xib in Resources */,
 				189A2372239E153E00AC8B67 /* Test1_ViewController.xib in Resources */,
 				18BA1081223F757D008D171F /* NextViewController.xib in Resources */,
+				1870906723A1D91C0087C293 /* LoginViewController.xib in Resources */,
 				189A2389239F6D9A00AC8B67 /* APPInfosViewController.xib in Resources */,
+				1870906B23A202A30087C293 /* p1.plist in Resources */,
 				189A239823A082BA00AC8B67 /* 5.jpg in Resources */,
 				189A239923A082BA00AC8B67 /* 3.jpg in Resources */,
 				18BA1083223F8725008D171F /* Test_Next_Page.xib in Resources */,
@@ -500,7 +531,9 @@
 				189A236C239DEAF500AC8B67 /* APPUIScrollViewController.m in Sources */,
 				189A2388239F6D9A00AC8B67 /* APPInfosViewController.m in Sources */,
 				1870905B23A0E8DD0087C293 /* DownloadFileViewController.m in Sources */,
+				1870906623A1D91C0087C293 /* LoginViewController.m in Sources */,
 				186C0D52239CA8620051A17C /* Extra+Test.m in Sources */,
+				1870906F23A205800087C293 /* APPIMGViewController.m in Sources */,
 				189A238C239F79B800AC8B67 /* APPInfo.m in Sources */,
 				18D8E649223CE49A006E89FC /* ViewController.m in Sources */,
 				18BA1080223F757D008D171F /* NextViewController.m in Sources */,
@@ -517,6 +550,7 @@
 				186C0D4A239C06620051A17C /* Extra.m in Sources */,
 				18D8E646223CE49A006E89FC /* AppDelegate.m in Sources */,
 				186C0D32239A1E860051A17C /* UITableView_ViewController.m in Sources */,
+				1870906223A1D0190087C293 /* Toast.m in Sources */,
 				186C0D3B239A34540051A17C /* Constant.m in Sources */,
 				186C0D252398A3220051A17C /* Test_Selector.m in Sources */,
 			);

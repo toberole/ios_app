@@ -13,6 +13,9 @@
 #import "../testui/TestAnimationViewController.h"
 #import "../testui/APPInfosViewController.h"
 #import "../testui/DownloadFileViewController.h"
+#import "../testui/LoginViewController.h"
+#import "../testui/APPIMGViewController.h"
+
 
 #define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 #define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
@@ -44,9 +47,22 @@
 @property(nonatomic,strong)UIButton *ocbase_btn;
 @property (nonatomic,strong)UIButton *uitest_btn;
 
+// 测试懒加载
+@property(nonatomic,copy)NSString *data;
+
 @end
 
 @implementation ViewController
+
+// 懒加载
+-(NSString*)data{
+    NSLog(@"懒加载");
+    if (_data == nil) {
+        _data = @"懒加载 ......";
+    }
+    
+    return _data;
+}
 
 // loadview -> viewDidLoad -> viewWillAppear -> viewDidAppear
 /*
@@ -99,6 +115,19 @@
     NSBundle *bundle = [NSBundle mainBundle];
     NSLog(@"bundle = %@",bundle);
     NSLog(@"bundle.bundlePath = %@",bundle.bundlePath);
+    
+    // 懒加载 self.data触发get方法 data
+    NSLog(@"懒加载 data = %@",self.data);
+    
+    
+    // plist
+    // 写法1
+    // [[NSBundle mainBundle]pathForResource:@"extras" ofType:@"plist"];
+    // 写法2
+    NSString * path = [[NSBundle mainBundle]pathForResource:@"extras" ofType:@"plist"];
+    // 解析plist
+    NSArray *arr = [NSArray arrayWithContentsOfFile:path];
+    NSLog(@"count = %d",arr.count);
     
     
     // [self file_op];
@@ -163,8 +192,17 @@
 //    APPInfosViewController *vc = [[APPInfosViewController alloc]init];
 //    [self.navigationController pushViewController:vc animated:YES];
     
-    DownloadFileViewController *vc = [[DownloadFileViewController alloc]init];
+//    DownloadFileViewController *vc = [[DownloadFileViewController alloc]init];
+//    [self.navigationController pushViewController:vc animated:YES];
+    
+    
+//    LoginViewController *vc = [[LoginViewController alloc]init];
+//    [self.navigationController pushViewController:vc animated:YES];
+    
+    APPIMGViewController *vc = [[APPIMGViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
+    
+    
 }
 
 //NSInputStream;

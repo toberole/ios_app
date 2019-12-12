@@ -44,6 +44,7 @@
             _btn_download.enabled = YES;
         }];
     }];
+    
     [self.view addSubview:_toast_v];
    
     [self download];
@@ -54,6 +55,10 @@
     
 }
 
+
+/**
+ 弹出toast
+ */
 -(UILabel*)toast:(NSString*)msg{
     UILabel * toast_v = [[UILabel alloc]init];
     int toast_v_w = 150;
