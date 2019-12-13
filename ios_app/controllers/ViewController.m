@@ -15,6 +15,12 @@
 #import "../testui/DownloadFileViewController.h"
 #import "../testui/LoginViewController.h"
 #import "../testui/APPIMGViewController.h"
+#include "../bean/GetSetBean.h"
+#import "../testui/APPLauoutViewController.h"
+#import "../testui/APPTaskViewController.h"
+#import "../testui/APPUIScrollViewController.h"
+#import "../testui/APPViewTouchViewController.h"
+
 
 
 #define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
@@ -48,13 +54,16 @@
 @property (nonatomic,strong)UIButton *uitest_btn;
 
 // 测试懒加载
+// Xcode自动生成 "."语法会触发set和get
+// 对应的set方法：- (void)setHeight:(NSString *)data;
+// get方法：- (int)data;
 @property(nonatomic,copy)NSString *data;
 
 @end
 
 @implementation ViewController
 
-// 懒加载
+// 懒加载 自己提供了get方法 xcode就不会自动生成
 -(NSString*)data{
     NSLog(@"懒加载");
     if (_data == nil) {
@@ -119,6 +128,10 @@
     // 懒加载 self.data触发get方法 data
     NSLog(@"懒加载 data = %@",self.data);
     
+    GetSetBean * bean = [[GetSetBean alloc]init];
+    bean.count = 100;
+    NSLog(@"bean.count = %d",bean.count);
+    
     
     // plist
     // 写法1
@@ -180,8 +193,8 @@
 
 -(void)uitest_btn_clicked{
     NSLog(@"uitest_btn_clicked");
-    //    APPUIViewController *vc = [[APPUIViewController alloc]init];
-    //    [self.navigationController pushViewController:vc animated:YES];
+//        APPUIViewController *vc = [[APPUIViewController alloc]init];
+//        [self.navigationController pushViewController:vc animated:YES];
     
     //    Test1_ViewController *vc = [[Test1_ViewController alloc]init];
     //    [self.navigationController pushViewController:vc animated:YES];
@@ -199,7 +212,20 @@
 //    LoginViewController *vc = [[LoginViewController alloc]init];
 //    [self.navigationController pushViewController:vc animated:YES];
     
-    APPIMGViewController *vc = [[APPIMGViewController alloc]init];
+//    APPIMGViewController *vc = [[APPIMGViewController alloc]init];
+//    [self.navigationController pushViewController:vc animated:YES];
+    
+//    APPLauoutViewController *vc = [[APPLauoutViewController alloc]init];
+//    [self.navigationController pushViewController:vc animated:YES];
+    
+//    APPTaskViewController *vc = [[APPTaskViewController alloc]init];
+//    [self.navigationController pushViewController:vc animated:YES];
+    
+    
+//    APPUIScrollViewController *vc = [[APPUIScrollViewController alloc]init];
+//    [self.navigationController pushViewController:vc animated:YES];
+    
+    APPViewTouchViewController *vc = [[APPViewTouchViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
     
     

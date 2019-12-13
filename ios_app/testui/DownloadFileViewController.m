@@ -1,11 +1,3 @@
-//
-//  DownloadFileViewController.m
-//  ios_app
-//
-//  Created by Apple on 2019/12/11.
-//  Copyright © 2019年 Apple. All rights reserved.
-//
-
 #import "DownloadFileViewController.h"
 @interface DownloadFileViewController ()
 @property(nonatomic,strong)UIButton *btn_download;

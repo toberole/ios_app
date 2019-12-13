@@ -37,6 +37,14 @@
 		1870906B23A202A30087C293 /* p1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1870906A23A202A30087C293 /* p1.plist */; };
 		1870906F23A205800087C293 /* APPIMGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1870906D23A205800087C293 /* APPIMGViewController.m */; };
 		1870907023A205800087C293 /* APPIMGViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1870906E23A205800087C293 /* APPIMGViewController.xib */; };
+		1870907323A20CB60087C293 /* GetSetBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 1870907223A20CB60087C293 /* GetSetBean.m */; };
+		1870907523A229BB0087C293 /* 8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1870907423A229BB0087C293 /* 8.jpg */; };
+		1870907923A22EB60087C293 /* APPLauoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1870907723A22EB60087C293 /* APPLauoutViewController.m */; };
+		1870907A23A22EB60087C293 /* APPLauoutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1870907823A22EB60087C293 /* APPLauoutViewController.xib */; };
+		1870908123A24B710087C293 /* APPTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1870907F23A24B710087C293 /* APPTaskViewController.m */; };
+		1870908223A24B710087C293 /* APPTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1870908023A24B710087C293 /* APPTaskViewController.xib */; };
+		1870908623A330B70087C293 /* APPViewTouchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1870908423A330B70087C293 /* APPViewTouchViewController.m */; };
+		1870908723A330B70087C293 /* APPViewTouchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1870908523A330B70087C293 /* APPViewTouchViewController.xib */; };
 		189A236C239DEAF500AC8B67 /* APPUIScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189A236A239DEAF500AC8B67 /* APPUIScrollViewController.m */; };
 		189A236D239DEAF500AC8B67 /* APPUIScrollViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 189A236B239DEAF500AC8B67 /* APPUIScrollViewController.xib */; };
 		189A2371239E153E00AC8B67 /* Test1_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189A236F239E153E00AC8B67 /* Test1_ViewController.m */; };
@@ -132,6 +140,18 @@
 		1870906C23A205800087C293 /* APPIMGViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPIMGViewController.h; sourceTree = "<group>"; };
 		1870906D23A205800087C293 /* APPIMGViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPIMGViewController.m; sourceTree = "<group>"; };
 		1870906E23A205800087C293 /* APPIMGViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = APPIMGViewController.xib; sourceTree = "<group>"; };
+		1870907123A20CB60087C293 /* GetSetBean.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetSetBean.h; sourceTree = "<group>"; };
+		1870907223A20CB60087C293 /* GetSetBean.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetSetBean.m; sourceTree = "<group>"; };
+		1870907423A229BB0087C293 /* 8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8.jpg; sourceTree = "<group>"; };
+		1870907623A22EB60087C293 /* APPLauoutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPLauoutViewController.h; sourceTree = "<group>"; };
+		1870907723A22EB60087C293 /* APPLauoutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPLauoutViewController.m; sourceTree = "<group>"; };
+		1870907823A22EB60087C293 /* APPLauoutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = APPLauoutViewController.xib; sourceTree = "<group>"; };
+		1870907E23A24B710087C293 /* APPTaskViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPTaskViewController.h; sourceTree = "<group>"; };
+		1870907F23A24B710087C293 /* APPTaskViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPTaskViewController.m; sourceTree = "<group>"; };
+		1870908023A24B710087C293 /* APPTaskViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = APPTaskViewController.xib; sourceTree = "<group>"; };
+		1870908323A330B70087C293 /* APPViewTouchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPViewTouchViewController.h; sourceTree = "<group>"; };
+		1870908423A330B70087C293 /* APPViewTouchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPViewTouchViewController.m; sourceTree = "<group>"; };
+		1870908523A330B70087C293 /* APPViewTouchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = APPViewTouchViewController.xib; sourceTree = "<group>"; };
 		189A2369239DEAF500AC8B67 /* APPUIScrollViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPUIScrollViewController.h; sourceTree = "<group>"; };
 		189A236A239DEAF500AC8B67 /* APPUIScrollViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPUIScrollViewController.m; sourceTree = "<group>"; };
 		189A236B239DEAF500AC8B67 /* APPUIScrollViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = APPUIScrollViewController.xib; sourceTree = "<group>"; };
@@ -233,6 +253,8 @@
 				186C0D54239CE08E0051A17C /* NSURL+url.m */,
 				189A238A239F79B800AC8B67 /* APPInfo.h */,
 				189A238B239F79B800AC8B67 /* APPInfo.m */,
+				1870907123A20CB60087C293 /* GetSetBean.h */,
+				1870907223A20CB60087C293 /* GetSetBean.m */,
 			);
 			path = bean;
 			sourceTree = "<group>";
@@ -259,6 +281,7 @@
 		18965532223D3DD8008DE47F /* images */ = {
 			isa = PBXGroup;
 			children = (
+				1870907423A229BB0087C293 /* 8.jpg */,
 				189A238D23A0817400AC8B67 /* 0.jpg */,
 				189A238F23A0817F00AC8B67 /* 1.jpg */,
 				189A239723A082BA00AC8B67 /* 2.jpg */,
@@ -295,6 +318,15 @@
 				1870906C23A205800087C293 /* APPIMGViewController.h */,
 				1870906D23A205800087C293 /* APPIMGViewController.m */,
 				1870906E23A205800087C293 /* APPIMGViewController.xib */,
+				1870907623A22EB60087C293 /* APPLauoutViewController.h */,
+				1870907723A22EB60087C293 /* APPLauoutViewController.m */,
+				1870907823A22EB60087C293 /* APPLauoutViewController.xib */,
+				1870907E23A24B710087C293 /* APPTaskViewController.h */,
+				1870907F23A24B710087C293 /* APPTaskViewController.m */,
+				1870908023A24B710087C293 /* APPTaskViewController.xib */,
+				1870908323A330B70087C293 /* APPViewTouchViewController.h */,
+				1870908423A330B70087C293 /* APPViewTouchViewController.m */,
+				1870908523A330B70087C293 /* APPViewTouchViewController.xib */,
 			);
 			path = testui;
 			sourceTree = "<group>";
@@ -477,8 +509,10 @@
 				186C0D2C2398ECE20051A17C /* netpage.xib in Resources */,
 				189A2378239E4E2700AC8B67 /* images.xcassets in Resources */,
 				1870905323A0CA560087C293 /* test_file.txt in Resources */,
+				1870908223A24B710087C293 /* APPTaskViewController.xib in Resources */,
 				189A239C23A082BA00AC8B67 /* 4.jpg in Resources */,
 				1870904E23A099770087C293 /* 7.jpg in Resources */,
+				1870907A23A22EB60087C293 /* APPLauoutViewController.xib in Resources */,
 				189A23A023A0834F00AC8B67 /* 6.jpg in Resources */,
 				182EFF7822468B3100E5AE90 /* aaaaa.xib in Resources */,
 				189A238E23A0817400AC8B67 /* 0.jpg in Resources */,
@@ -498,7 +532,9 @@
 				189A239823A082BA00AC8B67 /* 5.jpg in Resources */,
 				189A239923A082BA00AC8B67 /* 3.jpg in Resources */,
 				18BA1083223F8725008D171F /* Test_Next_Page.xib in Resources */,
+				1870907523A229BB0087C293 /* 8.jpg in Resources */,
 				189A239023A0817F00AC8B67 /* 1.jpg in Resources */,
+				1870908723A330B70087C293 /* APPViewTouchViewController.xib in Resources */,
 				1870905123A0BB160087C293 /* appinfo_item.xib in Resources */,
 				189A239E23A082BA00AC8B67 /* 2.jpg in Resources */,
 				186C0D7F239D23A50051A17C /* APPUIViewController.xib in Resources */,
@@ -528,20 +564,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				189A237C239E5BDA00AC8B67 /* TestAnimationViewController.m in Sources */,
+				1870908623A330B70087C293 /* APPViewTouchViewController.m in Sources */,
 				189A236C239DEAF500AC8B67 /* APPUIScrollViewController.m in Sources */,
 				189A2388239F6D9A00AC8B67 /* APPInfosViewController.m in Sources */,
 				1870905B23A0E8DD0087C293 /* DownloadFileViewController.m in Sources */,
 				1870906623A1D91C0087C293 /* LoginViewController.m in Sources */,
 				186C0D52239CA8620051A17C /* Extra+Test.m in Sources */,
+				1870908123A24B710087C293 /* APPTaskViewController.m in Sources */,
 				1870906F23A205800087C293 /* APPIMGViewController.m in Sources */,
 				189A238C239F79B800AC8B67 /* APPInfo.m in Sources */,
 				18D8E649223CE49A006E89FC /* ViewController.m in Sources */,
 				18BA1080223F757D008D171F /* NextViewController.m in Sources */,
+				1870907923A22EB60087C293 /* APPLauoutViewController.m in Sources */,
 				186C0D282398E82E0051A17C /* NetViewController.m in Sources */,
 				186C0D7E239D23A50051A17C /* APPUIViewController.m in Sources */,
 				18D8E654223CE49C006E89FC /* main.m in Sources */,
 				186C0D47239BC19B0051A17C /* Book.m in Sources */,
 				186C0D55239CE08E0051A17C /* NSURL+url.m in Sources */,
+				1870907323A20CB60087C293 /* GetSetBean.m in Sources */,
 				186C0D42239BA2010051A17C /* OCBaseViewController.m in Sources */,
 				189A2371239E153E00AC8B67 /* Test1_ViewController.m in Sources */,
 				186C0D3E239A56920051A17C /* UITableViewViewController.m in Sources */,

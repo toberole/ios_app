@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios_app/controllers/ViewController.m"
-            timestampString = "597821348.1970789"
+            timestampString = "597897826.492704"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "name"
             landmarkType = "24">
             <Locations>
@@ -42,11 +42,11 @@
                   moduleName = "ios_app"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/code/ncode/ios_app/ios_app/controllers/ViewController.m"
-                  timestampString = "597671169.761494"
+                  timestampString = "597897826.8903019"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
                   offsetFromSymbolStart = "12">
                </Location>
                <Location
@@ -57,14 +57,30 @@
                   moduleName = "ios_app"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/code/ncode/ios_app/ios_app/controllers/ViewController.m"
-                  timestampString = "597671169.763203"
+                  timestampString = "597897826.89364"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
                   offsetFromSymbolStart = "32">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ios_app/controllers/ViewController.m"
+            timestampString = "597897826.493239"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "242"
+            endingLineNumber = "242"
+            landmarkName = "-file_op2"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

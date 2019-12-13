@@ -1,11 +1,3 @@
-//
-//  APPInfosViewController.m
-//  ios_app
-//
-//  Created by Apple on 2019/12/10.
-//  Copyright © 2019年 Apple. All rights reserved.
-//
-
 #import "APPInfosViewController.h"
 #import "../bean/APPInfo.h"
 

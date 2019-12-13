@@ -2,7 +2,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface DownloadFileViewController : UIViewController
+@interface APPLauoutViewController : UIViewController
 
 @end
 
