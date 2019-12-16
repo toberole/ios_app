@@ -3,7 +3,7 @@
 #import "FooterView.h"
 #import "HeaderView.h"
 
-@interface APPTableViewController_1 ()<UITableViewDataSource,FootViewDelegate,UIScrollViewDelegate>
+@interface APPTableViewController_1 ()<UITableViewDataSource,FootViewDelegate,UITableViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 

@@ -18,6 +18,8 @@
 		181C478B23A7294C0040DCE2 /* FooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 181C478A23A7294C0040DCE2 /* FooterView.m */; };
 		181C479023A74F3F0040DCE2 /* header.xib in Resources */ = {isa = PBXBuildFile; fileRef = 181C478F23A74F3F0040DCE2 /* header.xib */; };
 		181C479323A753600040DCE2 /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 181C479223A753600040DCE2 /* HeaderView.m */; };
+		181C479723A7B3090040DCE2 /* APPTableViewController_2.m in Sources */ = {isa = PBXBuildFile; fileRef = 181C479523A7B3090040DCE2 /* APPTableViewController_2.m */; };
+		181C479823A7B3090040DCE2 /* APPTableViewController_2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 181C479623A7B3090040DCE2 /* APPTableViewController_2.xib */; };
 		182EFF7822468B3100E5AE90 /* aaaaa.xib in Resources */ = {isa = PBXBuildFile; fileRef = 182EFF7722468B3100E5AE90 /* aaaaa.xib */; };
 		186C0D252398A3220051A17C /* Test_Selector.m in Sources */ = {isa = PBXBuildFile; fileRef = 186C0D242398A3220051A17C /* Test_Selector.m */; };
 		186C0D282398E82E0051A17C /* NetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 186C0D272398E82E0051A17C /* NetViewController.m */; };
@@ -120,6 +122,9 @@
 		181C478F23A74F3F0040DCE2 /* header.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = header.xib; sourceTree = "<group>"; };
 		181C479123A753600040DCE2 /* HeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeaderView.h; sourceTree = "<group>"; };
 		181C479223A753600040DCE2 /* HeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeaderView.m; sourceTree = "<group>"; };
+		181C479423A7B3090040DCE2 /* APPTableViewController_2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPTableViewController_2.h; sourceTree = "<group>"; };
+		181C479523A7B3090040DCE2 /* APPTableViewController_2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPTableViewController_2.m; sourceTree = "<group>"; };
+		181C479623A7B3090040DCE2 /* APPTableViewController_2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = APPTableViewController_2.xib; sourceTree = "<group>"; };
 		182EFF7722468B3100E5AE90 /* aaaaa.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = aaaaa.xib; sourceTree = "<group>"; };
 		182EFFCB2247822700E5AE90 /* ios_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		186C0D1E2398A21B0051A17C /* README.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = README.h; sourceTree = "<group>"; };
@@ -376,6 +381,9 @@
 				181C477D23A63A1C0040DCE2 /* APPTableViewController_1.h */,
 				181C477E23A63A1C0040DCE2 /* APPTableViewController_1.m */,
 				181C477F23A63A1C0040DCE2 /* APPTableViewController_1.xib */,
+				181C479423A7B3090040DCE2 /* APPTableViewController_2.h */,
+				181C479523A7B3090040DCE2 /* APPTableViewController_2.m */,
+				181C479623A7B3090040DCE2 /* APPTableViewController_2.xib */,
 			);
 			path = testui;
 			sourceTree = "<group>";
@@ -572,6 +580,7 @@
 				181C477C23A5236D0040DCE2 /* tableview.plist in Resources */,
 				186C0D34239A1F220051A17C /* listview.xib in Resources */,
 				18D8E64E223CE49C006E89FC /* Assets.xcassets in Resources */,
+				181C479823A7B3090040DCE2 /* APPTableViewController_2.xib in Resources */,
 				189A237D239E5BDA00AC8B67 /* TestAnimationViewController.xib in Resources */,
 				1870908C23A340270087C293 /* APPUIScrollViewController_Demo.xib in Resources */,
 				181C477A23A4F8670040DCE2 /* APPTableViewController.xib in Resources */,
@@ -653,6 +662,7 @@
 				1870908B23A340270087C293 /* APPUIScrollViewController_Demo.m in Sources */,
 				18D8E646223CE49A006E89FC /* AppDelegate.m in Sources */,
 				181C477923A4F8670040DCE2 /* APPTableViewController.m in Sources */,
+				181C479723A7B3090040DCE2 /* APPTableViewController_2.m in Sources */,
 				186C0D32239A1E860051A17C /* UITableView_ViewController.m in Sources */,
 				1870906223A1D0190087C293 /* Toast.m in Sources */,
 				186C0D3B239A34540051A17C /* Constant.m in Sources */,
