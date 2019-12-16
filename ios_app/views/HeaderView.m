@@ -38,7 +38,7 @@
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    NSLog(@"HeaderView scrollViewDidScroll ......");
+    // NSLog(@"HeaderView scrollViewDidScroll ......");
     CGFloat width = self.lastView.frame.size.width;
     // 计算当前的滚动页
     int n = self.scrollView.contentOffset.x/width;
@@ -55,7 +55,7 @@
 }
 
 - (void)scroll:(NSInteger)page{
-    NSLog(@"HeaderView scroll ...");
+    // NSLog(@"HeaderView scroll ...");
     CGFloat width = self.lastView.frame.size.width;
     self.scrollView.contentOffset = CGPointMake(page * width, 0);
 }

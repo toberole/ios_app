@@ -182,17 +182,24 @@ NSString * const desc_context_kov = @"desc_context_kov";
     [ex test_over];
 }
 
+#pragma mark 注册通知 NSNotificationCenter
 -(void)initNotificationCenter{
     // selector 接收到消息的调用的方法
     // name 消息的标示 用于接收消息匹配
-    // object 用于接收消息标示 与发消息的匹配 nil匹配所有
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(notification_x:) name:book_notification object:nil];
+    // object 用于接收消息标示 与发消息的匹配 nil匹配所有的name相同的通知
+    // 匹配规则：name + object
+    // 如果name和object都为nil 那么监听所有的通知
+    [[NSNotificationCenter defaultCenter]addObserver:self/* 要监听消息的对象 */ selector:@selector(notification_x:)/* 监听消息的方法 */ name:book_notification/* 被监听通知的名称 */ object:nil/* 发布通知的对象 */];
+    
 }
 
 -(void)notification_x:(NSNotification *)data{
-    NSLog(@"接收到 notification_x data = %@",data);
+    NSLog(@"接收到 notification_x 通知名称 = %@",data.name);
+    NSLog(@"接收到 notification_x 通知发布者 = %@",data.object);
+    NSLog(@"接收到 notification_x 通知携带的信息 = %@",data.userInfo);
 }
 
+#pragma mark KVO
 -(void)addObserver4book_kvo{
     NSLog(@"OCBaseViewController#addObserver4book_kvo");
     // 注册观察者 KVO 在dealloc中可以移除
@@ -238,6 +245,7 @@ NSString * const desc_context_kov = @"desc_context_kov";
     NSLog(@"OCBaseViewController#viewDidLayoutSubviews");
 }
 
+#pragma mark 发送通知
 -(void)btn_NSNotification_clicked{
     NSLog(@"btn_NSNotification_clicked");
     // 发送消息
@@ -413,7 +421,7 @@ NSString * const desc_context_kov = @"desc_context_kov";
     NSLog(@"book5 = %@",book5);
     
 }
-//实现KVO方法
+// 实现KVO方法
 /**
  *  当监控的某个属性的值改变了就会调用
  *
@@ -422,6 +430,7 @@ NSString * const desc_context_kov = @"desc_context_kov";
  *  @param change  属性的修改情况（属性原来的值、属性最新的值）
  *  @param context void * == id
  */
+#pragma mark KVO方法observe
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
     NSLog(@"--------- observeValueForKeyPath ---------");
     
