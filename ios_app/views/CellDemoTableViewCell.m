@@ -4,7 +4,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *lbl_cell;
 @end
 
-
 @implementation CellDemoTableViewCell
 
 - (void)awakeFromNib {
@@ -15,8 +14,12 @@
     [super setSelected:selected animated:animated];
 }
 
-- (void)setLbl_cell:(NSString *)lbl_cell_text{
-    _lbl_cell.text = lbl_cell_text;
+//-(void)setLbl_cell:(NSString *)lbl_cell_text{
+//    NSLog(@"setLbl_cell ******");
+//}
+
+- (void)setLblCellText:(NSString *)lbl_cell_text{
+    self.lbl_cell.text = lbl_cell_text;
 }
 
 @end

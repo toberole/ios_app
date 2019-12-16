@@ -14,6 +14,8 @@
 		181C478123A63A1C0040DCE2 /* APPTableViewController_1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 181C477F23A63A1C0040DCE2 /* APPTableViewController_1.xib */; };
 		181C478323A648610040DCE2 /* cell_demo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 181C478223A648610040DCE2 /* cell_demo.xib */; };
 		181C478623A648F70040DCE2 /* CellDemoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 181C478523A648F70040DCE2 /* CellDemoTableViewCell.m */; };
+		181C478823A722140040DCE2 /* footerview.xib in Resources */ = {isa = PBXBuildFile; fileRef = 181C478723A722140040DCE2 /* footerview.xib */; };
+		181C478B23A7294C0040DCE2 /* FooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 181C478A23A7294C0040DCE2 /* FooterView.m */; };
 		182EFF7822468B3100E5AE90 /* aaaaa.xib in Resources */ = {isa = PBXBuildFile; fileRef = 182EFF7722468B3100E5AE90 /* aaaaa.xib */; };
 		186C0D252398A3220051A17C /* Test_Selector.m in Sources */ = {isa = PBXBuildFile; fileRef = 186C0D242398A3220051A17C /* Test_Selector.m */; };
 		186C0D282398E82E0051A17C /* NetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 186C0D272398E82E0051A17C /* NetViewController.m */; };
@@ -110,6 +112,9 @@
 		181C478223A648610040DCE2 /* cell_demo.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = cell_demo.xib; sourceTree = "<group>"; };
 		181C478423A648F70040DCE2 /* CellDemoTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CellDemoTableViewCell.h; sourceTree = "<group>"; };
 		181C478523A648F70040DCE2 /* CellDemoTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CellDemoTableViewCell.m; sourceTree = "<group>"; };
+		181C478723A722140040DCE2 /* footerview.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = footerview.xib; sourceTree = "<group>"; };
+		181C478923A7294C0040DCE2 /* FooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FooterView.h; sourceTree = "<group>"; };
+		181C478A23A7294C0040DCE2 /* FooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FooterView.m; sourceTree = "<group>"; };
 		182EFF7722468B3100E5AE90 /* aaaaa.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = aaaaa.xib; sourceTree = "<group>"; };
 		182EFFCB2247822700E5AE90 /* ios_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		186C0D1E2398A21B0051A17C /* README.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = README.h; sourceTree = "<group>"; };
@@ -285,6 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				1870905023A0BB160087C293 /* appinfo_item.xib */,
+				181C478723A722140040DCE2 /* footerview.xib */,
 			);
 			path = layout;
 			sourceTree = "<group>";
@@ -298,6 +304,8 @@
 				1870906123A1D0190087C293 /* Toast.m */,
 				181C478423A648F70040DCE2 /* CellDemoTableViewCell.h */,
 				181C478523A648F70040DCE2 /* CellDemoTableViewCell.m */,
+				181C478923A7294C0040DCE2 /* FooterView.h */,
+				181C478A23A7294C0040DCE2 /* FooterView.m */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -565,6 +573,7 @@
 				189A2384239F31AD00AC8B67 /* abc.jpg in Resources */,
 				189A236D239DEAF500AC8B67 /* APPUIScrollViewController.xib in Resources */,
 				189A2372239E153E00AC8B67 /* Test1_ViewController.xib in Resources */,
+				181C478823A722140040DCE2 /* footerview.xib in Resources */,
 				18BA1081223F757D008D171F /* NextViewController.xib in Resources */,
 				1870906723A1D91C0087C293 /* LoginViewController.xib in Resources */,
 				189A2389239F6D9A00AC8B67 /* APPInfosViewController.xib in Resources */,
@@ -618,6 +627,7 @@
 				18BA1080223F757D008D171F /* NextViewController.m in Sources */,
 				1870907923A22EB60087C293 /* APPLauoutViewController.m in Sources */,
 				186C0D282398E82E0051A17C /* NetViewController.m in Sources */,
+				181C478B23A7294C0040DCE2 /* FooterView.m in Sources */,
 				186C0D7E239D23A50051A17C /* APPUIViewController.m in Sources */,
 				18D8E654223CE49C006E89FC /* main.m in Sources */,
 				186C0D47239BC19B0051A17C /* Book.m in Sources */,
