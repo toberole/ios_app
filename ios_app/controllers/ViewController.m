@@ -1,7 +1,7 @@
 #import "ViewController.h"
 
 #import "NextViewController.h"
-
+#import "../bean/GetSetBean.h"
 #import "../test/Test_Selector.h"
 #import "NetViewController.h"
 #import "StatusBarNavigationBarViewController.h"
@@ -15,14 +15,13 @@
 #import "../testui/DownloadFileViewController.h"
 #import "../testui/LoginViewController.h"
 #import "../testui/APPIMGViewController.h"
-#include "../bean/GetSetBean.h"
 #import "../testui/APPLauoutViewController.h"
 #import "../testui/APPTaskViewController.h"
 #import "../testui/APPUIScrollViewController.h"
 #import "../testui/APPViewTouchViewController.h"
-
-
-
+#import "../testui/APPUIScrollViewController_Demo.h"
+#import "APPTableViewController.h"
+#import "APPTableViewController_1.h"
 #define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 #define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
 
@@ -117,7 +116,9 @@
     [super viewDidLoad];
     
     NSLog(@"ViewController navigationItem = %@",self.navigationItem);
-    
+    // 定时器
+    // [self useTimer];
+
     // 设置导航栏
     [self setNav];
     
@@ -137,10 +138,12 @@
     // 写法1
     // [[NSBundle mainBundle]pathForResource:@"extras" ofType:@"plist"];
     // 写法2
-    NSString * path = [[NSBundle mainBundle]pathForResource:@"extras" ofType:@"plist"];
+    NSString * path = [[NSBundle mainBundle]pathForResource:@"p1" ofType:@"plist"];
     // 解析plist
     NSArray *arr = [NSArray arrayWithContentsOfFile:path];
-    NSLog(@"count = %d",arr.count);
+    NSLog(@"plist count = %d",arr.count);
+    NSLog(@"plist firstObject data = %@",[arr firstObject]);
+    NSLog(@"plist lastObject data = %@",[arr lastObject]);
     
     
     // [self file_op];
@@ -155,6 +158,22 @@
     //    [btn addTarget:self action:@selector(btn_next_Clicked) forControlEvents:UIControlEventTouchUpInside];
     
     [self initViews];
+}
+-(void)useTimer{
+    // 定时器使用
+       // (NSTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)ti target:(id)aTarget selector:(SEL)aSelector userInfo:(nullable id)userInfo repeats:(BOOL)yesOrNo;
+       NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(task_time) userInfo:nil repeats:YES];
+    // 暂停销毁timer 不能再继续使用 需要重新创建新的才能使用
+    // [timer invalidate];
+    // 设置 timer优先级
+    NSRunLoop * runLoop = [NSRunLoop currentRunLoop];
+    // NSRunLoopCommonModes UI级别
+    // NSDefaultRunLoopMode 低级别
+    [runLoop addTimer:timer forMode:NSDefaultRunLoopMode];
+}
+
+-(void)task_time{
+    NSLog(@"timer ......");
 }
 
 -(void)initViews{
@@ -225,10 +244,19 @@
 //    APPUIScrollViewController *vc = [[APPUIScrollViewController alloc]init];
 //    [self.navigationController pushViewController:vc animated:YES];
     
-    APPViewTouchViewController *vc = [[APPViewTouchViewController alloc]init];
+//    APPViewTouchViewController *vc = [[APPViewTouchViewController alloc]init];
+//    [self.navigationController pushViewController:vc animated:YES];
+    
+    
+//    APPUIScrollViewController_Demo *vc = [[APPUIScrollViewController_Demo alloc]init];
+//    [self.navigationController pushViewController:vc animated:YES];
+    
+//    APPTableViewController *vc = [[APPTableViewController alloc]init];
+//    [self.navigationController pushViewController:vc animated:YES];
+    
+    APPTableViewController_1 *vc = [[APPTableViewController_1 alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
-    
-    
+
 }
 
 //NSInputStream;
@@ -252,7 +280,7 @@
     //如果文件不存在，返回的是nil
     NSFileHandle *fileHandle = [NSFileHandle fileHandleForWritingAtPath:filePath];
     //判断文件存不存在
-     if (fileHandle == nil) {
+    if (fileHandle == nil) {
         //如果文件不存在，会自动创建
         [data writeToFile:filePath atomically:YES];
     }else {

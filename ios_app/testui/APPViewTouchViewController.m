@@ -14,12 +14,15 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(nullable UIEvent *)event{
     NSLog(@"APPViewTouchViewController#touchesBegan");
 }
+
 - (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(nullable UIEvent *)event{
     NSLog(@"APPViewTouchViewController#touchesMoved");
 }
+
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(nullable UIEvent *)event{
     NSLog(@"APPViewTouchViewController#touchesEnded");
 }
+
 - (void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(nullable UIEvent *)event{
     NSLog(@"APPViewTouchViewController#touchesCancelled");
 }

@@ -4,6 +4,7 @@
 
 @property (strong, nonatomic) IBOutlet UIScrollView *sv;
 @property (strong, nonatomic) IBOutlet UIImageView *iv;
+- (IBAction)scroll:(UIButton *)sender;
 
 @end
 
@@ -32,6 +33,10 @@
     [_sv setMaximumZoomScale:3];
     [_sv setMinimumZoomScale:0.5];
     NSLog(@"_sv = %@",_sv);
+    
+    // 设置滚动指示器
+    _sv.showsHorizontalScrollIndicator = YES;
+    _sv.showsVerticalScrollIndicator = NO;
 }
 
 
@@ -46,5 +51,22 @@
     return _iv;
 }
 
-
+/**
+    修改contentoffset实现滚动
+ */
+- (IBAction)scroll:(UIButton *)sender {
+    // 动画滚动
+//    [UIView animateWithDuration:1.5 animations:^{
+//        CGPoint point = _sv.contentOffset;
+//        // 向上滚动
+//        point.y = point.y + 50;
+//        [_sv setContentOffset:point];
+//    }];
+    
+    // 直接使用动画的方式设置contentoffset
+    CGPoint point = _sv.contentOffset;
+    // 向上滚动
+    point.y = point.y + 50;
+    [_sv setContentOffset:point animated:YES];
+}
 @end

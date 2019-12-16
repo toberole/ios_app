@@ -354,6 +354,8 @@ NSString * const desc_context_kov = @"desc_context_kov";
  可以像对象发送消息并且传递你想要访问的熟悉名称的键值作为参数。
  KVC方法会首先查找以参数命名的getter、setter方法，如果没有提供getter、setter方法，KVC方法会直接寻找_name和name的实例变量。
  
+ NSArray valueForKey会取出其中的t对象的属性的集合
+ 
  */
 #pragma mark kvc
 -(void)btn_kvc_kvo_clicked{

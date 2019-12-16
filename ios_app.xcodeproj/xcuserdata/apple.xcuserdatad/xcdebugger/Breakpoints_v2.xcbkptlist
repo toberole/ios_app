@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
+   uuid = "970DC203-248F-4CF2-8437-5D54FF56C552"
    type = "1"
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "AEC96CCA-9AAD-4A92-9E67-C30B2A80F1A2"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -22,19 +24,21 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "CA6655AF-A22A-4110-B441-99AABA2CBC5F"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios_app/controllers/ViewController.m"
-            timestampString = "597897826.492704"
+            timestampString = "597924279.112885"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "name"
             landmarkType = "24">
             <Locations>
                <Location
+                  uuid = "CA6655AF-A22A-4110-B441-99AABA2CBC5F - 6d42b877a7bb6023"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -42,14 +46,14 @@
                   moduleName = "ios_app"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/code/ncode/ios_app/ios_app/controllers/ViewController.m"
-                  timestampString = "597897826.8903019"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "42"
-                  endingLineNumber = "42"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
                   offsetFromSymbolStart = "12">
                </Location>
                <Location
+                  uuid = "CA6655AF-A22A-4110-B441-99AABA2CBC5F - 66015900df78bbbd"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -57,30 +61,13 @@
                   moduleName = "ios_app"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/code/ncode/ios_app/ios_app/controllers/ViewController.m"
-                  timestampString = "597897826.89364"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "42"
-                  endingLineNumber = "42"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
                   offsetFromSymbolStart = "32">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ios_app/controllers/ViewController.m"
-            timestampString = "597897826.493239"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "242"
-            endingLineNumber = "242"
-            landmarkName = "-file_op2"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
