@@ -1,5 +1,5 @@
 #import "NetViewController.h"
-#import "../constant/Constant.h"
+#import "Constant.h"
 
 @interface NetViewController ()
 

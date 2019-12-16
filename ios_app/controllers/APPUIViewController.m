@@ -1,6 +1,6 @@
 #import "APPUIViewController.h"
 
-#import "../testui/APPUIScrollViewController.h"
+#import "APPUIScrollViewController.h"
 
 
 @interface APPUIViewController ()

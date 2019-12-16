@@ -11,11 +11,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="cL8-A7-7Ky" customClass="FooterView">
-            <rect key="frame" x="0.0" y="0.0" width="318" height="70"/>
+            <rect key="frame" x="0.0" y="0.0" width="318" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="GTa-wS-om0">
-                    <rect key="frame" x="16" y="0.0" width="286" height="70"/>
+                    <rect key="frame" x="16" y="0.0" width="286" height="44"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -25,15 +25,15 @@
                     </connections>
                 </button>
                 <view hidden="YES" contentMode="scaleToFill" id="f7n-6Y-5u7">
-                    <rect key="frame" x="16" y="14" width="286" height="43"/>
+                    <rect key="frame" x="16" y="14" width="286" height="44"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" id="oH2-0A-mnF">
-                            <rect key="frame" x="40" y="11" width="20" height="20"/>
+                            <rect key="frame" x="40" y="6" width="20" height="20"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </activityIndicatorView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="正在努力加载..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BML-CZ-auc">
-                            <rect key="frame" x="93" y="11" width="147" height="21"/>
+                            <rect key="frame" x="94" y="0.0" width="147" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>

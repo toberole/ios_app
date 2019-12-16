@@ -1,10 +1,10 @@
 #import "OCBaseViewController.h"
-#import "../bean/Book.h"
+#import "Book.h"
 // message.h包含了objc.h和runtime.h
 #import <objc/message.h>
 
-#import "../bean/Extra.h"
-#import "../bean/Extra+Test.h"
+#import "Extra.h"
+#import "Extra+Test.h"
 
 // 用与移除KVO 可以用于区别子类和父类中的kvo观察者
 // 移除的时候 子类 和 父类 分别移除自己的kvo观察者

@@ -1,5 +1,5 @@
 #import "APPInfoItemView.h"
-#include "../bean/APPInfo.h"
+#include "APPInfo.h"
 
 @implementation APPInfoItemView
 - (instancetype)initWithNibName:(NSString *)nibName{

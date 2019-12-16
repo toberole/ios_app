@@ -1,5 +1,5 @@
 #import "APPInfosViewController.h"
-#import "../bean/APPInfo.h"
+#import "APPInfo.h"
 
 
 NSString * data_url = @"https://raw.githubusercontent.com/toberole/jni_xxxx_demo/master/test_data/data/appsinfo.txt";

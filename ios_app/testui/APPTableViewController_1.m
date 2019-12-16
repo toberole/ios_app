@@ -1,10 +1,16 @@
 #import "APPTableViewController_1.h"
 #import "CellDemoTableViewCell.h"
 #import "FooterView.h"
+#import "HeaderView.h"
+
 @interface APPTableViewController_1 ()<UITableViewDataSource,FootViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+
 @property (strong,nonatomic) NSMutableArray * data;
+@property (strong,nonatomic) HeaderView * header;
+@property (strong,nonatomic) NSTimer * timer;
+@property (nonatomic,assign) NSInteger page;
 
 @end
 
@@ -24,12 +30,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _tableView.dataSource = self;
-    // 注意设置footerview的fream只有x和height有效 y和width设置无效
+    // 注意设置footerview的fream只有x和height有效,y和width设置无效
     FooterView * footer = [FooterView footerView];
     footer.delegate = self;
     _tableView.tableFooterView = footer;
     
     // 设置headerview
+    self.header = [HeaderView headerView];
+    _tableView.tableHeaderView = self.header;
+    
+    // 创建计时器
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(scrollHeader) userInfo:nil repeats:YES];
+    
+    self.page = 0;
+}
+
+-(void)scrollHeader{
+    [self.header scroll:(++self.page) % 3];
 }
 
 - (void)footerViewloadMore:(FooterView *)footerView{
@@ -37,6 +54,17 @@
     NSLog(@"加载更多数据 .... footerViewloadMore");
     [self.data addObject:@"load more data"];
     [self.tableView reloadData];
+    
+    // 滚动tableview到最上面
+//    UITableViewScrollPositionNone,
+//    UITableViewScrollPositionTop,
+//    UITableViewScrollPositionMiddle,
+//    UITableViewScrollPositionBottom
+    NSIndexPath *idx = [NSIndexPath indexPathForRow:self.data.count - 1 inSection:0];
+    [self.tableView scrollToRowAtIndexPath:idx atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    
+    // 刷行指定行
+    // self.tableView reloadRowsAtIndexPaths:<#(nonnull NSArray<NSIndexPath *> *)#> withRowAnimation:<#(UITableViewRowAnimation)#>
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -58,8 +86,5 @@
     [cell setLblCellText:self.data[indexPath.row]];
     return cell;
 }
-
-
-
 
 @end

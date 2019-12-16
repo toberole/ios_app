@@ -1,5 +1,5 @@
 #import "UITableView_ViewController.h"
-#import "../constant/Constant.h"
+#import "Constant.h"
 
 
 /*
