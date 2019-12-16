@@ -13,6 +13,12 @@
 
 @implementation HeaderView
 
+- (void)awakeFromNib{
+    [super awakeFromNib];
+    // 控件从xib加载构造完毕
+    NSLog(@"awakeFromNib ......");
+}
+
 + (HeaderView *)headerView{
     HeaderView * header = [[[NSBundle mainBundle]loadNibNamed:@"header" owner:nil options:nil]lastObject];
     // 小技巧 设置宽度
@@ -38,6 +44,14 @@
     int n = self.scrollView.contentOffset.x/width;
     self.pageControl.currentPage = n;
     self.lbl_info.text = self.tips[n];
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+    // NSLog(@"开始拖拽 ......");
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+    // NSLog(@"结束拖拽 ......");
 }
 
 - (void)scroll:(NSInteger)page{

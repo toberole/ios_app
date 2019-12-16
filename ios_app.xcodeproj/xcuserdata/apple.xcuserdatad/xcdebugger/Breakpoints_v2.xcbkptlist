@@ -36,38 +36,6 @@
             endingLineNumber = "41"
             landmarkName = "name"
             landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "CA6655AF-A22A-4110-B441-99AABA2CBC5F - 6d42b877a7bb6023"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[ViewController name]"
-                  moduleName = "ios_app"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/code/ncode/ios_app/ios_app/controllers/ViewController.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "41"
-                  endingLineNumber = "41"
-                  offsetFromSymbolStart = "12">
-               </Location>
-               <Location
-                  uuid = "CA6655AF-A22A-4110-B441-99AABA2CBC5F - 66015900df78bbbd"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[ViewController setName:]"
-                  moduleName = "ios_app"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/code/ncode/ios_app/ios_app/controllers/ViewController.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "41"
-                  endingLineNumber = "41"
-                  offsetFromSymbolStart = "32">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

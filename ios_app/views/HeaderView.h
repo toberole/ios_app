@@ -3,9 +3,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HeaderView : UIView
-+(HeaderView*)headerView;
-
 -(void)scroll:(NSInteger)page;
++(HeaderView*)headerView;
 @end
 
 NS_ASSUME_NONNULL_END

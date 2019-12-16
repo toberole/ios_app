@@ -42,6 +42,10 @@
     // 创建计时器
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(scrollHeader) userInfo:nil repeats:YES];
     
+    // 设置NSTimer和UI一个级别[由于NSTimer的默认优先级比较低 如果不设置的时候 触摸屏幕其就得不到执行]
+    NSRunLoop *runLoop = [NSRunLoop currentRunLoop];
+    [runLoop addTimer:self.timer forMode:NSRunLoopCommonModes];
+    
     self.page = 0;
 }
 
@@ -66,6 +70,7 @@
     // 刷行指定行
     // self.tableView reloadRowsAtIndexPaths:<#(nonnull NSArray<NSIndexPath *> *)#> withRowAnimation:<#(UITableViewRowAnimation)#>
 }
+
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
