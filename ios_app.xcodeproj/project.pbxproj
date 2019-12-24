@@ -18,8 +18,29 @@
 		181C478B23A7294C0040DCE2 /* FooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 181C478A23A7294C0040DCE2 /* FooterView.m */; };
 		181C479023A74F3F0040DCE2 /* header.xib in Resources */ = {isa = PBXBuildFile; fileRef = 181C478F23A74F3F0040DCE2 /* header.xib */; };
 		181C479323A753600040DCE2 /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 181C479223A753600040DCE2 /* HeaderView.m */; };
-		181C479723A7B3090040DCE2 /* APPTableViewController_2.m in Sources */ = {isa = PBXBuildFile; fileRef = 181C479523A7B3090040DCE2 /* APPTableViewController_2.m */; };
-		181C479823A7B3090040DCE2 /* APPTableViewController_2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 181C479623A7B3090040DCE2 /* APPTableViewController_2.xib */; };
+		181C479C23A8A3530040DCE2 /* APPTableViewController_2.m in Sources */ = {isa = PBXBuildFile; fileRef = 181C479A23A8A3530040DCE2 /* APPTableViewController_2.m */; };
+		181C479F23A8A5040040DCE2 /* APPTableViewController_2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 181C479E23A8A5040040DCE2 /* APPTableViewController_2.storyboard */; };
+		181C47A223A8B4430040DCE2 /* APPTableViewController_3.m in Sources */ = {isa = PBXBuildFile; fileRef = 181C47A123A8B4430040DCE2 /* APPTableViewController_3.m */; };
+		181C47A423A8B4650040DCE2 /* APPTableViewController_3.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 181C47A323A8B4650040DCE2 /* APPTableViewController_3.storyboard */; };
+		181C47A623A8B6EE0040DCE2 /* APPTableViewController_3_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 181C47A523A8B6EE0040DCE2 /* APPTableViewController_3_Cell.xib */; };
+		181C47A923A8B7340040DCE2 /* APPTableViewController_3_Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 181C47A823A8B7340040DCE2 /* APPTableViewController_3_Cell.m */; };
+		181C47AB23A8E5200040DCE2 /* section_item.xib in Resources */ = {isa = PBXBuildFile; fileRef = 181C47AA23A8E5200040DCE2 /* section_item.xib */; };
+		181C47AE23A8E5520040DCE2 /* MySectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 181C47AD23A8E5520040DCE2 /* MySectionView.m */; };
+		181C47B223A9C21B0040DCE2 /* APPTableViewController_4.m in Sources */ = {isa = PBXBuildFile; fileRef = 181C47B023A9C21B0040DCE2 /* APPTableViewController_4.m */; };
+		181C47B323A9C21B0040DCE2 /* APPTableViewController_4.xib in Resources */ = {isa = PBXBuildFile; fileRef = 181C47B123A9C21B0040DCE2 /* APPTableViewController_4.xib */; };
+		181C47B723A9CED90040DCE2 /* APPAutoLayoutDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 181C47B523A9CED90040DCE2 /* APPAutoLayoutDemoViewController.m */; };
+		181C47B823A9CED90040DCE2 /* APPAutoLayoutDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 181C47B623A9CED90040DCE2 /* APPAutoLayoutDemoViewController.xib */; };
+		181C47BC23A9D1270040DCE2 /* APPAutoResizingDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 181C47BA23A9D1270040DCE2 /* APPAutoResizingDemoViewController.m */; };
+		181C47BD23A9D1270040DCE2 /* APPAutoResizingDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 181C47BB23A9D1270040DCE2 /* APPAutoResizingDemoViewController.xib */; };
+		181C47BF23A9D51F0040DCE2 /* APPAutoResizingDemoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 181C47BE23A9D51F0040DCE2 /* APPAutoResizingDemoViewController.storyboard */; };
+		181C47C123AB511B0040DCE2 /* test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 181C47C023AB511B0040DCE2 /* test.storyboard */; };
+		181C47C323AB567E0040DCE2 /* test1.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 181C47C223AB567E0040DCE2 /* test1.storyboard */; };
+		181C47C523B0B8DE0040DCE2 /* test2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 181C47C423B0B8DD0040DCE2 /* test2.storyboard */; };
+		181C47C723B0C3850040DCE2 /* test3.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 181C47C623B0C3850040DCE2 /* test3.storyboard */; };
+		181C47C923B1DDBB0040DCE2 /* test4.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 181C47C823B1DDBB0040DCE2 /* test4.storyboard */; };
+		181C47CB23B2084A0040DCE2 /* test5.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 181C47CA23B2084A0040DCE2 /* test5.storyboard */; };
+		181C47CD23B210530040DCE2 /* test6.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 181C47CC23B210530040DCE2 /* test6.storyboard */; };
+		181C47CF23B2154E0040DCE2 /* test7.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 181C47CE23B2154E0040DCE2 /* test7.storyboard */; };
 		182EFF7822468B3100E5AE90 /* aaaaa.xib in Resources */ = {isa = PBXBuildFile; fileRef = 182EFF7722468B3100E5AE90 /* aaaaa.xib */; };
 		186C0D252398A3220051A17C /* Test_Selector.m in Sources */ = {isa = PBXBuildFile; fileRef = 186C0D242398A3220051A17C /* Test_Selector.m */; };
 		186C0D282398E82E0051A17C /* NetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 186C0D272398E82E0051A17C /* NetViewController.m */; };
@@ -122,9 +143,36 @@
 		181C478F23A74F3F0040DCE2 /* header.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = header.xib; sourceTree = "<group>"; };
 		181C479123A753600040DCE2 /* HeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeaderView.h; sourceTree = "<group>"; };
 		181C479223A753600040DCE2 /* HeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeaderView.m; sourceTree = "<group>"; };
-		181C479423A7B3090040DCE2 /* APPTableViewController_2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPTableViewController_2.h; sourceTree = "<group>"; };
-		181C479523A7B3090040DCE2 /* APPTableViewController_2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPTableViewController_2.m; sourceTree = "<group>"; };
-		181C479623A7B3090040DCE2 /* APPTableViewController_2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = APPTableViewController_2.xib; sourceTree = "<group>"; };
+		181C479923A8A3530040DCE2 /* APPTableViewController_2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPTableViewController_2.h; sourceTree = "<group>"; };
+		181C479A23A8A3530040DCE2 /* APPTableViewController_2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPTableViewController_2.m; sourceTree = "<group>"; };
+		181C479E23A8A5040040DCE2 /* APPTableViewController_2.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = APPTableViewController_2.storyboard; sourceTree = "<group>"; };
+		181C47A023A8B4430040DCE2 /* APPTableViewController_3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPTableViewController_3.h; sourceTree = "<group>"; };
+		181C47A123A8B4430040DCE2 /* APPTableViewController_3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPTableViewController_3.m; sourceTree = "<group>"; };
+		181C47A323A8B4650040DCE2 /* APPTableViewController_3.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = APPTableViewController_3.storyboard; sourceTree = "<group>"; };
+		181C47A523A8B6EE0040DCE2 /* APPTableViewController_3_Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = APPTableViewController_3_Cell.xib; sourceTree = "<group>"; };
+		181C47A723A8B7340040DCE2 /* APPTableViewController_3_Cell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPTableViewController_3_Cell.h; sourceTree = "<group>"; };
+		181C47A823A8B7340040DCE2 /* APPTableViewController_3_Cell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPTableViewController_3_Cell.m; sourceTree = "<group>"; };
+		181C47AA23A8E5200040DCE2 /* section_item.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = section_item.xib; sourceTree = "<group>"; };
+		181C47AC23A8E5520040DCE2 /* MySectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MySectionView.h; sourceTree = "<group>"; };
+		181C47AD23A8E5520040DCE2 /* MySectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MySectionView.m; sourceTree = "<group>"; };
+		181C47AF23A9C21B0040DCE2 /* APPTableViewController_4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPTableViewController_4.h; sourceTree = "<group>"; };
+		181C47B023A9C21B0040DCE2 /* APPTableViewController_4.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPTableViewController_4.m; sourceTree = "<group>"; };
+		181C47B123A9C21B0040DCE2 /* APPTableViewController_4.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = APPTableViewController_4.xib; sourceTree = "<group>"; };
+		181C47B423A9CED90040DCE2 /* APPAutoLayoutDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPAutoLayoutDemoViewController.h; sourceTree = "<group>"; };
+		181C47B523A9CED90040DCE2 /* APPAutoLayoutDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPAutoLayoutDemoViewController.m; sourceTree = "<group>"; };
+		181C47B623A9CED90040DCE2 /* APPAutoLayoutDemoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = APPAutoLayoutDemoViewController.xib; sourceTree = "<group>"; };
+		181C47B923A9D1270040DCE2 /* APPAutoResizingDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPAutoResizingDemoViewController.h; sourceTree = "<group>"; };
+		181C47BA23A9D1270040DCE2 /* APPAutoResizingDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPAutoResizingDemoViewController.m; sourceTree = "<group>"; };
+		181C47BB23A9D1270040DCE2 /* APPAutoResizingDemoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = APPAutoResizingDemoViewController.xib; sourceTree = "<group>"; };
+		181C47BE23A9D51F0040DCE2 /* APPAutoResizingDemoViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = APPAutoResizingDemoViewController.storyboard; sourceTree = "<group>"; };
+		181C47C023AB511B0040DCE2 /* test.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = test.storyboard; sourceTree = "<group>"; };
+		181C47C223AB567E0040DCE2 /* test1.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = test1.storyboard; sourceTree = "<group>"; };
+		181C47C423B0B8DD0040DCE2 /* test2.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = test2.storyboard; sourceTree = "<group>"; };
+		181C47C623B0C3850040DCE2 /* test3.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = test3.storyboard; sourceTree = "<group>"; };
+		181C47C823B1DDBB0040DCE2 /* test4.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = test4.storyboard; sourceTree = "<group>"; };
+		181C47CA23B2084A0040DCE2 /* test5.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = test5.storyboard; sourceTree = "<group>"; };
+		181C47CC23B210530040DCE2 /* test6.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = test6.storyboard; sourceTree = "<group>"; };
+		181C47CE23B2154E0040DCE2 /* test7.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = test7.storyboard; sourceTree = "<group>"; };
 		182EFF7722468B3100E5AE90 /* aaaaa.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = aaaaa.xib; sourceTree = "<group>"; };
 		182EFFCB2247822700E5AE90 /* ios_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		186C0D1E2398A21B0051A17C /* README.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = README.h; sourceTree = "<group>"; };
@@ -302,6 +350,15 @@
 				1870905023A0BB160087C293 /* appinfo_item.xib */,
 				181C478723A722140040DCE2 /* footerview.xib */,
 				181C478F23A74F3F0040DCE2 /* header.xib */,
+				181C47AA23A8E5200040DCE2 /* section_item.xib */,
+				181C47C023AB511B0040DCE2 /* test.storyboard */,
+				181C47C223AB567E0040DCE2 /* test1.storyboard */,
+				181C47C423B0B8DD0040DCE2 /* test2.storyboard */,
+				181C47C623B0C3850040DCE2 /* test3.storyboard */,
+				181C47C823B1DDBB0040DCE2 /* test4.storyboard */,
+				181C47CA23B2084A0040DCE2 /* test5.storyboard */,
+				181C47CC23B210530040DCE2 /* test6.storyboard */,
+				181C47CE23B2154E0040DCE2 /* test7.storyboard */,
 			);
 			path = layout;
 			sourceTree = "<group>";
@@ -319,6 +376,10 @@
 				181C478A23A7294C0040DCE2 /* FooterView.m */,
 				181C479123A753600040DCE2 /* HeaderView.h */,
 				181C479223A753600040DCE2 /* HeaderView.m */,
+				181C47A723A8B7340040DCE2 /* APPTableViewController_3_Cell.h */,
+				181C47A823A8B7340040DCE2 /* APPTableViewController_3_Cell.m */,
+				181C47AC23A8E5520040DCE2 /* MySectionView.h */,
+				181C47AD23A8E5520040DCE2 /* MySectionView.m */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -381,9 +442,23 @@
 				181C477D23A63A1C0040DCE2 /* APPTableViewController_1.h */,
 				181C477E23A63A1C0040DCE2 /* APPTableViewController_1.m */,
 				181C477F23A63A1C0040DCE2 /* APPTableViewController_1.xib */,
-				181C479423A7B3090040DCE2 /* APPTableViewController_2.h */,
-				181C479523A7B3090040DCE2 /* APPTableViewController_2.m */,
-				181C479623A7B3090040DCE2 /* APPTableViewController_2.xib */,
+				181C479923A8A3530040DCE2 /* APPTableViewController_2.h */,
+				181C479A23A8A3530040DCE2 /* APPTableViewController_2.m */,
+				181C479E23A8A5040040DCE2 /* APPTableViewController_2.storyboard */,
+				181C47A023A8B4430040DCE2 /* APPTableViewController_3.h */,
+				181C47A123A8B4430040DCE2 /* APPTableViewController_3.m */,
+				181C47A323A8B4650040DCE2 /* APPTableViewController_3.storyboard */,
+				181C47A523A8B6EE0040DCE2 /* APPTableViewController_3_Cell.xib */,
+				181C47AF23A9C21B0040DCE2 /* APPTableViewController_4.h */,
+				181C47B023A9C21B0040DCE2 /* APPTableViewController_4.m */,
+				181C47B123A9C21B0040DCE2 /* APPTableViewController_4.xib */,
+				181C47B423A9CED90040DCE2 /* APPAutoLayoutDemoViewController.h */,
+				181C47B523A9CED90040DCE2 /* APPAutoLayoutDemoViewController.m */,
+				181C47B623A9CED90040DCE2 /* APPAutoLayoutDemoViewController.xib */,
+				181C47B923A9D1270040DCE2 /* APPAutoResizingDemoViewController.h */,
+				181C47BA23A9D1270040DCE2 /* APPAutoResizingDemoViewController.m */,
+				181C47BB23A9D1270040DCE2 /* APPAutoResizingDemoViewController.xib */,
+				181C47BE23A9D51F0040DCE2 /* APPAutoResizingDemoViewController.storyboard */,
 			);
 			path = testui;
 			sourceTree = "<group>";
@@ -565,11 +640,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				1870905C23A0E8DD0087C293 /* DownloadFileViewController.xib in Resources */,
+				181C47C523B0B8DE0040DCE2 /* test2.storyboard in Resources */,
 				186C0D2C2398ECE20051A17C /* netpage.xib in Resources */,
+				181C47BF23A9D51F0040DCE2 /* APPAutoResizingDemoViewController.storyboard in Resources */,
 				189A2378239E4E2700AC8B67 /* images.xcassets in Resources */,
+				181C47AB23A8E5200040DCE2 /* section_item.xib in Resources */,
 				1870905323A0CA560087C293 /* test_file.txt in Resources */,
 				1870908223A24B710087C293 /* APPTaskViewController.xib in Resources */,
+				181C479F23A8A5040040DCE2 /* APPTableViewController_2.storyboard in Resources */,
 				181C478123A63A1C0040DCE2 /* APPTableViewController_1.xib in Resources */,
+				181C47B323A9C21B0040DCE2 /* APPTableViewController_4.xib in Resources */,
 				189A239C23A082BA00AC8B67 /* 4.jpg in Resources */,
 				1870904E23A099770087C293 /* 7.jpg in Resources */,
 				1870907A23A22EB60087C293 /* APPLauoutViewController.xib in Resources */,
@@ -578,19 +658,26 @@
 				189A238E23A0817400AC8B67 /* 0.jpg in Resources */,
 				181C478323A648610040DCE2 /* cell_demo.xib in Resources */,
 				181C477C23A5236D0040DCE2 /* tableview.plist in Resources */,
+				181C47CF23B2154E0040DCE2 /* test7.storyboard in Resources */,
+				181C47C723B0C3850040DCE2 /* test3.storyboard in Resources */,
 				186C0D34239A1F220051A17C /* listview.xib in Resources */,
 				18D8E64E223CE49C006E89FC /* Assets.xcassets in Resources */,
-				181C479823A7B3090040DCE2 /* APPTableViewController_2.xib in Resources */,
 				189A237D239E5BDA00AC8B67 /* TestAnimationViewController.xib in Resources */,
 				1870908C23A340270087C293 /* APPUIScrollViewController_Demo.xib in Resources */,
+				181C47CB23B2084A0040DCE2 /* test5.storyboard in Resources */,
 				181C477A23A4F8670040DCE2 /* APPTableViewController.xib in Resources */,
 				18D8E64C223CE49A006E89FC /* Main.storyboard in Resources */,
 				1870906923A201240087C293 /* extras.plist in Resources */,
 				1870907023A205800087C293 /* APPIMGViewController.xib in Resources */,
+				181C47CD23B210530040DCE2 /* test6.storyboard in Resources */,
 				189A2384239F31AD00AC8B67 /* abc.jpg in Resources */,
 				189A236D239DEAF500AC8B67 /* APPUIScrollViewController.xib in Resources */,
+				181C47A623A8B6EE0040DCE2 /* APPTableViewController_3_Cell.xib in Resources */,
 				189A2372239E153E00AC8B67 /* Test1_ViewController.xib in Resources */,
 				181C478823A722140040DCE2 /* footerview.xib in Resources */,
+				181C47A423A8B4650040DCE2 /* APPTableViewController_3.storyboard in Resources */,
+				181C47BD23A9D1270040DCE2 /* APPAutoResizingDemoViewController.xib in Resources */,
+				181C47C323AB567E0040DCE2 /* test1.storyboard in Resources */,
 				18BA1081223F757D008D171F /* NextViewController.xib in Resources */,
 				1870906723A1D91C0087C293 /* LoginViewController.xib in Resources */,
 				189A2389239F6D9A00AC8B67 /* APPInfosViewController.xib in Resources */,
@@ -598,13 +685,16 @@
 				1870906B23A202A30087C293 /* p1.plist in Resources */,
 				189A239823A082BA00AC8B67 /* 5.jpg in Resources */,
 				189A239923A082BA00AC8B67 /* 3.jpg in Resources */,
+				181C47C923B1DDBB0040DCE2 /* test4.storyboard in Resources */,
 				18BA1083223F8725008D171F /* Test_Next_Page.xib in Resources */,
 				1870907523A229BB0087C293 /* 8.jpg in Resources */,
 				189A239023A0817F00AC8B67 /* 1.jpg in Resources */,
+				181C47B823A9CED90040DCE2 /* APPAutoLayoutDemoViewController.xib in Resources */,
 				1870908723A330B70087C293 /* APPViewTouchViewController.xib in Resources */,
 				1870905123A0BB160087C293 /* appinfo_item.xib in Resources */,
 				189A239E23A082BA00AC8B67 /* 2.jpg in Resources */,
 				186C0D7F239D23A50051A17C /* APPUIViewController.xib in Resources */,
+				181C47C123AB511B0040DCE2 /* test.storyboard in Resources */,
 				186C0D43239BA2010051A17C /* OCBaseViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -631,12 +721,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				189A237C239E5BDA00AC8B67 /* TestAnimationViewController.m in Sources */,
+				181C47A923A8B7340040DCE2 /* APPTableViewController_3_Cell.m in Sources */,
+				181C47A223A8B4430040DCE2 /* APPTableViewController_3.m in Sources */,
 				1870908623A330B70087C293 /* APPViewTouchViewController.m in Sources */,
 				189A236C239DEAF500AC8B67 /* APPUIScrollViewController.m in Sources */,
 				189A2388239F6D9A00AC8B67 /* APPInfosViewController.m in Sources */,
 				1870905B23A0E8DD0087C293 /* DownloadFileViewController.m in Sources */,
 				1870906623A1D91C0087C293 /* LoginViewController.m in Sources */,
 				186C0D52239CA8620051A17C /* Extra+Test.m in Sources */,
+				181C47BC23A9D1270040DCE2 /* APPAutoResizingDemoViewController.m in Sources */,
+				181C47B223A9C21B0040DCE2 /* APPTableViewController_4.m in Sources */,
 				1870908123A24B710087C293 /* APPTaskViewController.m in Sources */,
 				181C478023A63A1C0040DCE2 /* APPTableViewController_1.m in Sources */,
 				1870906F23A205800087C293 /* APPIMGViewController.m in Sources */,
@@ -652,6 +746,8 @@
 				181C479323A753600040DCE2 /* HeaderView.m in Sources */,
 				186C0D55239CE08E0051A17C /* NSURL+url.m in Sources */,
 				1870907323A20CB60087C293 /* GetSetBean.m in Sources */,
+				181C47AE23A8E5520040DCE2 /* MySectionView.m in Sources */,
+				181C47B723A9CED90040DCE2 /* APPAutoLayoutDemoViewController.m in Sources */,
 				186C0D42239BA2010051A17C /* OCBaseViewController.m in Sources */,
 				189A2371239E153E00AC8B67 /* Test1_ViewController.m in Sources */,
 				186C0D3E239A56920051A17C /* UITableViewViewController.m in Sources */,
@@ -662,7 +758,7 @@
 				1870908B23A340270087C293 /* APPUIScrollViewController_Demo.m in Sources */,
 				18D8E646223CE49A006E89FC /* AppDelegate.m in Sources */,
 				181C477923A4F8670040DCE2 /* APPTableViewController.m in Sources */,
-				181C479723A7B3090040DCE2 /* APPTableViewController_2.m in Sources */,
+				181C479C23A8A3530040DCE2 /* APPTableViewController_2.m in Sources */,
 				186C0D32239A1E860051A17C /* UITableView_ViewController.m in Sources */,
 				1870906223A1D0190087C293 /* Toast.m in Sources */,
 				186C0D3B239A34540051A17C /* Constant.m in Sources */,

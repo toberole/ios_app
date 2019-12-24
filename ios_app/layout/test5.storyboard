@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="hxd-5y-mAb">
+            <objects>
+                <viewController id="DSE-zT-1sh" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LK6-Yu-mEB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yq9-Mj-dKj" userLabel="蓝色 View">
+                                <rect key="frame" x="30" y="74" width="354" height="50"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="PCb-JM-878"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PGU-oM-1Oz" userLabel="红色 View">
+                                <rect key="frame" x="207" y="154" width="177" height="50"/>
+                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="yq9-Mj-dKj" firstAttribute="top" secondItem="L56-Ia-VoR" secondAttribute="top" constant="30" id="50L-VR-I4F"/>
+                            <constraint firstItem="yq9-Mj-dKj" firstAttribute="leading" secondItem="L56-Ia-VoR" secondAttribute="leading" constant="30" id="IZB-Gd-6Ge"/>
+                            <constraint firstItem="L56-Ia-VoR" firstAttribute="trailing" secondItem="yq9-Mj-dKj" secondAttribute="trailing" constant="30" id="QsQ-5x-q3Z"/>
+                            <constraint firstItem="PGU-oM-1Oz" firstAttribute="width" secondItem="yq9-Mj-dKj" secondAttribute="width" multiplier="0.5" id="VNb-BI-nVK"/>
+                            <constraint firstItem="PGU-oM-1Oz" firstAttribute="top" secondItem="yq9-Mj-dKj" secondAttribute="bottom" constant="30" id="gfV-fb-K5P"/>
+                            <constraint firstItem="PGU-oM-1Oz" firstAttribute="height" secondItem="yq9-Mj-dKj" secondAttribute="height" id="oCk-90-7AZ"/>
+                            <constraint firstItem="PGU-oM-1Oz" firstAttribute="trailing" secondItem="yq9-Mj-dKj" secondAttribute="trailing" id="wjM-TN-iGD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="L56-Ia-VoR"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tyd-Bg-cOW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="211.59420289855075" y="223.66071428571428"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="p8d-y1-ip9">
+            <objects>
+                <viewController id="xTt-ly-qzY" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="z5k-jg-mkx" userLabel="蓝色 View">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y4q-Rc-JFG">
+                                <rect key="frame" x="30" y="74" width="354" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Ryt-H5-kt3"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xax-SL-j19" userLabel="红色 View">
+                                <rect key="frame" x="30" y="74" width="354" height="50"/>
+                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Xax-SL-j19" firstAttribute="top" secondItem="z5k-jg-mkx" secondAttribute="topMargin" constant="30" id="1oL-ZX-R11"/>
+                            <constraint firstItem="Xax-SL-j19" firstAttribute="trailing" secondItem="Y4q-Rc-JFG" secondAttribute="trailing" id="Gad-si-IDU"/>
+                            <constraint firstItem="Xax-SL-j19" firstAttribute="centerX" secondItem="z5k-jg-mkx" secondAttribute="centerX" id="Vfy-Cz-z4l"/>
+                            <constraint firstItem="nKo-eL-Zca" firstAttribute="trailing" secondItem="Y4q-Rc-JFG" secondAttribute="trailing" constant="30" id="YS1-Fa-tkj"/>
+                            <constraint firstItem="Y4q-Rc-JFG" firstAttribute="leading" secondItem="nKo-eL-Zca" secondAttribute="leading" constant="30" id="diQ-Ih-kHT"/>
+                            <constraint firstItem="Y4q-Rc-JFG" firstAttribute="top" secondItem="nKo-eL-Zca" secondAttribute="top" constant="30" id="hZE-2J-dL0"/>
+                            <constraint firstItem="Xax-SL-j19" firstAttribute="height" secondItem="Y4q-Rc-JFG" secondAttribute="height" id="l5a-M5-XYz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nKo-eL-Zca"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q46-O1-0wa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-127.53623188405798" y="522.99107142857144"/>
+        </scene>
+    </scenes>
+</document>

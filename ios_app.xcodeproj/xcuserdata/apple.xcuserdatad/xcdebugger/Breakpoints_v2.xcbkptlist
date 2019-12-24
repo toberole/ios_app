@@ -32,8 +32,8 @@
             timestampString = "597924279.112885"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "name"
             landmarkType = "24">
             <Locations>
@@ -48,8 +48,8 @@
                   urlString = "file:///Users/apple/code/ncode/ios_app/ios_app/controllers/ViewController.m"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "41"
-                  endingLineNumber = "41"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
                   offsetFromSymbolStart = "12">
                </Location>
                <Location
@@ -63,8 +63,8 @@
                   urlString = "file:///Users/apple/code/ncode/ios_app/ios_app/controllers/ViewController.m"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "41"
-                  endingLineNumber = "41"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
                   offsetFromSymbolStart = "32">
                </Location>
             </Locations>

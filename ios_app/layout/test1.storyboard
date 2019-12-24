@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="Dd9-5y-NwF">
+            <objects>
+                <viewController id="g6s-Ll-Ine" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3Ub-ev-qGJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QlB-W6-QZ2">
+                                <rect key="frame" x="50" y="94" width="314" height="718"/>
+                                <color key="backgroundColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="QlB-W6-QZ2" firstAttribute="leading" secondItem="gWT-9A-WVN" secondAttribute="leading" constant="50" id="Ie8-Rw-TWQ"/>
+                            <constraint firstItem="gWT-9A-WVN" firstAttribute="trailing" secondItem="QlB-W6-QZ2" secondAttribute="trailing" constant="50" id="PDA-fq-lLl"/>
+                            <constraint firstItem="gWT-9A-WVN" firstAttribute="bottom" secondItem="QlB-W6-QZ2" secondAttribute="bottom" constant="50" id="YXX-Kf-n7D"/>
+                            <constraint firstItem="QlB-W6-QZ2" firstAttribute="top" secondItem="gWT-9A-WVN" secondAttribute="top" constant="50" id="eB2-VR-dbM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gWT-9A-WVN"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OQP-f4-HDj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="76.811594202898561" y="208.92857142857142"/>
+        </scene>
+    </scenes>
+</document>

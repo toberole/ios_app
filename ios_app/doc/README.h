@@ -159,4 +159,12 @@
  
  */
 
-
+/**
+ UIdevice可以发出很多系统的事件通知 可以监听系统事件
+ 
+ 屏幕适配：
+    autoresizing、autolayout
+    autoresizing、autolayout二者互斥，不能同时使用
+ 
+    size classes + autolayout
+ */

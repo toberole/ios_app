@@ -22,6 +22,10 @@
 #import "APPUIScrollViewController_Demo.h"
 #import "APPTableViewController.h"
 #import "APPTableViewController_1.h"
+#import "APPTableViewController_2.h"
+#import "APPTableViewController_3.h"
+#import "APPAutoResizingDemoViewController.h"
+
 #define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 #define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
 
@@ -110,6 +114,14 @@
 -(void)loadView{
     [super loadView];
     NSLog(@"ViewController#loadView");
+}
+/**不允许旋转*/
+- (BOOL)shouldAutorotat{
+    return NO;
+}
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskLandscape;
 }
 
 - (void)viewDidLoad {
@@ -254,8 +266,21 @@
 //    APPTableViewController *vc = [[APPTableViewController alloc]init];
 //    [self.navigationController pushViewController:vc animated:YES];
     
-    APPTableViewController_1 *vc = [[APPTableViewController_1 alloc]init];
+//    APPTableViewController_1 *vc = [[APPTableViewController_1 alloc]init];
+//    [self.navigationController pushViewController:vc animated:YES];
+
+//    UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"APPTableViewController_2" bundle:nil];
+//    APPTableViewController_2 *vc = [storyboard instantiateViewControllerWithIdentifier:@"APPTableViewController_2"];
+//    [self.navigationController pushViewController:vc animated:YES];
+
+//    UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"APPTableViewController_3" bundle:nil];
+//    APPTableViewController_3 *vc = [storyboard instantiateViewControllerWithIdentifier:@"APPTableViewController_3"];
+//    [self.navigationController pushViewController:vc animated:YES];
+    
+    APPAutoResizingDemoViewController *vc = [[APPAutoResizingDemoViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
+   
+    
 
 }
 

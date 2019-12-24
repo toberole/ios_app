@@ -42,8 +42,7 @@
     
     // 创建计时器
     self.timer = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(scrollHeader) userInfo:nil repeats:YES];
-    
-    // 设置NSTimer和UI一个级别[由于NSTimer的默认优先级比较低 如果不设置的时候 触摸屏幕其就得不到执行]
+    // 设置NSTimer线程级别和UI一个级别[由于NSTimer的默认优先级比较低 如果不设置的时候 触摸屏幕其就得不到执行]
     NSRunLoop *runLoop = [NSRunLoop currentRunLoop];
     [runLoop addTimer:self.timer forMode:NSRunLoopCommonModes];
     
@@ -131,6 +130,7 @@
         cell.selectedBackgroundView = [UIView new];
         cell.selectedBackgroundView.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
     }
+    
     [cell setLblCellText:self.data[indexPath.row]];
     return cell;
 }
