@@ -41,6 +41,10 @@
 		181C47CB23B2084A0040DCE2 /* test5.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 181C47CA23B2084A0040DCE2 /* test5.storyboard */; };
 		181C47CD23B210530040DCE2 /* test6.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 181C47CC23B210530040DCE2 /* test6.storyboard */; };
 		181C47CF23B2154E0040DCE2 /* test7.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 181C47CE23B2154E0040DCE2 /* test7.storyboard */; };
+		181C47D323B2287D0040DCE2 /* AudioRecorderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 181C47D123B2287D0040DCE2 /* AudioRecorderViewController.m */; };
+		181C47D423B2287D0040DCE2 /* AudioRecorderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 181C47D223B2287D0040DCE2 /* AudioRecorderViewController.xib */; };
+		181C47D823B232070040DCE2 /* RecordTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 181C47D723B232070040DCE2 /* RecordTool.m */; };
+		181C47DC23B304440040DCE2 /* BeanOC.m in Sources */ = {isa = PBXBuildFile; fileRef = 181C47DB23B304440040DCE2 /* BeanOC.m */; };
 		182EFF7822468B3100E5AE90 /* aaaaa.xib in Resources */ = {isa = PBXBuildFile; fileRef = 182EFF7722468B3100E5AE90 /* aaaaa.xib */; };
 		186C0D252398A3220051A17C /* Test_Selector.m in Sources */ = {isa = PBXBuildFile; fileRef = 186C0D242398A3220051A17C /* Test_Selector.m */; };
 		186C0D282398E82E0051A17C /* NetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 186C0D272398E82E0051A17C /* NetViewController.m */; };
@@ -102,6 +106,7 @@
 		18BA1080223F757D008D171F /* NextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BA107E223F757D008D171F /* NextViewController.m */; };
 		18BA1081223F757D008D171F /* NextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BA107F223F757D008D171F /* NextViewController.xib */; };
 		18BA1083223F8725008D171F /* Test_Next_Page.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BA1082223F8725008D171F /* Test_Next_Page.xib */; };
+		18BFC0F625959B9200E67817 /* FileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BFC0F525959B9200E67817 /* FileViewController.m */; };
 		18D8E646223CE49A006E89FC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D8E645223CE49A006E89FC /* AppDelegate.m */; };
 		18D8E649223CE49A006E89FC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D8E648223CE49A006E89FC /* ViewController.m */; };
 		18D8E64C223CE49A006E89FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D8E64A223CE49A006E89FC /* Main.storyboard */; };
@@ -173,6 +178,13 @@
 		181C47CA23B2084A0040DCE2 /* test5.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = test5.storyboard; sourceTree = "<group>"; };
 		181C47CC23B210530040DCE2 /* test6.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = test6.storyboard; sourceTree = "<group>"; };
 		181C47CE23B2154E0040DCE2 /* test7.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = test7.storyboard; sourceTree = "<group>"; };
+		181C47D023B2287D0040DCE2 /* AudioRecorderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioRecorderViewController.h; sourceTree = "<group>"; };
+		181C47D123B2287D0040DCE2 /* AudioRecorderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioRecorderViewController.m; sourceTree = "<group>"; };
+		181C47D223B2287D0040DCE2 /* AudioRecorderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioRecorderViewController.xib; sourceTree = "<group>"; };
+		181C47D623B232070040DCE2 /* RecordTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecordTool.h; sourceTree = "<group>"; };
+		181C47D723B232070040DCE2 /* RecordTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordTool.m; sourceTree = "<group>"; };
+		181C47DA23B304440040DCE2 /* BeanOC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeanOC.h; sourceTree = "<group>"; };
+		181C47DB23B304440040DCE2 /* BeanOC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeanOC.m; sourceTree = "<group>"; };
 		182EFF7722468B3100E5AE90 /* aaaaa.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = aaaaa.xib; sourceTree = "<group>"; };
 		182EFFCB2247822700E5AE90 /* ios_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		186C0D1E2398A21B0051A17C /* README.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = README.h; sourceTree = "<group>"; };
@@ -264,6 +276,8 @@
 		18BA107E223F757D008D171F /* NextViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NextViewController.m; sourceTree = "<group>"; };
 		18BA107F223F757D008D171F /* NextViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NextViewController.xib; sourceTree = "<group>"; };
 		18BA1082223F8725008D171F /* Test_Next_Page.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Test_Next_Page.xib; sourceTree = "<group>"; };
+		18BFC0F425959B9200E67817 /* FileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileViewController.h; sourceTree = "<group>"; };
+		18BFC0F525959B9200E67817 /* FileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileViewController.m; sourceTree = "<group>"; };
 		18D8E644223CE49A006E89FC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		18D8E645223CE49A006E89FC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		18D8E647223CE49A006E89FC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -299,6 +313,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		181C47D523B231E50040DCE2 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				181C47D623B232070040DCE2 /* RecordTool.h */,
+				181C47D723B232070040DCE2 /* RecordTool.m */,
+			);
+			path = util;
+			sourceTree = "<group>";
+		};
+		181C47D923B304220040DCE2 /* ocbase */ = {
+			isa = PBXGroup;
+			children = (
+				181C47DA23B304440040DCE2 /* BeanOC.h */,
+				181C47DB23B304440040DCE2 /* BeanOC.m */,
+			);
+			path = ocbase;
+			sourceTree = "<group>";
+		};
 		186C0D1D2398A2050051A17C /* doc */ = {
 			isa = PBXGroup;
 			children = (
@@ -492,6 +524,11 @@
 				186C0D7B239D23A50051A17C /* APPUIViewController.h */,
 				186C0D7C239D23A50051A17C /* APPUIViewController.m */,
 				186C0D7D239D23A50051A17C /* APPUIViewController.xib */,
+				181C47D023B2287D0040DCE2 /* AudioRecorderViewController.h */,
+				181C47D123B2287D0040DCE2 /* AudioRecorderViewController.m */,
+				181C47D223B2287D0040DCE2 /* AudioRecorderViewController.xib */,
+				18BFC0F425959B9200E67817 /* FileViewController.h */,
+				18BFC0F525959B9200E67817 /* FileViewController.m */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -507,6 +544,8 @@
 		18D8E643223CE49A006E89FC /* ios_app */ = {
 			isa = PBXGroup;
 			children = (
+				181C47D923B304220040DCE2 /* ocbase */,
+				181C47D523B231E50040DCE2 /* util */,
 				1870905423A0D28F0087C293 /* views */,
 				1870904F23A0BAED0087C293 /* layout */,
 				189A237E239E80AC00AC8B67 /* test_file */,
@@ -662,6 +701,7 @@
 				181C47C723B0C3850040DCE2 /* test3.storyboard in Resources */,
 				186C0D34239A1F220051A17C /* listview.xib in Resources */,
 				18D8E64E223CE49C006E89FC /* Assets.xcassets in Resources */,
+				181C47D423B2287D0040DCE2 /* AudioRecorderViewController.xib in Resources */,
 				189A237D239E5BDA00AC8B67 /* TestAnimationViewController.xib in Resources */,
 				1870908C23A340270087C293 /* APPUIScrollViewController_Demo.xib in Resources */,
 				181C47CB23B2084A0040DCE2 /* test5.storyboard in Resources */,
@@ -755,14 +795,18 @@
 				186C0D2F239942080051A17C /* StatusBarNavigationBarViewController.m in Sources */,
 				186C0D4A239C06620051A17C /* Extra.m in Sources */,
 				181C478623A648F70040DCE2 /* CellDemoTableViewCell.m in Sources */,
+				181C47D823B232070040DCE2 /* RecordTool.m in Sources */,
 				1870908B23A340270087C293 /* APPUIScrollViewController_Demo.m in Sources */,
 				18D8E646223CE49A006E89FC /* AppDelegate.m in Sources */,
 				181C477923A4F8670040DCE2 /* APPTableViewController.m in Sources */,
 				181C479C23A8A3530040DCE2 /* APPTableViewController_2.m in Sources */,
 				186C0D32239A1E860051A17C /* UITableView_ViewController.m in Sources */,
+				181C47DC23B304440040DCE2 /* BeanOC.m in Sources */,
 				1870906223A1D0190087C293 /* Toast.m in Sources */,
 				186C0D3B239A34540051A17C /* Constant.m in Sources */,
 				186C0D252398A3220051A17C /* Test_Selector.m in Sources */,
+				18BFC0F625959B9200E67817 /* FileViewController.m in Sources */,
+				181C47D323B2287D0040DCE2 /* AudioRecorderViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -935,7 +979,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "tech.iso-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -955,7 +999,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "tech.iso-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

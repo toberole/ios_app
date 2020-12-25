@@ -32,10 +32,10 @@
             timestampString = "597924279.112885"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "name"
-            landmarkType = "24">
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "ViewController()"
+            landmarkType = "2">
             <Locations>
                <Location
                   uuid = "CA6655AF-A22A-4110-B441-99AABA2CBC5F - 6d42b877a7bb6023"
@@ -48,8 +48,8 @@
                   urlString = "file:///Users/apple/code/ncode/ios_app/ios_app/controllers/ViewController.m"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "45"
-                  endingLineNumber = "45"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
                   offsetFromSymbolStart = "12">
                </Location>
                <Location
@@ -63,9 +63,9 @@
                   urlString = "file:///Users/apple/code/ncode/ios_app/ios_app/controllers/ViewController.m"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "45"
-                  endingLineNumber = "45"
-                  offsetFromSymbolStart = "32">
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "20">
                </Location>
             </Locations>
          </BreakpointContent>

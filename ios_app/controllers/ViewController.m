@@ -25,6 +25,9 @@
 #import "APPTableViewController_2.h"
 #import "APPTableViewController_3.h"
 #import "APPAutoResizingDemoViewController.h"
+#import "AudioRecorderViewController.h"
+#import "BeanOC.h"
+#import "FileViewController.h"
 
 #define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 #define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
@@ -55,6 +58,7 @@
 @property(nonatomic,strong)UIButton *uiTabView_btn1;
 @property(nonatomic,strong)UIButton *ocbase_btn;
 @property (nonatomic,strong)UIButton *uitest_btn;
+@property(nonatomic,strong)UIButton*btn_file;
 
 // 测试懒加载
 // Xcode自动生成 "."语法会触发set和get
@@ -79,31 +83,31 @@
 // loadview -> viewDidLoad -> viewWillAppear -> viewDidAppear
 /*
  loadView什么时候被调用？
-    每次访问UIViewController的view(比如controller.view、self.view)而且view为nil，loadView方法就会被调用。
+ 每次访问UIViewController的view(比如controller.view、self.view)而且view为nil，loadView方法就会被调用。
  有什么作用？
-    loadView方法是用来负责创建UIViewController的view
+ loadView方法是用来负责创建UIViewController的view
  默认实现是怎样的？
-    a、它会先去查找与UIViewController相关联的xib文件，通过加载xib文件来创建UIViewController的view
-    如果在初始化UIViewController指定了xib文件名，就会根据传入的xib文件名加载对应的xib文件
-        [[MJViewController alloc] initWithNibName:@"MJViewController" bundle:nil];
-    b、如果没有明显地传xib文件名，就会加载跟UIViewController同名的xib文件
-        [[MJViewController alloc] init]; // 加载MJViewController.xib
-    c、如果没有找到相关联的xib文件，就会创建一个空白的UIView，然后赋值给UIViewController的view属性，大致如下
-        self.view = [[[UIView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame] autorelease];
-
-    注意：
-    在某些情况下，xib不是那么地灵活，所以有时候我们想通过代码来创建UIView，比如：
-    self.view = [[[UIWebView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame] autorelease];
-    如果想通过代码来创建UIViewController的view，就要重写loadView方法，并且不需要调用[super loadView]，因为若没有xib文件，[super loadView]默认会创建一个空白的UIView。我们既然要通过代码来自定义UIView，那么就没必要事先创建一个空白的UIView，以节省不必要的开销。正确的做法应该是这样：
+ a、它会先去查找与UIViewController相关联的xib文件，通过加载xib文件来创建UIViewController的view
+ 如果在初始化UIViewController指定了xib文件名，就会根据传入的xib文件名加载对应的xib文件
+ [[MJViewController alloc] initWithNibName:@"MJViewController" bundle:nil];
+ b、如果没有明显地传xib文件名，就会加载跟UIViewController同名的xib文件
+ [[MJViewController alloc] init]; // 加载MJViewController.xib
+ c、如果没有找到相关联的xib文件，就会创建一个空白的UIView，然后赋值给UIViewController的view属性，大致如下
+ self.view = [[[UIView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame] autorelease];
+ 
+ 注意：
+ 在某些情况下，xib不是那么地灵活，所以有时候我们想通过代码来创建UIView，比如：
+ self.view = [[[UIWebView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame] autorelease];
+ 如果想通过代码来创建UIViewController的view，就要重写loadView方法，并且不需要调用[super loadView]，因为若没有xib文件，[super loadView]默认会创建一个空白的UIView。我们既然要通过代码来自定义UIView，那么就没必要事先创建一个空白的UIView，以节省不必要的开销。正确的做法应该是这样：
  - (void)loadView {
  self.view = [[[UIWebView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame] autorelease];
  }
  
  
  viewDidLoad 什么时候被调用？
-    无论是通过xib文件还是重写loadView方法创建UIViewController的view，在view创建完毕后，最终都会调用viewDidLoad方法
+ 无论是通过xib文件还是重写loadView方法创建UIViewController的view，在view创建完毕后，最终都会调用viewDidLoad方法
  有什么作用？
-    一般我们会在这里做界面上的初始化操作
+ 一般我们会在这里做界面上的初始化操作
  
  */
 + (void)load{
@@ -130,7 +134,7 @@
     NSLog(@"ViewController navigationItem = %@",self.navigationItem);
     // 定时器
     // [self useTimer];
-
+    
     // 设置导航栏
     [self setNav];
     
@@ -170,11 +174,22 @@
     //    [btn addTarget:self action:@selector(btn_next_Clicked) forControlEvents:UIControlEventTouchUpInside];
     
     [self initViews];
+    
+    
+    [self test];
 }
+
+-(void)test{
+    BeanOC *bean = [[BeanOC alloc]init];
+    [bean setX:1];
+    BeanOC *bean1 = [[BeanOC alloc]init];
+    NSLog(@"x = %d",[bean1 x]);
+}
+
 -(void)useTimer{
     // 定时器使用
-       // (NSTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)ti target:(id)aTarget selector:(SEL)aSelector userInfo:(nullable id)userInfo repeats:(BOOL)yesOrNo;
-       NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(task_time) userInfo:nil repeats:YES];
+    // (NSTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)ti target:(id)aTarget selector:(SEL)aSelector userInfo:(nullable id)userInfo repeats:(BOOL)yesOrNo;
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(task_time) userInfo:nil repeats:YES];
     // 暂停销毁timer 不能再继续使用 需要重新创建新的才能使用
     // [timer invalidate];
     // 设置 timer优先级
@@ -202,6 +217,10 @@
     _uiTabView_btn1 = [self.view viewWithTag:11];
     _ocbase_btn = [self.view viewWithTag:12];
     _uitest_btn = [self.view viewWithTag:13];
+    self.btn_file =[self.view viewWithTag:14];
+    
+    [self.btn_file addTarget:self  action:@selector(btn_file_clicked) forControlEvents:UIControlEventTouchUpInside];
+    
     
     /*
      _btn.frame: 该view在父view坐标系统中的位置和大小，它的参考坐标系是父view的坐标系
@@ -224,8 +243,8 @@
 
 -(void)uitest_btn_clicked{
     NSLog(@"uitest_btn_clicked");
-//        APPUIViewController *vc = [[APPUIViewController alloc]init];
-//        [self.navigationController pushViewController:vc animated:YES];
+    //        APPUIViewController *vc = [[APPUIViewController alloc]init];
+    //        [self.navigationController pushViewController:vc animated:YES];
     
     //    Test1_ViewController *vc = [[Test1_ViewController alloc]init];
     //    [self.navigationController pushViewController:vc animated:YES];
@@ -233,55 +252,56 @@
     //    TestAnimationViewController *vc = [[TestAnimationViewController alloc]init];
     //    [self.navigationController pushViewController:vc animated:YES];
     
-//    APPInfosViewController *vc = [[APPInfosViewController alloc]init];
-//    [self.navigationController pushViewController:vc animated:YES];
+    //    APPInfosViewController *vc = [[APPInfosViewController alloc]init];
+    //    [self.navigationController pushViewController:vc animated:YES];
     
-//    DownloadFileViewController *vc = [[DownloadFileViewController alloc]init];
-//    [self.navigationController pushViewController:vc animated:YES];
-    
-    
-//    LoginViewController *vc = [[LoginViewController alloc]init];
-//    [self.navigationController pushViewController:vc animated:YES];
-    
-//    APPIMGViewController *vc = [[APPIMGViewController alloc]init];
-//    [self.navigationController pushViewController:vc animated:YES];
-    
-//    APPLauoutViewController *vc = [[APPLauoutViewController alloc]init];
-//    [self.navigationController pushViewController:vc animated:YES];
-    
-//    APPTaskViewController *vc = [[APPTaskViewController alloc]init];
-//    [self.navigationController pushViewController:vc animated:YES];
+    //    DownloadFileViewController *vc = [[DownloadFileViewController alloc]init];
+    //    [self.navigationController pushViewController:vc animated:YES];
     
     
-//    APPUIScrollViewController *vc = [[APPUIScrollViewController alloc]init];
-//    [self.navigationController pushViewController:vc animated:YES];
+    //    LoginViewController *vc = [[LoginViewController alloc]init];
+    //    [self.navigationController pushViewController:vc animated:YES];
     
-//    APPViewTouchViewController *vc = [[APPViewTouchViewController alloc]init];
-//    [self.navigationController pushViewController:vc animated:YES];
+    //    APPIMGViewController *vc = [[APPIMGViewController alloc]init];
+    //    [self.navigationController pushViewController:vc animated:YES];
+    
+    //    APPLauoutViewController *vc = [[APPLauoutViewController alloc]init];
+    //    [self.navigationController pushViewController:vc animated:YES];
+    
+    //    APPTaskViewController *vc = [[APPTaskViewController alloc]init];
+    //    [self.navigationController pushViewController:vc animated:YES];
     
     
-//    APPUIScrollViewController_Demo *vc = [[APPUIScrollViewController_Demo alloc]init];
-//    [self.navigationController pushViewController:vc animated:YES];
+    //    APPUIScrollViewController *vc = [[APPUIScrollViewController alloc]init];
+    //    [self.navigationController pushViewController:vc animated:YES];
     
-//    APPTableViewController *vc = [[APPTableViewController alloc]init];
-//    [self.navigationController pushViewController:vc animated:YES];
+    //    APPViewTouchViewController *vc = [[APPViewTouchViewController alloc]init];
+    //    [self.navigationController pushViewController:vc animated:YES];
     
-//    APPTableViewController_1 *vc = [[APPTableViewController_1 alloc]init];
-//    [self.navigationController pushViewController:vc animated:YES];
-
-//    UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"APPTableViewController_2" bundle:nil];
-//    APPTableViewController_2 *vc = [storyboard instantiateViewControllerWithIdentifier:@"APPTableViewController_2"];
-//    [self.navigationController pushViewController:vc animated:YES];
-
-//    UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"APPTableViewController_3" bundle:nil];
-//    APPTableViewController_3 *vc = [storyboard instantiateViewControllerWithIdentifier:@"APPTableViewController_3"];
-//    [self.navigationController pushViewController:vc animated:YES];
     
-    APPAutoResizingDemoViewController *vc = [[APPAutoResizingDemoViewController alloc]init];
+    //    APPUIScrollViewController_Demo *vc = [[APPUIScrollViewController_Demo alloc]init];
+    //    [self.navigationController pushViewController:vc animated:YES];
+    
+    //    APPTableViewController *vc = [[APPTableViewController alloc]init];
+    //    [self.navigationController pushViewController:vc animated:YES];
+    
+    //    APPTableViewController_1 *vc = [[APPTableViewController_1 alloc]init];
+    //    [self.navigationController pushViewController:vc animated:YES];
+    
+    //    UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"APPTableViewController_2" bundle:nil];
+    //    APPTableViewController_2 *vc = [storyboard instantiateViewControllerWithIdentifier:@"APPTableViewController_2"];
+    //    [self.navigationController pushViewController:vc animated:YES];
+    
+    //    UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"APPTableViewController_3" bundle:nil];
+    //    APPTableViewController_3 *vc = [storyboard instantiateViewControllerWithIdentifier:@"APPTableViewController_3"];
+    //    [self.navigationController pushViewController:vc animated:YES];
+    
+    //    APPAutoResizingDemoViewController *vc = [[APPAutoResizingDemoViewController alloc]init];
+    //    [self.navigationController pushViewController:vc animated:YES];
+    
+    AudioRecorderViewController *vc = [[AudioRecorderViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
-   
     
-
 }
 
 //NSInputStream;
@@ -340,32 +360,32 @@
  文件管理器（NSFileManager/FileManager）：此类主要是对文件进行的操作（创建/删除/改名等）以及文件信息的获取。
  文件连接器（NSFileHandle/FileHandle）：此类主要是对文件内容进行读取和写入操作。
  一、沙盒以及组成部分
-    iOS应用程序只能对自己创建的文件系统读取文件，这个"独立","封闭","安全"的空间，称之为沙盒。
+ iOS应用程序只能对自己创建的文件系统读取文件，这个"独立","封闭","安全"的空间，称之为沙盒。
  
  1.1、Home目录(应用程序包)
-    整个应用程序各文档所在的目录,包含了所有的资源文件和可执行文件
+ 整个应用程序各文档所在的目录,包含了所有的资源文件和可执行文件
  1.2、Documents
-    保存应用运行时生成的需要持久化的数据，iTunes同步设备时会备份该目录
-    需要保存由"应用程序本身"产生的文件或者数据，例如: 游戏进度，涂鸦软件的绘图
-    目录中的文件会被自动保存在 iCloud
-    此目录下不要保存从网络上下载的文件，否则会无法上架!
+ 保存应用运行时生成的需要持久化的数据，iTunes同步设备时会备份该目录
+ 需要保存由"应用程序本身"产生的文件或者数据，例如: 游戏进度，涂鸦软件的绘图
+ 目录中的文件会被自动保存在 iCloud
+ 此目录下不要保存从网络上下载的文件，否则会无法上架!
  1.3、tmp
-    保存应用运行时所需要的临时数据或文件，"后续不需要使用"，使用完毕后再将相应的文件从该目录删除。
-    应用没有运行，系统也可能会清除该目录下的文件
-    iTunes不会同步备份该目录
-    重新启动手机, tmp 目录会被清空
-    系统磁盘空间不足时，系统也会自动清理
+ 保存应用运行时所需要的临时数据或文件，"后续不需要使用"，使用完毕后再将相应的文件从该目录删除。
+ 应用没有运行，系统也可能会清除该目录下的文件
+ iTunes不会同步备份该目录
+ 重新启动手机, tmp 目录会被清空
+ 系统磁盘空间不足时，系统也会自动清理
  1.4、Library/Cache
-    保存应用运行时生成的需要持久化的数据，iTunes同步设备时不备份该目录。一般存放体积大、不需要备份的非重要数据
-    保存临时文件,"后续需要使用"，例如: 缓存的图片，离线数据（地图数据）
-    系统不会清理 cache 目录中的文件
-    就要求程序开发时, "必须提供 cache 目录的清理解决方案"
+ 保存应用运行时生成的需要持久化的数据，iTunes同步设备时不备份该目录。一般存放体积大、不需要备份的非重要数据
+ 保存临时文件,"后续需要使用"，例如: 缓存的图片，离线数据（地图数据）
+ 系统不会清理 cache 目录中的文件
+ 就要求程序开发时, "必须提供 cache 目录的清理解决方案"
  1.5、Library/Preference
-    保存应用的所有偏好设置，IOS的Settings应用会在该目录中查找应用的设置信息。iTunes
-    用户偏好，使用 NSUserDefault 直接读写！
-    如果想要数据及时写入硬盘，还需要调用一个同步方法 synchronize()
+ 保存应用的所有偏好设置，IOS的Settings应用会在该目录中查找应用的设置信息。iTunes
+ 用户偏好，使用 NSUserDefault 直接读写！
+ 如果想要数据及时写入硬盘，还需要调用一个同步方法 synchronize()
  1.6.程序.app，与另三个路径的父路径不同
-    这是应用程序的程序包目录，包含应用程序的本身。由于应用程序必须经过签名，所以您在运行时不能对这个目录中的内容进行修改，否则可能会使应用程序无法启动
+ 这是应用程序的程序包目录，包含应用程序的本身。由于应用程序必须经过签名，所以您在运行时不能对这个目录中的内容进行修改，否则可能会使应用程序无法启动
  */
 
 #pragma mark 文件操作
@@ -469,14 +489,14 @@
 -(void)btn_net_Clicked{
     NSLog(@"btn_net_Clicked");
     
-     // 可以修改xib文件的file owner
+    // 可以修改xib文件的file owner
     
-//    NSArray *apparray= [[NSBundle mainBundle]loadNibNamed:@"Test_Next_Page" owner:nil options:nil];
-//    NSLog(@"views = %@",apparray);
-//    NSLog(@"views = %@",apparray[0]);
-//    NextViewController *nc  = [[NextViewController alloc]init];
-//    nc.view = apparray[0];
-//    [self.navigationController pushViewController:nc animated:YES];//跳转到下一页面
+    //    NSArray *apparray= [[NSBundle mainBundle]loadNibNamed:@"Test_Next_Page" owner:nil options:nil];
+    //    NSLog(@"views = %@",apparray);
+    //    NSLog(@"views = %@",apparray[0]);
+    //    NextViewController *nc  = [[NextViewController alloc]init];
+    //    nc.view = apparray[0];
+    //    [self.navigationController pushViewController:nc animated:YES];//跳转到下一页面
     
     
     NSArray * arr = [[NSBundle mainBundle]loadNibNamed:@"netpage" owner:nil options:nil];
@@ -486,7 +506,7 @@
     NSLog(@"views subviews count = %ld",[[view subviews]count]);
     nc.view = view;
     [self.navigationController pushViewController:nc animated:YES];//跳转到下一页面
-
+    
 }
 /*
  获取SEL值：
@@ -574,9 +594,9 @@
     }
     
     // 状态栏
-//    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
-//    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;// (黑色)
-//    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;// (白色)
+    //    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+    //    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;// (黑色)
+    //    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;// (白色)
     
     // 导航栏样式
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
@@ -761,10 +781,10 @@
      
      */
     /*
-         {
-             "name": "hello",
-             "age": 11
-         }
+     {
+     "name": "hello",
+     "age": 11
+     }
      */
     id resString = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableLeaves error:nil];
     // 取值
@@ -773,6 +793,13 @@
     
     NSString *name_res = resString[@"name"];
     NSLog(@"name_res = %@",name_res);
+    
+}
+
+# pragma mark FileViewController 文件操作
+-(void)btn_file_clicked{
+    FileViewController*nc = [[FileViewController alloc]init];
+    [self.navigationController pushViewController:nc animated:YES];//跳转到下一页面
     
 }
 
